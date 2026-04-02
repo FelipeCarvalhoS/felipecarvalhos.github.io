@@ -1,3 +1,4 @@
+import { fredoka, plusJakartaSans } from '@/styles/fonts'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {

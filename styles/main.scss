@@ -1,14 +1,4 @@
 /**********************************************************************************************
-Import fonts
-**********************************************************************************************/
-
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-
-
-
-
-/**********************************************************************************************
 1. Import functions
 **********************************************************************************************/
 
@@ -37,13 +27,11 @@ $spacer: 1rem;
 //
 // Typography
 //
-
-$font-family-base:   "Plus Jakarta Sans", sans-serif;
-$font-size-base:     1rem;
+$font-size-base:       1rem;
 // $font-weight-xlight: 200;
 // $font-weight-base:   $font-weight-xlight;
 
-$headings-font-family:   "Fredoka", sans-serif;
+$headings-font-family:   var(--font-fredoka), sans-serif;
 $headings-font-weight:   500;
 $headings-margin-bottom: 0;
 $h1-font-size:           $font-size-base * 2.125;   // 34px
@@ -154,14 +142,14 @@ $display-font-sizes: (
 );
 
 $spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-  6: $spacer * 4.5,
-  7: $spacer * 6,
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4.5,
+    7: $spacer * 6,
 );
 
 $theme-colors: map-remove($theme-colors, "info", "light", "dark");
