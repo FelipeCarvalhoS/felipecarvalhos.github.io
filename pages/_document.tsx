@@ -1,10 +1,24 @@
-import { fredoka, plusJakartaSans } from '@/styles/fonts'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
     return (
         <Html lang="en">
-            <Head />
+            <Head>
+                <link
+                    rel="preload"
+                    href="/fonts/fredoka.ttf"
+                    as="font"
+                    type="font/ttf"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/plus_jakarta_sans.ttf"
+                    as="font"
+                    type="font/ttf"
+                    crossOrigin="anonymous"
+                />
+            </Head>
             <body>
                 <Main />
                 <NextScript />

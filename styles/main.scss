@@ -27,11 +27,12 @@ $spacer: 1rem;
 //
 // Typography
 //
+$font-family-base: 'Plus Jakarta Sans', sans-serif;
 $font-size-base:       1rem;
 // $font-weight-xlight: 200;
 // $font-weight-base:   $font-weight-xlight;
 
-$headings-font-family:   var(--font-fredoka), sans-serif;
+$headings-font-family:   'Fredoka', sans-serif;
 $headings-font-weight:   500;
 $headings-margin-bottom: 0;
 $h1-font-size:           $font-size-base * 2.125;   // 34px
