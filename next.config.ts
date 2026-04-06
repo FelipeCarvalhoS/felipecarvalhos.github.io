@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     sassOptions: {
         implementation: 'sass',
     },
+    output: 'export',
 }
 
 export default nextConfig

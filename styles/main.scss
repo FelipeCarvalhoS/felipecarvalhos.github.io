@@ -28,9 +28,9 @@ $spacer: 1rem;
 // Typography
 //
 $font-family-base: 'Plus Jakarta Sans', sans-serif;
-$font-size-base:       1rem;
+$font-size-base:   1rem;
+$font-weight-base: 300;
 // $font-weight-xlight: 200;
-// $font-weight-base:   $font-weight-xlight;
 
 $headings-font-family:   'Fredoka', sans-serif;
 $headings-font-weight:   500;
@@ -59,9 +59,9 @@ $body-tertiary-color:  hsl(0, 0%, 56%);
 $body-tertiary-bg:     hsl(206, 100%, 88%);
 $border-color:         hsl(222, 90%, 61%);
 
-$primary:   #FFD60A;
-$primary-darker:  #FFC300;
-$secondary: #F18701;
+$primary:        hsl(50, 100%, 52%);
+$primary-darker: hsl(50, 100%, 49%);
+$secondary:      #F18701;
 
 //
 // Navbar
@@ -69,11 +69,13 @@ $secondary: #F18701;
 
 $navbar-padding-y:                  0;
 $navbar-brand-margin-end:           0;
+$navbar-brand-font-size:            $h3-font-size;
 $navbar-nav-link-padding-x:         0;
 $navbar-light-color:                $body-color;
 $navbar-light-hover-color:          $secondary;
 $navbar-light-active-color:         $navbar-light-hover-color;
 $navbar-light-icon-color:           $navbar-light-color;
+$navbar-light-brand-color:          $navbar-light-color;
 $navbar-light-toggler-border-color: transparent;
 $navbar-toggler-focus-width:        0;
 
@@ -137,9 +139,8 @@ $offcanvas-horizontal-width: min(100vw, 20rem);
 **********************************************************************************************/
 
 $display-font-sizes: (
-    1: 2.75rem,   // 44px
-    2: 2.5rem,    // 40px
-    3: 2.25rem,   // 36px
+    1: 4.5rem, // 72px
+    2: 3rem,   // 48px
 );
 
 $spacers: (
@@ -177,7 +178,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
+// @import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";
@@ -198,7 +199,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 // @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
 // @import "bootstrap/scss/toasts";
-// @import "bootstrap/scss/modal";
+@import "bootstrap/scss/modal";
 // @import "bootstrap/scss/tooltip";
 // @import "bootstrap/scss/popover";
 // @import "bootstrap/scss/carousel";
@@ -216,8 +217,6 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 7. Customize Bootstrap's utility API
 **********************************************************************************************/
 
-// ...
-
 @import "bootstrap/scss/utilities/api";
 
 
@@ -225,7 +224,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 
 
 /**********************************************************************************************
-Other custom styles
+8. Other custom styles
 **********************************************************************************************/
 
-// ...
+@import "custom";

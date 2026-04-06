@@ -1,0 +1,46 @@
+.spikes {
+    --spike-width: 42px;
+    --spike-height: 10px;
+    --spike-color: var(--bs-secondary-bg);
+    
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--spike-height);
+        background: var(--spike-color);
+        mask-image: url('/img/spike.svg');
+        mask-size: var(--spike-width) var(--spike-height);
+        mask-position: center;
+        bottom: 0;
+    }
+}
+
+.hero {
+    --primary-stripe-rgb: null;
+    --secondary-stripe-rgb: null;
+
+    background-size: 32px 32px;
+    background-image: linear-gradient(
+        -45deg,
+        rgb(var(--primary-stripe-rgb)) 25%,
+        rgb(var(--secondary-stripe-rgb)) 25%,
+        rgb(var(--secondary-stripe-rgb)) 50%,
+        rgb(var(--primary-stripe-rgb)) 50%,
+        rgb(var(--primary-stripe-rgb)) 75%,
+        rgb(var(--secondary-stripe-rgb)) 75%,
+        rgb(var(--secondary-stripe-rgb)) 100%
+    );
+    animation: pan 180s linear infinite;
+}
+
+@keyframes pan {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
