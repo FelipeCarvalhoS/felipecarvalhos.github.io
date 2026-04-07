@@ -1,19 +1,9 @@
-import type { AppProps } from 'next/app'
-import '@/styles/fonts.scss'
-import '@/styles/main.scss'
-import { slugify } from '@/utils/slugify'
+'use client'
+
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap'
+import { slugify } from '@/utils/slugify'
 
-export default function App({ Component, pageProps }: AppProps) {
-    return (
-        <>
-            <MyNavbar />
-            <Component {...pageProps} />
-        </>
-    )
-}
-
-function MyNavbar() {
+export default function MyNavbar() {
     return (
         <Navbar
             bg="body"
