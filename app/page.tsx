@@ -1,6 +1,13 @@
+'use client'
+
+import { useLocale, useSetLocale } from '@/app/LocaleProvider'
+import Felipe from '@/components/Felipe'
 import { Container, Stack } from 'react-bootstrap'
 
 export default function Home() {
+    const { locale, t } = useLocale()
+    const setLocale = useSetLocale()
+
     return (
         <main>
             <section
@@ -8,8 +15,7 @@ export default function Home() {
                 style={
                     {
                         '--primary-stripe-rgb': 'var(--bs-primary-rgb)',
-                        '--secondary-stripe-rgb':
-                            'var(--bs-primary-darker-rgb)',
+                        '--secondary-stripe-rgb': 'var(--bs-primary-darker-rgb)',
                     } as React.CSSProperties
                 }
             >
@@ -21,24 +27,16 @@ export default function Home() {
                         paddingBottom: 'calc(3rem + var(--spike-height))',
                     }}
                 >
-                    <img
-                        src="/img/dots.svg"
-                        alt=""
-                        className="align-self-end d-none d-md-block"
-                    />
+                    <img src="/img/dots.svg" alt="" className="align-self-end d-none d-md-block" />
                     <Stack className="flex-grow-1 align-self-center text-center">
-                        <span className="fs-1 fw-normal">Olá! Eu me chamo</span>
+                        <span className="fs-1 fw-normal">{t.hero.greeting}</span>
                         <div
                             className="d-flex justify-content-between align-self-center w-100"
                             style={{ maxWidth: '48rem' }}
                         >
-                            <img
-                                src="/img/accent-rays.svg"
-                                alt=""
-                                className="d-none d-xl-block"
-                            />
+                            <img src="/img/accent-rays.svg" alt="" className="d-none d-xl-block" />
                             <h1 className="display-1 fw-semibold text-wrap flex-grow-1">
-                                Felipe Carvalho
+                                <Felipe />
                             </h1>
                             <img
                                 src="/img/accent-rays.svg"
@@ -55,6 +53,10 @@ export default function Home() {
                     />
                 </Container>
             </section>
+            {locale}
+            <button onClick={locale === 'en' ? () => setLocale('pt-BR') : () => setLocale('en')}>
+                {locale === 'en' ? 'Português' : 'English'}
+            </button>
         </main>
     )
 }

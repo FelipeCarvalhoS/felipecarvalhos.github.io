@@ -1,0 +1,8 @@
+{
+    "navbar": {
+        "links": ["Sobre", "Habilidades", "Experiência", "Projetos", "Contato"]
+    },
+    "hero": {
+        "greeting": "Olá! Eu me chamo"
+    }
+}
