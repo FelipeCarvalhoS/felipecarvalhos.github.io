@@ -1,9 +1,13 @@
 import { Container } from 'react-bootstrap'
 
-export default function StandardContainer(props: React.ComponentProps<typeof Container>) {
+export default function StandardContainer({
+    classNameExtra = '',
+    children,
+    ...props
+}: React.ComponentProps<typeof Container> & { classNameExtra?: string }) {
     return (
-        <Container fluid="xxl" {...props}>
-            {props.children}
+        <Container fluid="xxl" className={`px-3 px-md-5 py-8 ${classNameExtra}`} {...props}>
+            {children}
         </Container>
     )
 }
