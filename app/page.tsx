@@ -2,11 +2,11 @@
 
 import { useLocale, useSetLocale } from '@/app/LocaleProvider'
 import Felipe from '@/components/Felipe'
-import { Container, Stack } from 'react-bootstrap'
+import StandardContainer from '@/components/StandardContainer'
+import { Col, Image as BsImage, Row, Stack, Button } from 'react-bootstrap'
 
 export default function Home() {
-    const { locale, t } = useLocale()
-    const setLocale = useSetLocale()
+    const t = useLocale().t
 
     return (
         <main>
@@ -19,9 +19,8 @@ export default function Home() {
                     } as React.CSSProperties
                 }
             >
-                <Container
-                    fluid="xxl"
-                    className="d-flex justify-content-between pt-5 px-6 column-gap-5"
+                <StandardContainer
+                    className="d-flex justify-content-between pt-5 px-md-5 px-lg-6 column-gap-5"
                     style={{
                         minHeight: 'calc(min(30vw, 26rem))',
                         paddingBottom: 'calc(3rem + var(--spike-height))',
@@ -35,7 +34,7 @@ export default function Home() {
                             style={{ maxWidth: '48rem' }}
                         >
                             <img src="/img/accent-rays.svg" alt="" className="d-none d-xl-block" />
-                            <h1 className="display-1 fw-semibold text-wrap flex-grow-1">
+                            <h1 className="display-1 text-wrap flex-grow-1">
                                 <Felipe />
                             </h1>
                             <img
@@ -51,12 +50,35 @@ export default function Home() {
                         alt=""
                         className="align-self-start d-none d-md-block"
                     />
-                </Container>
+                </StandardContainer>
             </section>
-            {locale}
-            <button onClick={locale === 'en' ? () => setLocale('pt-BR') : () => setLocale('en')}>
-                {locale === 'en' ? 'Português' : 'English'}
-            </button>
+            <section>
+                <StandardContainer
+                    fluid={false}
+                    className="px-3 px-md-5 py-8 d-flex justify-content-center"
+                >
+                    <div
+                        className="d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center mb-5"
+                        style={{ maxWidth: '60rem' }}
+                    >
+                        <div style={{ flexBasis: '50%' }}>
+                            <h2 className="display-2 h1 mb-4">Sobre Mim</h2>
+                            <p className="fs-4 lh-sm mb-5">
+                                Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo
+                                in eu pharetra tristique. Faucibus purus blandit risus nulla tellus.
+                                Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam
+                                ultrices euismod.
+                            </p>
+                            <Button variant="primary" size="lg" className="px-5 fs-4 rounded-pill">
+                                Baixar currículo
+                            </Button>
+                        </div>
+                        <div>
+                            <BsImage src="/img/profile.png" alt="" fluid />
+                        </div>
+                    </div>
+                </StandardContainer>
+            </section>
         </main>
     )
 }

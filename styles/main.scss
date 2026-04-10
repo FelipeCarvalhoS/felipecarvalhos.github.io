@@ -33,7 +33,7 @@ $font-weight-base: 300;
 // $font-weight-xlight: 200;
 
 $headings-font-family:   'Fredoka', sans-serif;
-$headings-font-weight:   500;
+$headings-font-weight:   600;
 $headings-margin-bottom: 0;
 $h1-font-size:           $font-size-base * 2.125;   // 34px
 $h2-font-size:           $font-size-base * 2;      // 32px
@@ -152,6 +152,7 @@ $spacers: (
     5: $spacer * 3,
     6: $spacer * 4.5,
     7: $spacer * 6,
+    8: $spacer * 6.75,
 );
 
 $theme-colors: map-remove($theme-colors, "info", "light", "dark");
@@ -178,7 +179,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 
 @import "bootstrap/scss/reboot";
 @import "bootstrap/scss/type";
-// @import "bootstrap/scss/images";
+@import "bootstrap/scss/images";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";

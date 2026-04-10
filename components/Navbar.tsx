@@ -1,16 +1,17 @@
 'use client'
 
-import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap'
+import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { slugify } from '@/utils/slugify'
 import { useLocale } from '@/app/LocaleProvider'
 import Felipe from './Felipe'
+import StandardContainer from './StandardContainer'
 
 export default function MyNavbar() {
     const t = useLocale().t
 
     return (
         <Navbar bg="body" expand="md" className="sticky-top py-2 ps-3 ps-md-4 shadow-sm">
-            <Container fluid="xxl" className="flex-nowrap">
+            <StandardContainer className="flex-nowrap">
                 <div className="h3 fw-normal me-3">
                     <Felipe />
                 </div>
@@ -40,7 +41,7 @@ export default function MyNavbar() {
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
-            </Container>
+            </StandardContainer>
         </Navbar>
     )
 }
