@@ -53,12 +53,9 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section>
-                <StandardContainer
-                    fluid={false}
-                    className="px-3 px-md-5 py-8 d-flex justify-content-center"
-                >
+                <StandardContainer fluid={false} classNameExtra="d-flex justify-content-center">
                     <div
-                        className="d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center mb-5"
+                        className="d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
                         style={{ maxWidth: '60rem' }}
                     >
                         <div style={{ flexBasis: '50%' }}>
@@ -69,8 +66,13 @@ export default function Home() {
                                 Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam
                                 ultrices euismod.
                             </p>
-                            <Button variant="primary" size="lg" className="px-5 fs-4 rounded-pill">
-                                Baixar currículo
+                            <Button
+                                variant="primary"
+                                size="lg"
+                                className="fs-4 rounded-pill d-flex align-items-center gap-3"
+                            >
+                                <span>Baixar currículo</span>
+                                <BsImage src="/img/download.svg" alt="Download" />
                             </Button>
                         </div>
                         <div>
@@ -78,6 +80,11 @@ export default function Home() {
                         </div>
                     </div>
                 </StandardContainer>
+            </section>
+            <section>
+                <div className="diagonal-primary p-4 text-center">
+                    <h2 className="display-2">Experiência</h2>
+                </div>
             </section>
         </main>
     )
