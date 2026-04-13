@@ -22,18 +22,24 @@ export default function MyNavbar() {
                     aria-labelledby="offcanvas-navbar-label"
                 >
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id="offcanvas-navbar-label">
+                        <Offcanvas.Title className="fw-normal" id="offcanvas-navbar-label">
                             <Felipe />
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="justify-content-end">
-                        <Nav as="ul" className="nav-fill flex-grow-1" style={{ maxWidth: '40rem' }}>
+                        <Nav
+                            as="ul"
+                            className="nav-fill flex-grow-1 align-items-start"
+                            style={
+                                {
+                                    maxWidth: '40rem',
+                                    '--bs-nav-link-hover-color': 'var(--bs-secondary)',
+                                } as React.CSSProperties
+                            }
+                        >
                             {t.navbar.links.map((link: string) => (
-                                <Nav.Item as="li" key={link}>
-                                    <Nav.Link
-                                        className="fw-light px-2 fs-6"
-                                        href={'#' + slugify(link)}
-                                    >
+                                <Nav.Item key={link} as="li">
+                                    <Nav.Link className="px-2 fs-6" href={'#' + slugify(link)}>
                                         {link}
                                     </Nav.Link>
                                 </Nav.Item>

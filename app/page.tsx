@@ -74,7 +74,7 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section>
+            <section id="experiencia">
                 <div className="diagonal-primary p-4 text-center">
                     <h2 className="display-2">Experiência</h2>
                 </div>
