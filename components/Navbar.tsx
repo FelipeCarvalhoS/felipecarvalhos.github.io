@@ -12,7 +12,7 @@ export default function MyNavbar() {
     return (
         <Navbar bg="body" expand="md" className="sticky-top py-2 ps-3 ps-md-4 shadow-sm">
             <StandardContainer className="flex-nowrap">
-                <div className="h3 fw-normal me-3">
+                <div className="h4 fw-normal me-3 mb-0">
                     <Felipe />
                 </div>
                 <Navbar.Toggle aria-controls="offcanvas-navbar" />
