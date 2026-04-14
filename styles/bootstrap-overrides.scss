@@ -152,8 +152,6 @@ $spacers: (
     4: $spacer * 1.5,
     5: $spacer * 3,
     6: $spacer * 4.5,
-    7: $spacer * 6,
-    8: $spacer * 6.75,
 );
 
 $theme-colors: map-remove($theme-colors, "info", "light", "dark");

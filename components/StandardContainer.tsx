@@ -6,7 +6,7 @@ export default function StandardContainer({
     ...props
 }: React.ComponentProps<typeof Container> & { classNameExtra?: string }) {
     return (
-        <Container fluid="xxl" className={`px-3 px-md-5 py-8 ${classNameExtra}`} {...props}>
+        <Container fluid="xxl" className={`px-3 px-md-5 ${classNameExtra}`} {...props}>
             {children}
         </Container>
     )
