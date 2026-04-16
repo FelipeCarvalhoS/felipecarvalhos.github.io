@@ -58,7 +58,7 @@ $body-secondary-color: hsl(0, 0%, 28%);
 $body-tertiary-color:  hsl(0, 0%, 52%);
 $body-bg:              hsl(0, 0%, 100%);
 $body-secondary-bg:    hsl(0, 0%, 96%);
-$body-tertiary-bg:     hsl(0, 0%, 93%);
+$body-tertiary-bg:     #ededed;
 $border-color:         #CCCCCC;
 
 $primary:        hsl(50, 100%, 52%);
@@ -193,7 +193,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 // @import "bootstrap/scss/accordion";
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/pagination";
-// @import "bootstrap/scss/badge";
+@import "bootstrap/scss/badge";
 // @import "bootstrap/scss/alert";
 // @import "bootstrap/scss/progress";
 // @import "bootstrap/scss/list-group";

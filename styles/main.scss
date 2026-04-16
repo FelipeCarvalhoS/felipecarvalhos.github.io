@@ -1,7 +1,7 @@
 .spikes {
     --spike-width: 42px;
     --spike-height: 10px;
-    --spike-color: var(--bs-secondary-bg);
+    --spike-color: null;
 
     position: relative;
 
@@ -38,6 +38,7 @@
 .hero {
     --primary-stripe-rgb: var(--bs-primary-rgb);
     --secondary-stripe-rgb: var(--bs-primary-darker-rgb);
+    --spike-color: var(--bs-secondary-bg);
 
     background-size: 32px 32px;
     background-image: linear-gradient(

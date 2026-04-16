@@ -39,7 +39,7 @@ export default function MyNavbar() {
                         >
                             {t.navbar.links.map((link: string) => (
                                 <Nav.Item key={link} as="li">
-                                    <Nav.Link className="px-2 fs-6" href={'#' + slugify(link)}>
+                                    <Nav.Link className="px-2" href={'#' + slugify(link)}>
                                         {link}
                                     </Nav.Link>
                                 </Nav.Item>

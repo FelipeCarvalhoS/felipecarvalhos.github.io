@@ -1,3 +1,4 @@
+import { ExperienceType } from '@/types'
 import { Image as BsImage } from 'react-bootstrap'
 
 export default function Experience({
@@ -5,7 +6,7 @@ export default function Experience({
     isFirst,
     isLast,
 }: {
-    experience: any
+    experience: ExperienceType
     isFirst: boolean
     isLast: boolean
 }) {
@@ -53,15 +54,15 @@ export default function Experience({
                         </div>
                         <div>
                             <h3 className="font-base fs-5 fw-semibold mb-2">{experience.title}</h3>
-                            <div className="fs-6 mb-2">{experience.company}</div>
+                            <div className="mb-2">{experience.company}</div>
                             <div className="text-body-secondary small">
                                 <span className="text-nowrap">{experience.start}</span> -{' '}
                                 <span className="text-nowrap">{experience.end || 'Presente'}</span>
                             </div>
                         </div>
                     </div>
-                    <ul className="mb-0 fs-6">
-                        {experience.bulletPoints.map((point: string, index: number) => (
+                    <ul className="mb-0">
+                        {experience.bulletPoints.map((point, index) => (
                             <li key={index}>
                                 <p
                                     className={

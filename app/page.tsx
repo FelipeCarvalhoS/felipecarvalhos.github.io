@@ -1,17 +1,19 @@
 'use client'
 
-import { useLocale, useSetLocale } from '@/app/LocaleProvider'
+import { useLocale } from '@/app/LocaleProvider'
 import ExperienceTimeline from '@/components/ExperienceTimeline'
+import Projects from '@/components/Projects'
 import Felipe from '@/components/Felipe'
 import StandardContainer from '@/components/StandardContainer'
 import { Image as BsImage, Stack, Button } from 'react-bootstrap'
+import { CSSProperties } from 'react'
 
 export default function Home() {
     const t = useLocale().t
 
     return (
         <main>
-            <section className="bg-primary hero spikes">
+            <section className="hero spikes">
                 <StandardContainer
                     className="d-flex justify-content-between pt-5 px-md-5 px-lg-6 column-gap-5"
                     style={{
@@ -94,12 +96,24 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id="experiencia">
+            <section
+                id="experiencia"
+                className="bg-body-tertiary spikes"
+                style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
+            >
                 <div className="diagonal-primary p-4 text-center">
                     <h2 className="display-2">Experiência</h2>
                 </div>
                 <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>
                     <ExperienceTimeline />
+                </StandardContainer>
+            </section>
+            <section id="projetos">
+                <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
+                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                        Meus Projetos
+                    </h2>
+                    <Projects />
                 </StandardContainer>
             </section>
         </main>
