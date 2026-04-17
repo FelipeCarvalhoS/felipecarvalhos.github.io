@@ -71,7 +71,7 @@ const projects: ProjectType[] = [
     },
 ]
 
-export default function Projects() {
+export default function ProjectList() {
     return (
         <div className="d-flex flex-column align-items-center" style={{ gap: '7rem' }}>
             {projects.map((project, index) => (

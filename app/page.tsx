@@ -2,11 +2,12 @@
 
 import { useLocale } from '@/app/LocaleProvider'
 import ExperienceTimeline from '@/components/ExperienceTimeline'
-import Projects from '@/components/Projects'
+import ProjectList from '@/components/ProjectList'
 import Felipe from '@/components/Felipe'
 import StandardContainer from '@/components/StandardContainer'
 import { Image as BsImage, Stack, Button } from 'react-bootstrap'
 import { CSSProperties } from 'react'
+import EducationList from '@/components/EducationList'
 
 export default function Home() {
     const t = useLocale().t
@@ -48,13 +49,9 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section>
-                <StandardContainer
-                    fluid={false}
-                    classNameExtra="d-flex justify-content-center"
-                    style={{ paddingBlock: '6.75rem' }}
-                >
+                <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
                     <div
-                        className="d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
+                        className="mx-auto d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
                         style={{ maxWidth: '60rem' }}
                     >
                         <div style={{ flexBasis: '50%' }}>
@@ -98,8 +95,8 @@ export default function Home() {
             </section>
             <section
                 id="experiencia"
-                className="bg-body-tertiary spikes"
-                style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
+                className="spikes"
+                style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
                 <div className="diagonal-primary p-4 text-center">
                     <h2 className="display-2">Experiência</h2>
@@ -108,12 +105,27 @@ export default function Home() {
                     <ExperienceTimeline />
                 </StandardContainer>
             </section>
+            <section
+                id="formacao-academica"
+                className="bg-body-tertiary spikes"
+                style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
+            >
+                <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
+                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                        Formação Acadêmica
+                    </h2>
+
+                    <div className="mx-auto" style={{ maxWidth: '46rem' }}>
+                        <EducationList />
+                    </div>
+                </StandardContainer>
+            </section>
             <section id="projetos">
                 <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         Meus Projetos
                     </h2>
-                    <Projects />
+                    <ProjectList />
                 </StandardContainer>
             </section>
         </main>

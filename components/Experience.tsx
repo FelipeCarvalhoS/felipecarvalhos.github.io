@@ -12,7 +12,7 @@ export default function Experience({
 }) {
     return (
         <div className="d-flex justify-content-center">
-            <div className="d-flex column-gap-4 column-gap-md-5" style={{ maxWidth: '50rem' }}>
+            <div className="d-flex column-gap-4 column-gap-md-5">
                 <div
                     style={{ minWidth: '6.25rem' }}
                     className="d-none d-sm-flex flex-column align-items-center"
@@ -47,14 +47,14 @@ export default function Experience({
                             <div className="ratio ratio-1x1">
                                 <BsImage
                                     className="object-fit-contain"
-                                    src={experience.companyLogo}
-                                    alt={experience.company}
+                                    src={experience.company.logo}
+                                    alt={experience.company.name}
                                 />
                             </div>
                         </div>
                         <div>
                             <h3 className="font-base fs-5 fw-semibold mb-2">{experience.title}</h3>
-                            <div className="mb-2">{experience.company}</div>
+                            <div className="mb-2">{experience.company.name}</div>
                             <div className="text-body-secondary small">
                                 <span className="text-nowrap">{experience.start}</span> -{' '}
                                 <span className="text-nowrap">{experience.end || 'Presente'}</span>
@@ -68,7 +68,7 @@ export default function Experience({
                                     className={
                                         isLast && index === experience.bulletPoints.length - 1
                                             ? 'mb-0'
-                                            : ''
+                                            : undefined
                                     }
                                 >
                                     {point}

@@ -120,6 +120,12 @@ $btn-padding-x-lg: $btn-padding-y-lg * 3;
 // $btn-border-radius-lg: 1rem;
 // $btn-font-weight:      300;
 
+//
+// Accordion
+//
+
+$accordion-button-icon: url('/img/icons/accordion-btn-icon.svg');
+
 
 
 
@@ -190,7 +196,7 @@ $theme-colors: map-merge($theme-colors, ("primary-darker": $primary-darker));
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar";
 @import "bootstrap/scss/card";
-// @import "bootstrap/scss/accordion";
+@import "bootstrap/scss/accordion";
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/pagination";
 @import "bootstrap/scss/badge";

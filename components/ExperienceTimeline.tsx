@@ -5,36 +5,12 @@ const experiences: ExperienceType[] = [
     {
         id: 1,
         title: 'Estagiário de TI',
-        company: 'Habitat Arquitetura & Construção',
-        companyLogo: '/img/experiences/logos/habitat.png',
+        company: {
+            name: 'Habitat Arquitetura & Construção',
+            logo: '/img/experiences/logos/habitat.png',
+        },
         start: 'Setembro 2025',
         end: null,
-        bulletPoints: [
-            'Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.',
-            'Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.',
-            'Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.',
-        ],
-    },
-    {
-        id: 2,
-        title: 'Estagiário de TI',
-        company: 'Habitat Arquitetura & Construção',
-        companyLogo: '/img/experiences/logos/habitat.png',
-        start: 'Setembro 2025',
-        end: 'Novembro 2025',
-        bulletPoints: [
-            'Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.',
-            'Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.',
-            'Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.',
-        ],
-    },
-    {
-        id: 3,
-        title: 'Estagiário de TI',
-        company: 'Habitat Arquitetura & Construção',
-        companyLogo: '/img/experiences/logos/habitat.png',
-        start: 'Setembro 2025',
-        end: 'Novembro 2025',
         bulletPoints: [
             'Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.',
             'Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.',
@@ -45,15 +21,15 @@ const experiences: ExperienceType[] = [
 
 export default function ExperienceTimeline() {
     return (
-        <>
-            {experiences.map(experience => (
+        <div style={{ maxWidth: '50rem' }} className="mx-auto">
+            {experiences.map((experience, index) => (
                 <Experience
                     key={experience.id}
-                    isFirst={experience.id === 1}
-                    isLast={experience.id === experiences.length}
+                    isFirst={index === 0}
+                    isLast={index === experiences.length - 1}
                     experience={experience}
                 />
             ))}
-        </>
+        </div>
     )
 }
