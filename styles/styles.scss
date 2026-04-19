@@ -1,0 +1,106 @@
+.spikes {
+    --spike-width: 42px;
+    --spike-height: 10px;
+    --spike-color: null;
+
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: var(--spike-height);
+        background: var(--spike-color);
+        mask-image: url('/img/spike.svg');
+        mask-size: var(--spike-width) var(--spike-height);
+        mask-position: center;
+        bottom: 0;
+    }
+}
+
+.diagonal-primary {
+    --skew-angle: -1.5deg;
+    --foreground: var(--bs-primary);
+    --upper-background: null;
+    --lower-background: null;
+
+    position: relative;
+    isolation: isolate;
+
+    background: linear-gradient(
+        var(--skew-angle),
+        var(--lower-background) 0%,
+        var(--lower-background) 50%,
+        var(--upper-background) 50%,
+        var(--upper-background) 100%
+    );
+
+    &::after {
+        content: '';
+        background: var(--foreground);
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        transform: skewY(var(--skew-angle));
+    }
+}
+
+.hero {
+    --primary-stripe-rgb: var(--bs-primary-rgb);
+    --secondary-stripe-rgb: var(--bs-primary-darker-rgb);
+    --spike-color: var(--bs-secondary-bg);
+
+    background-size: 32px 32px;
+    background-image: linear-gradient(
+        -45deg,
+        rgb(var(--primary-stripe-rgb)) 25%,
+        rgb(var(--secondary-stripe-rgb)) 25%,
+        rgb(var(--secondary-stripe-rgb)) 50%,
+        rgb(var(--primary-stripe-rgb)) 50%,
+        rgb(var(--primary-stripe-rgb)) 75%,
+        rgb(var(--secondary-stripe-rgb)) 75%,
+        rgb(var(--secondary-stripe-rgb)) 100%
+    );
+    animation: pan 180s linear infinite;
+}
+
+@keyframes pan {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
+
+.font-base {
+    font-family: var(--bs-body-font-family);
+}
+
+.accordion-button {
+    --bs-accordion-btn-focus-box-shadow: none;
+
+    &:focus-visible {
+        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5);
+    }
+}
+
+.scale-on-hover {
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.08);
+        @extend .shadow;
+    }
+}
+
+.skill {
+    width: 6rem;
+
+    @include media-breakpoint-up(sm) {
+        width: 7rem;
+    }
+}

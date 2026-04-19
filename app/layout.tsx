@@ -1,5 +1,5 @@
 import '@/styles/fonts.scss'
-import '@/styles/bootstrap-overrides.scss'
+import '@/styles/main.scss'
 import { Metadata } from 'next'
 import { preload } from 'react-dom'
 import Navbar from '@/components/Navbar'
