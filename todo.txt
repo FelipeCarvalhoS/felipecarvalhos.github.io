@@ -1,1 +1,3 @@
 Set .active to navbar links according to the current section being read
+Add fade in animations to each section
+Close offcanvas automatically when clicking on anchor
