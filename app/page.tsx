@@ -8,6 +8,7 @@ import StandardContainer from '@/components/StandardContainer'
 import { Image as BsImage, Stack, Button } from 'react-bootstrap'
 import { CSSProperties } from 'react'
 import EducationList from '@/components/EducationList'
+import SkillList from '@/components/SkillList'
 
 export default function Home() {
     const t = useLocale().t
@@ -48,7 +49,10 @@ export default function Home() {
                     />
                 </StandardContainer>
             </section>
-            <section>
+            <section
+                className="spikes"
+                style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
+            >
                 <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
                     <div
                         className="mx-auto d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
@@ -93,12 +97,31 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
+            <section id="habilidades" className="bg-body-tertiary">
+                <StandardContainer
+                    fluid={false}
+                    style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
+                >
+                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                        Minhas Habilidades
+                    </h2>
+                    <SkillList />
+                </StandardContainer>
+            </section>
             <section
                 id="experiencia"
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
-                <div className="diagonal-primary p-4 text-center">
+                <div
+                    className="diagonal-primary p-4 text-center"
+                    style={
+                        {
+                            '--upper-background': 'var(--bs-tertiary-bg)',
+                            '--lower-background': 'var(--bs-secondary-bg)',
+                        } as CSSProperties
+                    }
+                >
                     <h2 className="display-2">Experiência</h2>
                 </div>
                 <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>

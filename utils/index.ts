@@ -5,3 +5,7 @@ export function slugify(str: string): string {
         .toLowerCase()
         .replace(/\s+/g, '-')
 }
+
+export function addIncrementalIDs<T>(arr: T[]): (T & { id: number })[] {
+    return arr.map((item, index) => ({ id: index + 1, ...item }))
+}

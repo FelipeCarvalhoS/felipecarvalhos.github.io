@@ -26,3 +26,9 @@ export type EducationType = {
     end: string | null
     bulletPoints: string[]
 }
+
+export type SkillType = {
+    id: number
+    name: string
+    logo: string
+}

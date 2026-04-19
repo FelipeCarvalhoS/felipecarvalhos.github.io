@@ -1,7 +1,7 @@
 'use client'
 
 import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
-import { slugify } from '@/utils/slugify'
+import { slugify } from '@/utils'
 import { useLocale } from '@/app/LocaleProvider'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'

@@ -20,14 +20,24 @@
 
 .diagonal-primary {
     --skew-angle: -1.5deg;
-    --background: var(--bs-primary);
+    --foreground: var(--bs-primary);
+    --upper-background: null;
+    --lower-background: null;
 
     position: relative;
     isolation: isolate;
 
+    background: linear-gradient(
+        var(--skew-angle),
+        var(--lower-background) 0%,
+        var(--lower-background) 50%,
+        var(--upper-background) 50%,
+        var(--upper-background) 100%
+    );
+
     &::after {
         content: '';
-        background: var(--background);
+        background: var(--foreground);
         position: absolute;
         z-index: -1;
         inset: 0;
@@ -72,5 +82,23 @@
 
     &:focus-visible {
         --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5);
+    }
+}
+
+.scale-on-hover {
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.08);
+        @extend .shadow;
+    }
+}
+
+.skill {
+    width: 6rem;
+
+    @include media-breakpoint-up(sm) {
+        width: 7rem;
     }
 }
