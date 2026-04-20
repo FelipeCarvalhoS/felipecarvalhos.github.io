@@ -50,6 +50,7 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
+                id="sobre"
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
@@ -111,7 +112,12 @@ export default function Home() {
             <section
                 id="experiencia"
                 className="spikes"
-                style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
+                style={
+                    {
+                        '--spike-color': 'var(--bs-tertiary-bg)',
+                        scrollMarginTop: '6rem',
+                    } as CSSProperties
+                }
             >
                 <div
                     className="diagonal-primary p-4 text-center"

@@ -47,7 +47,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                         <span className="pe-2">Saiba Mais</span>
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu className="py-0">
+                    <Dropdown.Menu className="my-1 shadow-sm">
                         {project.links.map((link, index) => (
                             <Dropdown.Item
                                 href={link.url}
