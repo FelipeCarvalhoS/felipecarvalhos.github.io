@@ -1,0 +1,21 @@
+{
+    "Metadata": {
+        "title": {
+            "template": "%s | Felipe Carvalho",
+            "default": "Felipe Carvalho"
+        },
+        "description": "Portfólio de Felipe Carvalho"
+    },
+    "Navbar": {
+        "about": "Sobre",
+        "skills": "Habilidades",
+        "experience": "Experiência",
+        "projects": "Projetos",
+        "contact": "Contato"
+    },
+    "Home": {
+        "hero": {
+            "greeting": "Olá! Eu me chamo"
+        }
+    }
+}

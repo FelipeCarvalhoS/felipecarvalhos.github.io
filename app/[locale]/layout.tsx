@@ -1,0 +1,62 @@
+import '@/styles/fonts.scss'
+import '@/styles/main.scss'
+import { Metadata } from 'next'
+import Navbar from '@/components/Navbar'
+import { routing } from '@/i18n/routing'
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
+import { notFound } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale } = await params
+    const t = await getTranslations({ locale, namespace: 'Metadata' })
+
+    const title = {
+        template: t('title.template'),
+        default: t('title.default'),
+    }
+
+    const languages: Record<Locale, string> = Object.fromEntries(
+        routing.locales.map(locale => [locale, `http://localhost:3000/${locale}`]), // TODO: use actual domain from env
+    )
+
+    return {
+        title: title,
+        description: t('description'),
+
+        alternates: {
+            canonical: 'http://localhost:3000',
+            languages: languages,
+        },
+    }
+}
+
+export function generateStaticParams() {
+    return routing.locales.map(locale => ({ locale }))
+}
+
+type Props = {
+    children: React.ReactNode
+    params: Promise<{ locale: string }>
+}
+
+export default async function LocaleLayout({ children, params }: Props) {
+    const { locale } = await params
+    setRequestLocale(locale)
+
+    return (
+        <html lang={locale}>
+            <body className="bg-body-secondary">
+                <NextIntlClientProvider>
+                    <Navbar />
+                    {children}
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    )
+}

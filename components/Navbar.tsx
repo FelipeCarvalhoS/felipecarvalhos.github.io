@@ -2,12 +2,13 @@
 
 import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { slugify } from '@/utils'
-import { useLocale } from '@/app/LocaleProvider'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
+import { useTranslations } from 'next-intl'
 
 export default function MyNavbar() {
-    const t = useLocale().t
+    const t = useTranslations('Navbar')
+    const links = [t('about'), t('skills'), t('experience'), t('projects'), t('contact')]
 
     return (
         <Navbar bg="body" expand="md" className="sticky-top py-2 ps-3 ps-md-4 shadow-sm">
@@ -37,7 +38,7 @@ export default function MyNavbar() {
                                 } as React.CSSProperties
                             }
                         >
-                            {t.navbar.links.map((link: string) => (
+                            {links.map((link: string) => (
                                 <Nav.Item key={link} as="li">
                                     <Nav.Link className="px-2" href={'#' + slugify(link)}>
                                         {link}
