@@ -1,10 +1,10 @@
 import { EducationType } from '@/types'
 import { Accordion, Stack, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
+import { addIncrementalIDs } from '@/utils'
 
-const educations: EducationType[] = [
+const educations: EducationType[] = addIncrementalIDs([
     {
-        id: 1,
         title: 'Análise e Desenvolvimento de Sistemas',
         institution: {
             name: 'Fatec Campinas',
@@ -21,7 +21,6 @@ const educations: EducationType[] = [
         ],
     },
     {
-        id: 2,
         title: 'Análise e Desenvolvimento de Sistemas',
         institution: {
             name: 'Fatec Campinas',
@@ -37,7 +36,7 @@ const educations: EducationType[] = [
             'Obtive nota dez após apresentar o trabalho à banca de avaliadores.',
         ],
     },
-]
+])
 
 export default function EducationList() {
     return (

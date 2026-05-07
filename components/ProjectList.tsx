@@ -1,10 +1,10 @@
 import { ProjectType } from '@/types'
 import Project from './Project'
 import { Button } from 'react-bootstrap'
+import { addIncrementalIDs } from '@/utils'
 
-const projects: ProjectType[] = [
+const projects: ProjectType[] = addIncrementalIDs([
     {
-        id: 1,
         title: 'EasyTalk: Web App de Psicoterapia',
         start: 'Setembro 2025',
         end: null,
@@ -41,7 +41,6 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        id: 2,
         title: 'EasyTalk: Web App de Psicoterapia',
         start: 'Setembro 2025',
         end: 'Novembro 2025',
@@ -69,7 +68,7 @@ const projects: ProjectType[] = [
             },
         ],
     },
-]
+])
 
 export default function ProjectList() {
     return (

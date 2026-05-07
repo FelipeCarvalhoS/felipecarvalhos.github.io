@@ -1,9 +1,9 @@
 import { ExperienceType } from '@/types'
 import Experience from './Experience'
+import { addIncrementalIDs } from '@/utils'
 
-const experiences: ExperienceType[] = [
+const experiences: ExperienceType[] = addIncrementalIDs([
     {
-        id: 1,
         title: 'Estagiário de TI',
         company: {
             name: 'Habitat Arquitetura & Construção',
@@ -17,7 +17,7 @@ const experiences: ExperienceType[] = [
             'Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.',
         ],
     },
-]
+])
 
 export default function ExperienceTimeline() {
     return (
