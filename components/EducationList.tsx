@@ -1,44 +1,30 @@
 import { EducationType } from '@/types'
-import { Accordion, Stack, Image as BsImage } from 'react-bootstrap'
+import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
-import { addIncrementalIDs } from '@/utils'
+import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
+import { useLocale, useTranslations } from 'next-intl'
 
-const educations: EducationType[] = addIncrementalIDs([
+const educationData: Partial<EducationType>[] = addIncrementalIDs([
     {
-        title: 'Análise e Desenvolvimento de Sistemas',
+        slug: 'fatec',
         institution: {
             name: 'Fatec Campinas',
             logo: '/img/experiences/logos/habitat.png',
         },
-        start: 'Setembro 2025',
+        start: new Date('September 2021'),
         end: null,
-        bulletPoints: [
-            'Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.',
-            'Implementei as funções de pesquisa de profissionais e agendamento de consultas.',
-            'Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.',
-            'Prototipei a interface no Figma e a construí usando Bootstrap.',
-            'Obtive nota dez após apresentar o trabalho à banca de avaliadores.',
-        ],
-    },
-    {
-        title: 'Análise e Desenvolvimento de Sistemas',
-        institution: {
-            name: 'Fatec Campinas',
-            logo: '/img/experiences/logos/habitat.png',
-        },
-        start: 'Setembro 2025',
-        end: 'Novembro 2025',
-        bulletPoints: [
-            'Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.',
-            'Implementei as funções de pesquisa de profissionais e agendamento de consultas.',
-            'Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.',
-            'Prototipei a interface no Figma e a construí usando Bootstrap.',
-            'Obtive nota dez após apresentar o trabalho à banca de avaliadores.',
-        ],
     },
 ])
 
 export default function EducationList() {
+    const t = useTranslations('Education')
+    const locale = useLocale()
+
+    const educations: EducationType[] = addLocalizedFields(t, educationData, [
+        'title',
+        'bulletPoints',
+    ])
+
     return (
         <Accordion
             alwaysOpen
@@ -76,9 +62,12 @@ export default function EducationList() {
                                 </h3>
                                 <div className="mb-2">{education.institution.name}</div>
                                 <div className="text-body-secondary small">
-                                    <span className="text-nowrap">{education.start}</span> -{' '}
                                     <span className="text-nowrap">
-                                        {education.end || 'Presente'}
+                                        {formatDate(education.start, locale, 'long')}
+                                    </span>{' '}
+                                    -{' '}
+                                    <span className="text-nowrap">
+                                        {formatDate(education.end, locale, 'long')}
                                     </span>
                                 </div>
                             </div>

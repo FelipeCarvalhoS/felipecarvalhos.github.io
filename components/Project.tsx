@@ -1,7 +1,11 @@
 import { ProjectType } from '@/types'
+import { formatDate } from '@/utils'
+import { useLocale } from 'next-intl'
 import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap'
 
 export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
+    const locale = useLocale()
+
     return (
         <div
             className={`d-flex justify-content-between gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
@@ -9,7 +13,8 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
             <div>
                 <h3 className="font-base fs-5 fw-semibold mb-2">{project.title}</h3>
                 <div className="mb-4 text-body-secondary">
-                    {project.start} - {project.end || 'Presente'}
+                    {formatDate(project.start, locale, 'long')} -{' '}
+                    {formatDate(project.end, locale, 'long')}
                 </div>
                 <Stack direction="horizontal" className="gap-2 mb-4">
                     {project.technologies.map(technology => (
@@ -53,6 +58,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                                 href={link.url}
                                 key={index}
                                 className="d-flex gap-2 py-2"
+                                target="_blank"
                             >
                                 <Ratio aspectRatio="1x1" style={{ width: '1.25em' }}>
                                     <BsImage src={link.icon.src} alt={link.icon.alt} />

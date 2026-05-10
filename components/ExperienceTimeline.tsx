@@ -1,25 +1,37 @@
 import { ExperienceType } from '@/types'
 import Experience from './Experience'
-import { addIncrementalIDs } from '@/utils'
+import { addIncrementalIDs, addLocalizedFields } from '@/utils'
+import { useTranslations } from 'next-intl'
 
-const experiences: ExperienceType[] = addIncrementalIDs([
+const experienceData: Partial<ExperienceType>[] = addIncrementalIDs([
     {
-        title: 'Estagiário de TI',
+        slug: 'habitat-present',
         company: {
             name: 'Habitat Arquitetura & Construção',
             logo: '/img/experiences/logos/habitat.png',
         },
-        start: 'Setembro 2025',
+        start: new Date('September 2025'),
         end: null,
-        bulletPoints: [
-            'Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.',
-            'Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.',
-            'Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.',
-        ],
+    },
+    {
+        slug: 'habitat',
+        company: {
+            name: 'Habitat Arquitetura & Construção',
+            logo: '/img/experiences/logos/habitat.png',
+        },
+        start: new Date('September 2025'),
+        end: new Date('November 2025'),
     },
 ])
 
 export default function ExperienceTimeline() {
+    const t = useTranslations('Experience')
+
+    const experiences: ExperienceType[] = addLocalizedFields(t, experienceData, [
+        'title',
+        'bulletPoints',
+    ])
+
     return (
         <div style={{ maxWidth: '50rem' }} className="mx-auto">
             {experiences.map((experience, index) => (

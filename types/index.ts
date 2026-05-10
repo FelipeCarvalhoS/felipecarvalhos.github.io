@@ -1,17 +1,19 @@
 export type ExperienceType = {
     id: number
+    slug: string
     title: string
     company: { name: string; logo: string }
-    start: string
-    end: string | null
+    start: Date
+    end: Date | null
     bulletPoints: string[]
 }
 
 export type ProjectType = {
     id: number
+    slug: string
     title: string
-    start: string
-    end: string | null
+    start: Date
+    end: Date | null
     technologies: { name: string; logo: string }[]
     image: string
     bulletPoints: string[]
@@ -20,10 +22,11 @@ export type ProjectType = {
 
 export type EducationType = {
     id: number
+    slug: string
     title: string
     institution: { name: string; logo: string }
-    start: string
-    end: string | null
+    start: Date
+    end: Date | null
     bulletPoints: string[]
 }
 

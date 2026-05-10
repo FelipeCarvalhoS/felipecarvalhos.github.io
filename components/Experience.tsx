@@ -1,4 +1,6 @@
 import { ExperienceType } from '@/types'
+import { formatDate } from '@/utils'
+import { useLocale } from 'next-intl'
 import { Image as BsImage } from 'react-bootstrap'
 
 export default function Experience({
@@ -10,6 +12,8 @@ export default function Experience({
     isFirst: boolean
     isLast: boolean
 }) {
+    const locale = useLocale()
+
     return (
         <div className="d-flex justify-content-center">
             <div className="d-flex column-gap-4 column-gap-md-5">
@@ -26,9 +30,14 @@ export default function Experience({
                         style={{ aspectRatio: '1 / 1' }}
                     >
                         <span className="text-secondary fw-medium h5 text-center">
-                            {experience.end ? experience.end.split(' ')[0].slice(0, 3) : 'Hoje'}
+                            {experience.end
+                                ? formatDate(experience.end, locale, 'short').split(' ')[0]
+                                : locale === 'pt-br'
+                                  ? 'Hoje'
+                                  : 'Today'}
                             <br />
-                            {experience.end && experience.end.split(' ')[1]}
+                            {experience.end &&
+                                formatDate(experience.end, locale, 'short').split(' ')[1]}
                         </span>
                     </div>
                     <div
@@ -56,8 +65,13 @@ export default function Experience({
                             <h3 className="font-base fs-5 fw-semibold mb-2">{experience.title}</h3>
                             <div className="mb-2">{experience.company.name}</div>
                             <div className="text-body-secondary small">
-                                <span className="text-nowrap">{experience.start}</span> -{' '}
-                                <span className="text-nowrap">{experience.end || 'Presente'}</span>
+                                <span className="text-nowrap">
+                                    {formatDate(experience.start, locale, 'long')}
+                                </span>{' '}
+                                -{' '}
+                                <span className="text-nowrap">
+                                    {formatDate(experience.end, locale, 'long')}
+                                </span>
                             </div>
                         </div>
                     </div>

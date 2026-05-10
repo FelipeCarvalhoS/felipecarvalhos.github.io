@@ -9,8 +9,10 @@ import { CSSProperties } from 'react'
 import EducationList from '@/components/EducationList'
 import SkillList from '@/components/SkillList'
 import { useTranslations } from 'next-intl'
+import { slugify } from '@/utils'
 
 export default function Home() {
+    const n = useTranslations('Navbar')
     const t = useTranslations('Home')
 
     return (
@@ -50,7 +52,7 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
-                id="sobre"
+                id={slugify(n('about'))}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
@@ -60,13 +62,8 @@ export default function Home() {
                         style={{ maxWidth: '60rem' }}
                     >
                         <div style={{ flexBasis: '50%' }}>
-                            <h2 className="display-2 h1 mb-4">Sobre Mim</h2>
-                            <p className="fs-5 lh-sm mb-5">
-                                Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo
-                                in eu pharetra tristique. Faucibus purus blandit risus nulla tellus.
-                                Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam
-                                ultrices euismod.
-                            </p>
+                            <h2 className="display-2 h1 mb-4">{t('about.title')}</h2>
+                            <p className="fs-5 lh-sm mb-5">{t('about.text')}</p>
                             <Button
                                 as="a"
                                 target="_blank"
@@ -76,7 +73,7 @@ export default function Home() {
                                 className="fs-5 rounded-pill d-flex align-items-center gap-3"
                                 style={{ width: 'fit-content' }}
                             >
-                                <span>Ver currículo</span>
+                                <span>{t('about.getResume')}</span>
                                 {/* <BsImage
                                     src="/img/download.svg"
                                     alt="Download"
@@ -98,19 +95,19 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id="habilidades" className="bg-body-tertiary">
+            <section id={slugify(n('skills'))} className="bg-body-tertiary">
                 <StandardContainer
                     fluid={false}
                     style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
                 >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        Minhas Habilidades
+                        {t('skills.title')}
                     </h2>
                     <SkillList />
                 </StandardContainer>
             </section>
             <section
-                id="experiencia"
+                id={slugify(n('experience'))}
                 className="spikes"
                 style={
                     {
@@ -128,20 +125,20 @@ export default function Home() {
                         } as CSSProperties
                     }
                 >
-                    <h2 className="display-2">Experiência</h2>
+                    <h2 className="display-2">{t('experience.title')}</h2>
                 </div>
                 <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>
                     <ExperienceTimeline />
                 </StandardContainer>
             </section>
             <section
-                id="formacao-academica"
+                id={slugify(n('education'))}
                 className="bg-body-tertiary spikes"
                 style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
             >
                 <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        Formação Acadêmica
+                        {t('education.title')}
                     </h2>
 
                     <div className="mx-auto" style={{ maxWidth: '46rem' }}>
@@ -149,10 +146,10 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id="projetos">
+            <section id={slugify(n('projects'))}>
                 <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        Meus Projetos
+                        {t('projects.title')}
                     </h2>
                     <ProjectList />
                 </StandardContainer>
