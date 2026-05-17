@@ -3,9 +3,8 @@ import '@/styles/main.scss'
 import { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { routing } from '@/i18n/routing'
-import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
+import { Locale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
-import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({

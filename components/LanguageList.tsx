@@ -2,7 +2,6 @@ import { LanguageType } from '@/types'
 import { Image as BsImage } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
-import { CSSProperties } from 'react'
 
 const languageData: Partial<LanguageType>[] = addIncrementalIDs([
     {
@@ -78,8 +77,11 @@ export default function LanguageList() {
                             <div>{language.proficiency}</div>
                         </div>
                     </div>
-                    {language.certificates.map(certificate => (
-                        <div className="mt-4 d-flex justify-content-between align-items-center flex-wrap row-gap-2 column-gap-4">
+                    {language.certificates.map((certificate, index) => (
+                        <div
+                            key={index}
+                            className="mt-4 d-flex justify-content-between align-items-center flex-wrap row-gap-2 column-gap-4"
+                        >
                             <div>
                                 <h4 className="font-base fs-6 fw-semibold mb-2">
                                     {certificate.name}
