@@ -60,6 +60,7 @@ $border-color: #cccccc;
 $primary: hsl(50, 100%, 52%);
 $primary-darker: hsl(50, 100%, 49%);
 $secondary: #f18701;
+$info: hsl(216, 98%, 48%);
 
 //
 // Navbar
@@ -148,7 +149,7 @@ $spacers: (
     6: $spacer * 4.5,
 );
 
-$theme-colors: map-remove($theme-colors, 'info', 'light', 'dark');
+$theme-colors: map-remove($theme-colors, 'light', 'dark');
 $theme-colors: map-merge(
     $theme-colors,
     (

@@ -6,12 +6,16 @@
         },
         "description": "Felipe Carvalho's Portfolio"
     },
+    "Files": {
+        "cv": "/files/cv/Felipe-Carvalho-Python-Django-Developer.pdf"
+    },
     "Navbar": {
         "about": "About",
         "skills": "Skills",
         "experience": "Experience",
         "education": "Education",
         "projects": "Projects",
+        "languages": "Languages",
         "contact": "Contact"
     },
     "Projects": {
@@ -85,6 +89,18 @@
             ]
         }
     },
+    "Languages": {
+        "getCertificate": "See certificate",
+        "issuedIn": "Issued in {date}",
+        "english": {
+            "name": "English",
+            "proficiency": "C1 - Advanced"
+        },
+        "portuguese": {
+            "name": "Portuguese",
+            "proficiency": "Native Language"
+        }
+    },
     "Experience": {
         "habitat": {
             "title": "IT Intern",
@@ -119,10 +135,13 @@
         "about": {
             "title": "About Me",
             "text": "Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo in eu pharetra tristique. Faucibus purus blandit risus nulla tellus. Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam ultrices euismod.",
-            "getResume": "See résumé"
+            "getResume": "View résumé"
         },
         "skills": {
             "title": "My Skill Set"
+        },
+        "languages": {
+            "title": "Languages"
         }
     }
 }

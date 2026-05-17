@@ -35,3 +35,12 @@ export type SkillType = {
     name: string
     logo: string
 }
+
+export type LanguageType = {
+    id: number
+    slug: string
+    name: string
+    proficiency: string
+    flags: string[]
+    certificates: { name: string; issued_at: Date; url: string }[]
+}

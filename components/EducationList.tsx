@@ -20,10 +20,7 @@ export default function EducationList() {
     const t = useTranslations('Education')
     const locale = useLocale()
 
-    const educations: EducationType[] = addLocalizedFields(t, educationData, [
-        'title',
-        'bulletPoints',
-    ])
+    const educations = addLocalizedFields(t, educationData, ['title', 'bulletPoints'])
 
     return (
         <Accordion

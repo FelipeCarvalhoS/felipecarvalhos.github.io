@@ -27,10 +27,7 @@ const experienceData: Partial<ExperienceType>[] = addIncrementalIDs([
 export default function ExperienceTimeline() {
     const t = useTranslations('Experience')
 
-    const experiences: ExperienceType[] = addLocalizedFields(t, experienceData, [
-        'title',
-        'bulletPoints',
-    ])
+    const experiences = addLocalizedFields(t, experienceData, ['title', 'bulletPoints'])
 
     return (
         <div style={{ maxWidth: '50rem' }} className="mx-auto">

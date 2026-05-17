@@ -8,11 +8,13 @@ import { Image as BsImage, Stack, Button } from 'react-bootstrap'
 import { CSSProperties } from 'react'
 import EducationList from '@/components/EducationList'
 import SkillList from '@/components/SkillList'
+import LanguageList from '@/components/LanguageList'
 import { useTranslations } from 'next-intl'
 import { slugify } from '@/utils'
 
 export default function Home() {
     const n = useTranslations('Navbar')
+    const f = useTranslations('Files')
     const t = useTranslations('Home')
 
     return (
@@ -67,7 +69,7 @@ export default function Home() {
                             <Button
                                 as="a"
                                 target="_blank"
-                                href="/cv/Felipe-Carvalho__Desenvolvedor-Python-Django.pdf"
+                                href={f('cv')}
                                 variant="primary"
                                 size="lg"
                                 className="fs-5 rounded-pill d-flex align-items-center gap-3"
@@ -146,12 +148,27 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id={slugify(n('projects'))}>
+            <section
+                id={slugify(n('projects'))}
+                className="spikes"
+                style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
+            >
                 <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('projects.title')}
                     </h2>
                     <ProjectList />
+                </StandardContainer>
+            </section>
+            <section id={slugify(n('languages'))} className="bg-body-tertiary">
+                <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
+                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                        {t('languages.title')}
+                    </h2>
+
+                    <div className="mx-auto" style={{ maxWidth: '42rem' }}>
+                        <LanguageList />
+                    </div>
                 </StandardContainer>
             </section>
         </main>

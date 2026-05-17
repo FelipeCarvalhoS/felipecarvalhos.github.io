@@ -32,11 +32,7 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
 export default function ProjectList() {
     const t = useTranslations('Projects')
 
-    const projects: ProjectType[] = addLocalizedFields(t, projectData, [
-        'title',
-        'bulletPoints',
-        'links',
-    ])
+    const projects = addLocalizedFields(t, projectData, ['title', 'bulletPoints', 'links'])
 
     return (
         <div className="d-flex flex-column align-items-center" style={{ gap: '7rem' }}>

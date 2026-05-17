@@ -16,7 +16,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                     {formatDate(project.start, locale, 'long')} -{' '}
                     {formatDate(project.end, locale, 'long')}
                 </div>
-                <Stack direction="horizontal" className="gap-2 mb-4">
+                <Stack direction="horizontal" className="flex-wrap gap-2 mb-4">
                     {project.technologies.map(technology => (
                         <Badge
                             key={technology.name}

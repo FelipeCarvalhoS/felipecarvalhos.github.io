@@ -6,12 +6,16 @@
         },
         "description": "Portfólio de Felipe Carvalho"
     },
+    "Files": {
+        "cv": "/files/cv/Felipe-Carvalho-Desenvolvedor-Python-Django.pdf"
+    },
     "Navbar": {
         "about": "Sobre",
         "skills": "Habilidades",
         "experience": "Experiência",
         "education": "Educação",
         "projects": "Projetos",
+        "languages": "Idiomas",
         "contact": "Contato"
     },
     "Projects": {
@@ -85,6 +89,18 @@
             ]
         }
     },
+    "Languages": {
+        "getCertificate": "Ver certificado",
+        "issuedIn": "Emitido em {date}",
+        "english": {
+            "name": "Inglês",
+            "proficiency": "C1 - Avançado"
+        },
+        "portuguese": {
+            "name": "Português",
+            "proficiency": "Idioma Nativo"
+        }
+    },
     "Experience": {
         "habitat": {
             "title": "Estagiário de TI",
@@ -123,6 +139,9 @@
         },
         "skills": {
             "title": "Minhas Habilidades"
+        },
+        "languages": {
+            "title": "Idiomas"
         }
     }
 }
