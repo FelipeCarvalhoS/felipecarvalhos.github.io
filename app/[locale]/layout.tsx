@@ -55,6 +55,11 @@ export default async function LocaleLayout({ children, params }: Props) {
                 <NextIntlClientProvider>
                     <Navbar />
                     {children}
+                    <footer>
+                        <div className="bg-body text-center text-body-secondary py-4 small border border-top">
+                            &copy; {new Date().getFullYear()} Felipe de Carvalho Santos
+                        </div>
+                    </footer>
                 </NextIntlClientProvider>
             </body>
         </html>
