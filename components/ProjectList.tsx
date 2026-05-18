@@ -11,10 +11,10 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
         end: null,
         technologies: [
             { name: 'Django', logo: '/img/icons/django.svg' },
-            { name: 'Python', logo: '/img/icons/python.png' },
-            { name: 'Bootstrap', logo: '/img/icons/bootstrap.png' },
+            { name: 'Python', logo: '/img/icons/python.webp' },
+            { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
         ],
-        image: '/img/projects/easytalk.png',
+        image: '/img/projects/easytalk.webp',
     },
     {
         slug: 'easytalk',
@@ -22,10 +22,10 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
         end: new Date('November 2025'),
         technologies: [
             { name: 'Django', logo: '/img/icons/django.svg' },
-            { name: 'Python', logo: '/img/icons/python.png' },
-            { name: 'Bootstrap', logo: '/img/icons/bootstrap.png' },
+            { name: 'Python', logo: '/img/icons/python.webp' },
+            { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
         ],
-        image: '/img/projects/easytalk.png',
+        image: '/img/projects/easytalk.webp',
     },
 ])
 

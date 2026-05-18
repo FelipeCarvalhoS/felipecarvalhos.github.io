@@ -44,3 +44,11 @@ export type LanguageType = {
     flags: string[]
     certificates: { name: string; issued_at: Date; url: string }[]
 }
+
+export type HonorType = {
+    id: number
+    slug: string
+    name: string
+    description: string
+    image: string
+}

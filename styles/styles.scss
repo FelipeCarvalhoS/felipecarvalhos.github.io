@@ -19,7 +19,8 @@
 }
 
 .diagonal-primary {
-    --skew-angle: -1.5deg;
+    --skew-angle: 1.5deg;
+    --skew-angle-sign: -1;
     --foreground: var(--bs-primary);
     --upper-background: null;
     --lower-background: null;
@@ -41,7 +42,7 @@
         position: absolute;
         z-index: -1;
         inset: 0;
-        transform: skewY(var(--skew-angle));
+        transform: skewY(calc(var(--skew-angle) * var(--skew-angle-sign, 1)));
     }
 }
 
@@ -86,13 +87,16 @@
 }
 
 .scale-on-hover {
+    --scale: 1.03;
+    --duration: 0.3s;
+
     transition:
-        transform 0.2s ease-in-out,
-        box-shadow 0.2s ease-in-out;
+        transform var(--duration) ease-out,
+        box-shadow var(--duration) ease-out;
 
     &:hover,
-    &:focus {
-        transform: scale(1.08);
+    &:focus-within {
+        transform: scale(var(--scale));
         @extend .shadow;
     }
 }
@@ -102,5 +106,20 @@
 
     @include media-breakpoint-up(sm) {
         width: 7rem;
+    }
+}
+
+.external-link {
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        mask-image: url('/img/icons/external-link.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background-color: currentColor;
+        vertical-align: middle;
+        margin-left: 0.75ch;
     }
 }

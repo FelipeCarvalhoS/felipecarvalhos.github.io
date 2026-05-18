@@ -8,7 +8,7 @@ const experienceData: Partial<ExperienceType>[] = addIncrementalIDs([
         slug: 'habitat-present',
         company: {
             name: 'Habitat Arquitetura & Construção',
-            logo: '/img/experiences/logos/habitat.png',
+            logo: '/img/experiences/logos/habitat.webp',
         },
         start: new Date('September 2025'),
         end: null,
@@ -17,7 +17,7 @@ const experienceData: Partial<ExperienceType>[] = addIncrementalIDs([
         slug: 'habitat',
         company: {
             name: 'Habitat Arquitetura & Construção',
-            logo: '/img/experiences/logos/habitat.png',
+            logo: '/img/experiences/logos/habitat.webp',
         },
         start: new Date('September 2025'),
         end: new Date('November 2025'),

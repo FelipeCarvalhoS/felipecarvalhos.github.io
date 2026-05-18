@@ -1,147 +1,169 @@
 {
-    "Metadata": {
-        "title": {
-            "template": "%s | Felipe Carvalho",
-            "default": "Felipe Carvalho"
+  "Metadata": {
+    "title": {
+      "template": "%s | Felipe Carvalho",
+      "default": "Felipe Carvalho"
+    },
+    "description": "Felipe Carvalho's Portfolio"
+  },
+  "Files": {
+    "cv": "/files/cv/Felipe-Carvalho-Python-Django-Developer.pdf"
+  },
+  "Navbar": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "languages": "Languages",
+    "honors": "Honors",
+    "contact": "Contact"
+  },
+  "Projects": {
+    "loadMore": "Load More",
+    "easytalk-present": {
+      "title": "EasyTalk: Therapy Web App",
+      "bulletPoints": [
+        "Design the app's entity-relationship model and implemented it in Django.",
+        "Developed the features of search/filtering of professionals and appointment scheduling.",
+        "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
+        "Prototyped the UI in Figma and built it using Bootstrap.",
+        "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
+      ],
+      "links": [
+        {
+          "icon": {
+            "src": "/img/icons/github.svg",
+            "alt": "GitHub"
+          },
+          "label": "Repository",
+          "url": "#"
         },
-        "description": "Felipe Carvalho's Portfolio"
-    },
-    "Files": {
-        "cv": "/files/cv/Felipe-Carvalho-Python-Django-Developer.pdf"
-    },
-    "Navbar": {
-        "about": "About",
-        "skills": "Skills",
-        "experience": "Experience",
-        "education": "Education",
-        "projects": "Projects",
-        "languages": "Languages",
-        "contact": "Contact"
-    },
-    "Projects": {
-        "loadMore": "Load More",
-        "easytalk-present": {
-            "title": "EasyTalk: Web App de Psicoterapia",
-            "bulletPoints": [
-                "Design the app's entity-relationship model and implemented it in Django.",
-                "Developed the features of search/filtering of professionals and appointment scheduling.",
-                "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
-                "Prototyped the UI in Figma and built it using Bootstrap.",
-                "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
-            ],
-            "links": [
-                {
-                    "icon": {
-                        "src": "/img/icons/github.svg",
-                        "alt": "GitHub"
-                    },
-                    "label": "Repository",
-                    "url": "#"
-                },
-                {
-                    "icon": {
-                        "src": "/img/icons/youtube.svg",
-                        "alt": "YouTube"
-                    },
-                    "label": "Demonstration Video",
-                    "url": "#"
-                }
-            ]
-        },
-        "easytalk": {
-            "title": "EasyTalk: Web App de Psicoterapia",
-            "bulletPoints": [
-                "Design the app's entity-relationship model and implemented it in Django.",
-                "Developed the features of search/filtering of professionals and appointment scheduling.",
-                "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
-                "Prototyped the UI in Figma and built it using Bootstrap.",
-                "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
-            ],
-            "links": [
-                {
-                    "icon": {
-                        "src": "/img/icons/github.svg",
-                        "alt": "GitHub"
-                    },
-                    "label": "Repository",
-                    "url": "https://github.com/TG-Easy-Talk/django-easy-talk"
-                },
-                {
-                    "icon": {
-                        "src": "/img/icons/youtube.svg",
-                        "alt": "YouTube"
-                    },
-                    "label": "Demonstration Video",
-                    "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
-                }
-            ]
+        {
+          "icon": {
+            "src": "/img/icons/youtube.svg",
+            "alt": "YouTube"
+          },
+          "label": "Demonstration Video",
+          "url": "#"
         }
+      ]
     },
-    "Education": {
-        "fatec": {
-            "title": "Systems Analysis and Development",
-            "bulletPoints": [
-                "I elaborated the entity-relationship model of the system and implemented it in Django.",
-                "I implemented the functions for searching professionals and scheduling consultations.",
-                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
-                "I prototyped the interface in Figma and built it using Bootstrap.",
-                "I received a perfect grade after presenting the work to the evaluation committee."
-            ]
+    "easytalk": {
+      "title": "EasyTalk: Therapy Web App",
+      "bulletPoints": [
+        "Design the app's entity-relationship model and implemented it in Django.",
+        "Developed the features of search/filtering of professionals and appointment scheduling.",
+        "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
+        "Prototyped the UI in Figma and built it using Bootstrap.",
+        "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
+      ],
+      "links": [
+        {
+          "icon": {
+            "src": "/img/icons/github.svg",
+            "alt": "GitHub"
+          },
+          "label": "Repository",
+          "url": "https://github.com/TG-Easy-Talk/django-easy-talk"
+        },
+        {
+          "icon": {
+            "src": "/img/icons/youtube.svg",
+            "alt": "YouTube"
+          },
+          "label": "Demonstration Video",
+          "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
         }
-    },
-    "Languages": {
-        "getCertificate": "See certificate",
-        "issuedIn": "Issued in {date}",
-        "english": {
-            "name": "English",
-            "proficiency": "C1 - Advanced"
-        },
-        "portuguese": {
-            "name": "Portuguese",
-            "proficiency": "Native Language"
-        }
-    },
-    "Experience": {
-        "habitat": {
-            "title": "IT Intern",
-            "bulletPoints": [
-                "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
-                "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
-                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
-            ]
-        },
-        "habitat-present": {
-            "title": "IT Intern",
-            "bulletPoints": [
-                "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
-                "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
-                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
-            ]
-        }
-    },
-    "Home": {
-        "hero": {
-            "greeting": "Hello! My name is"
-        },
-        "projects": {
-            "title": "My Projects"
-        },
-        "education": {
-            "title": "Education"
-        },
-        "experience": {
-            "title": "Experience"
-        },
-        "about": {
-            "title": "About Me",
-            "text": "Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo in eu pharetra tristique. Faucibus purus blandit risus nulla tellus. Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam ultrices euismod.",
-            "getResume": "View résumé"
-        },
-        "skills": {
-            "title": "My Skill Set"
-        },
-        "languages": {
-            "title": "Languages"
-        }
+      ]
     }
+  },
+  "Education": {
+    "fatec": {
+      "title": "Systems Analysis and Development",
+      "bulletPoints": [
+        "I elaborated the entity-relationship model of the system and implemented it in Django.",
+        "I implemented the functions for searching professionals and scheduling consultations.",
+        "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+        "I prototyped the interface in Figma and built it using Bootstrap.",
+        "I received a perfect grade after presenting the work to the evaluation committee."
+      ]
+    }
+  },
+  "Languages": {
+    "getCertificate": "See certificate",
+    "issuedIn": "Issued in {date}",
+    "english": {
+      "name": "English",
+      "proficiency": "C1 - Advanced"
+    },
+    "portuguese": {
+      "name": "Portuguese",
+      "proficiency": "Native Language"
+    }
+  },
+  "Honors": {
+    "best-academic-performance": {
+      "name": "Best Academic Performance",
+      "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+    },
+    "10/10-capstone-project": {
+      "name": "10/10 Capstone Project",
+      "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+    },
+    "s": {
+      "name": "10/10 Capstone Project",
+      "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+    },
+    "viewDetails": "View"
+  },
+  "Experience": {
+    "habitat": {
+      "title": "IT Intern",
+      "bulletPoints": [
+        "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
+        "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
+        "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
+      ]
+    },
+    "habitat-present": {
+      "title": "IT Intern",
+      "bulletPoints": [
+        "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
+        "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
+        "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
+      ]
+    }
+  },
+  "Home": {
+    "hero": {
+      "greeting": "Hello! My name is"
+    },
+    "projects": {
+      "title": "My Projects"
+    },
+    "education": {
+      "title": "Education"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "about": {
+      "title": "About Me",
+      "text": "Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo in eu pharetra tristique. Faucibus purus blandit risus nulla tellus. Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam ultrices euismod.",
+      "getResume": "View résumé"
+    },
+    "skills": {
+      "title": "My Skill Set"
+    },
+    "languages": {
+      "title": "Languages"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "honors": {
+      "title": "Honors"
+    }
+  }
 }

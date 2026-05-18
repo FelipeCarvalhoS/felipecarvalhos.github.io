@@ -1,11 +1,12 @@
 import { SkillType } from '@/types'
 import { addIncrementalIDs } from '@/utils'
+import { CSSProperties } from 'react'
 import { Card, Image as BsImage, Ratio } from 'react-bootstrap'
 
 const skills: SkillType[] = addIncrementalIDs([
     {
         name: 'Python',
-        logo: 'img/icons/python.png',
+        logo: 'img/icons/python.webp',
     },
     {
         name: 'Django',
@@ -17,7 +18,7 @@ const skills: SkillType[] = addIncrementalIDs([
     },
     {
         name: 'JavaScript',
-        logo: 'img/icons/javascript.png',
+        logo: 'img/icons/javascript.webp',
     },
     {
         name: 'TypeScript',
@@ -25,7 +26,7 @@ const skills: SkillType[] = addIncrementalIDs([
     },
     {
         name: 'React',
-        logo: 'img/icons/react.png',
+        logo: 'img/icons/react.webp',
     },
     {
         name: 'Next.js',
@@ -33,7 +34,7 @@ const skills: SkillType[] = addIncrementalIDs([
     },
     {
         name: 'HTML',
-        logo: 'img/icons/html.png',
+        logo: 'img/icons/html.webp',
     },
     {
         name: 'CSS',
@@ -41,11 +42,11 @@ const skills: SkillType[] = addIncrementalIDs([
     },
     {
         name: 'Sass',
-        logo: 'img/icons/sass.png',
+        logo: 'img/icons/sass.webp',
     },
     {
         name: 'Bootstrap',
-        logo: 'img/icons/bootstrap.png',
+        logo: 'img/icons/bootstrap.webp',
     },
     {
         name: 'Git',
@@ -56,8 +57,8 @@ const skills: SkillType[] = addIncrementalIDs([
         logo: 'img/icons/github.svg',
     },
     {
-        name: 'Figma',
-        logo: 'img/icons/figma.png',
+        name: 'Docker',
+        logo: 'img/icons/docker.webp',
     },
 ])
 
@@ -71,6 +72,7 @@ export default function SkillList() {
                 <Card
                     key={skill.id}
                     className="skill align-items-center p-3 shadow-sm scale-on-hover"
+                    style={{ '--scale': '1.08', '--duration': '0.2s' } as CSSProperties}
                 >
                     <Ratio aspectRatio="1x1" style={{ width: '50%' }} className="mb-3">
                         <BsImage src={skill.logo} className="object-fit-contain" />

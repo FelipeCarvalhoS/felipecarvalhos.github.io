@@ -9,7 +9,7 @@ const educationData: Partial<EducationType>[] = addIncrementalIDs([
         slug: 'fatec',
         institution: {
             name: 'Fatec Campinas',
-            logo: '/img/experiences/logos/habitat.png',
+            logo: '/img/experiences/logos/habitat.webp',
         },
         start: new Date('September 2021'),
         end: null,
