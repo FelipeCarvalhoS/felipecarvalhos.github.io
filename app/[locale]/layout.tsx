@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import { Locale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
+import BootstrapClient from '@/components/BootstrapClient'
 
 export async function generateMetadata({
     params,
@@ -50,7 +51,8 @@ export default async function LocaleLayout({ children, params }: Props) {
 
     return (
         <html lang={locale}>
-            <body className="bg-body-secondary">
+            <body className="bg-body-secondary" data-bs-spy="scroll">
+                <BootstrapClient />
                 <NextIntlClientProvider>
                     <Navbar />
                     {children}

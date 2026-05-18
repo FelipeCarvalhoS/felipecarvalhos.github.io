@@ -11,7 +11,12 @@ export default function MyNavbar() {
     const links = [t('about'), t('skills'), t('experience'), t('projects'), t('contact')]
 
     return (
-        <Navbar bg="body" expand="md" className="sticky-top py-2 ps-3 ps-md-4 shadow-sm">
+        <Navbar
+            id="navbar"
+            bg="body"
+            expand="md"
+            className="sticky-top py-2 ps-3 ps-md-4 shadow-sm"
+        >
             <StandardContainer className="flex-nowrap">
                 <div className="h4 fw-normal me-3 mb-0">
                     <Felipe />
