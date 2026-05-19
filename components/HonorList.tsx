@@ -2,6 +2,7 @@ import { HonorType } from '@/types'
 import { Image as BsImage, Button, Card, Col, Row } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 const honorData: Partial<HonorType>[] = addIncrementalIDs([
     {
@@ -36,9 +37,12 @@ export default function HonorList() {
                                 </Card.Title>
                                 <Card.Text>{honor.description}</Card.Text>
                             </div>
-                            <a href="#" className="link-info text-decoration-none stretched-link">
+                            <Link
+                                href="#"
+                                className="link-info text-decoration-none stretched-link"
+                            >
                                 <span className="external-link">{t('viewDetails')}</span>
-                            </a>
+                            </Link>
                         </Card.Body>
                     </Card>
                 </Col>

@@ -7,7 +7,7 @@ const outputDir = './optimized/'
 
 fs.mkdirSync(outputDir, { recursive: true })
 
-const MAX_WIDTH = 500 // change this
+const MAX_WIDTH = 150 // change this
 const QUALITY = 70 // like Squoosh slider
 
 let i = 0

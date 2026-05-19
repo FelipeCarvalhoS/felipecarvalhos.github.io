@@ -1,14 +1,44 @@
 'use client'
 
-import { Nav, Navbar, Offcanvas } from 'react-bootstrap'
+import { Nav, Navbar, Offcanvas, Image as BsImage, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import { slugify } from '@/utils'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { CSSProperties } from 'react'
+
+function NavItemWithTooltip({
+    children,
+    id,
+    title,
+}: {
+    children: React.ReactNode
+    id: string
+    title: string
+}) {
+    return (
+        <OverlayTrigger placement="bottom" overlay={<Tooltip id={id}>{title}</Tooltip>}>
+            <Nav.Item
+                style={
+                    {
+                        '--bs-box-shadow': 'none',
+                        '--scale': '1.08',
+                        '--duration': '0.2s',
+                    } as CSSProperties
+                }
+                as="li"
+                className="scale-on-hover align-self-md-stretch d-flex justify-content-center align-items-stretch"
+            >
+                {children}
+            </Nav.Item>
+        </OverlayTrigger>
+    )
+}
 
 export default function MyNavbar() {
     const t = useTranslations('Navbar')
     const links = [t('about'), t('skills'), t('experience'), t('projects'), t('contact')]
+    const locale = useLocale()
 
     return (
         <Navbar
@@ -40,7 +70,7 @@ export default function MyNavbar() {
                                 {
                                     maxWidth: '40rem',
                                     '--bs-nav-link-hover-color': 'var(--bs-secondary)',
-                                } as React.CSSProperties
+                                } as CSSProperties
                             }
                         >
                             {links.map((link: string) => (
@@ -50,6 +80,26 @@ export default function MyNavbar() {
                                     </Nav.Link>
                                 </Nav.Item>
                             ))}
+                            <div className="vr d-none d-md-block text-secondary mx-3"></div>
+                            <hr className="d-block d-md-none text-secondary w-100"></hr>
+
+                            <NavItemWithTooltip
+                                title={t('changeLocale')}
+                                id="change-locale-tooltip"
+                            >
+                                <Nav.Link
+                                    className="px-2 d-md-flex align-items-center"
+                                    href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}
+                                    style={{ width: 'fit-content' }}
+                                >
+                                    <div className="visually-hidden">{t('changeLocale')}</div>
+                                    <BsImage
+                                        src="/img/icons/change-locale.webp"
+                                        alt={t('changeLocale')}
+                                        style={{ height: '1.25rem' }}
+                                    />
+                                </Nav.Link>
+                            </NavItemWithTooltip>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>

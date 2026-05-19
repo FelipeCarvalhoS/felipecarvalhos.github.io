@@ -17,7 +17,8 @@
     "projects": "Projetos",
     "languages": "Idiomas",
     "honors": "Méritos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "changeLocale": "Mudar para inglês"
   },
   "Projects": {
     "loadMore": "Carregar Mais",
