@@ -123,3 +123,10 @@
         margin-left: 0.75ch;
     }
 }
+
+.navbar-toggler {
+    &:focus-visible {
+        @extend .focus-ring;
+        @extend .focus-ring-primary;
+    }
+}

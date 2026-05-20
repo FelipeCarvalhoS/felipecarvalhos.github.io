@@ -5,7 +5,7 @@ import { slugify } from '@/utils'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
-import { CSSProperties } from 'react'
+import { CSSProperties, useState } from 'react'
 
 function NavItemWithTooltip({
     children,
@@ -39,6 +39,10 @@ export default function MyNavbar() {
     const t = useTranslations('Navbar')
     const links = [t('about'), t('skills'), t('experience'), t('projects'), t('contact')]
     const locale = useLocale()
+    const [show, setShow] = useState(false)
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     return (
         <Navbar
@@ -51,11 +55,13 @@ export default function MyNavbar() {
                 <div className="h4 fw-normal me-3 mb-0">
                     <Felipe />
                 </div>
-                <Navbar.Toggle aria-controls="offcanvas-navbar" />
+                <Navbar.Toggle onClick={handleShow} aria-controls="offcanvas-navbar" />
                 <Navbar.Offcanvas
                     id="offcanvas-navbar"
                     placement="end"
                     aria-labelledby="offcanvas-navbar-label"
+                    show={show}
+                    onHide={handleClose}
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title className="fw-normal" id="offcanvas-navbar-label">
@@ -74,7 +80,7 @@ export default function MyNavbar() {
                             }
                         >
                             {links.map((link: string) => (
-                                <Nav.Item key={link} as="li">
+                                <Nav.Item key={link} as="li" onClick={handleClose}>
                                     <Nav.Link className="px-2" href={'#' + slugify(link)}>
                                         {link}
                                     </Nav.Link>
