@@ -1,10 +1,11 @@
 import { ProjectType } from '@/types'
 import { formatDate } from '@/utils'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap'
 
 export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
     const locale = useLocale()
+    const t = useTranslations('Project')
 
     return (
         <div
@@ -49,7 +50,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                         id={`dropdown-${project.id}`}
                         className="rounded-pill px-3"
                     >
-                        <span className="pe-2">Saiba Mais</span>
+                        <span className="pe-2">{t('learnMore')}</span>
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="my-1 shadow-sm">

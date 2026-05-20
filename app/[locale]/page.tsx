@@ -190,7 +190,7 @@ export default function Home() {
                     className="diagonal-primary p-4 text-center"
                     style={
                         {
-                            '--upper-background': 'var(--bs-tertiary-bg)',
+                            '--upper-background': 'var(--bs-secondary-bg)',
                             '--lower-background': 'var(--bs-secondary-bg)',
                             '--skew-angle-sign': 1,
                         } as CSSProperties

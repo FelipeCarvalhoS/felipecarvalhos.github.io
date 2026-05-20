@@ -1,170 +1,173 @@
 {
-  "Metadata": {
-    "title": {
-      "template": "%s | Felipe Carvalho",
-      "default": "Felipe Carvalho"
-    },
-    "description": "Portfólio de Felipe Carvalho"
-  },
-  "Files": {
-    "cv": "/files/cv/Felipe-Carvalho-Desenvolvedor-Python-Django.pdf"
-  },
-  "Navbar": {
-    "about": "Sobre",
-    "skills": "Habilidades",
-    "experience": "Experiência",
-    "education": "Educação",
-    "projects": "Projetos",
-    "languages": "Idiomas",
-    "honors": "Méritos",
-    "contact": "Contato",
-    "changeLocale": "Mudar para inglês"
-  },
-  "Projects": {
-    "loadMore": "Carregar Mais",
-    "easytalk-present": {
-      "title": "EasyTalk: Web App de Psicoterapia",
-      "bulletPoints": [
-        "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-        "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-        "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-        "Prototipei a interface no Figma e a construí usando Bootstrap.",
-        "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
-      ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "#"
+    "Metadata": {
+        "title": {
+            "template": "%s | Felipe Carvalho",
+            "default": "Felipe Carvalho"
         },
-        {
-          "icon": {
-            "src": "/img/icons/youtube.svg",
-            "alt": "YouTube"
-          },
-          "label": "Vídeo Demonstrativo",
-          "url": "#"
-        }
-      ]
+        "description": "Portfólio de Felipe Carvalho"
     },
-    "easytalk": {
-      "title": "EasyTalk: Web App de Psicoterapia",
-      "bulletPoints": [
-        "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-        "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-        "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-        "Prototipei a interface no Figma e a construí usando Bootstrap.",
-        "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
-      ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "https://github.com/TG-Easy-Talk/django-easy-talk"
+    "Files": {
+        "cv": "/files/cv/Felipe-Carvalho-Desenvolvedor-Python-Django.pdf"
+    },
+    "Navbar": {
+        "about": "Sobre",
+        "skills": "Habilidades",
+        "experience": "Experiência",
+        "education": "Educação",
+        "projects": "Projetos",
+        "languages": "Idiomas",
+        "honors": "Méritos",
+        "contact": "Contato",
+        "changeLocale": "Mudar para inglês"
+    },
+    "Projects": {
+        "loadMore": "Carregar mais",
+        "easytalk-present": {
+            "title": "EasyTalk: Web App de Psicoterapia",
+            "bulletPoints": [
+                "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
+                "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
+                "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
+                "Prototipei a interface no Figma e a construí usando Bootstrap.",
+                "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repositório",
+                    "url": "#"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/youtube.svg",
+                        "alt": "YouTube"
+                    },
+                    "label": "Vídeo Demonstrativo",
+                    "url": "#"
+                }
+            ]
         },
-        {
-          "icon": {
-            "src": "/img/icons/youtube.svg",
-            "alt": "YouTube"
-          },
-          "label": "Vídeo Demonstrativo",
-          "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
+        "easytalk": {
+            "title": "EasyTalk: Web App de Psicoterapia",
+            "bulletPoints": [
+                "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
+                "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
+                "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
+                "Prototipei a interface no Figma e a construí usando Bootstrap.",
+                "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repositório",
+                    "url": "https://github.com/TG-Easy-Talk/django-easy-talk"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/youtube.svg",
+                        "alt": "YouTube"
+                    },
+                    "label": "Vídeo Demonstrativo",
+                    "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
+                }
+            ]
         }
-      ]
+    },
+    "Education": {
+        "fatec": {
+            "title": "Análise e Desenvolvimento de Sistemas",
+            "bulletPoints": [
+                "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
+                "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
+                "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
+                "Prototipei a interface no Figma e a construí usando Bootstrap.",
+                "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+            ]
+        }
+    },
+    "Languages": {
+        "getCertificate": "Ver certificado",
+        "issuedIn": "Emitido em {date}",
+        "english": {
+            "name": "Inglês",
+            "proficiency": "C1 - Avançado"
+        },
+        "portuguese": {
+            "name": "Português",
+            "proficiency": "Idioma Nativo"
+        }
+    },
+    "Honors": {
+        "best-academic-performance": {
+            "name": "Melhor Rendimento Acadêmico",
+            "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
+        },
+        "10/10-capstone-project": {
+            "name": "TCC Nota Dez",
+            "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
+        },
+        "s": {
+            "name": "10/10 Capstone Project",
+            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+        },
+        "viewDetails": "Visualizar"
+    },
+    "Experience": {
+        "habitat": {
+            "title": "Estagiário de TI",
+            "bulletPoints": [
+                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
+                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+            ]
+        },
+        "habitat-present": {
+            "title": "Estagiário de TI",
+            "bulletPoints": [
+                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
+                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+            ]
+        }
+    },
+    "Home": {
+        "hero": {
+            "greeting": "Olá! Eu me chamo"
+        },
+        "about": {
+            "title": "Sobre Mim",
+            "text": "Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo in eu pharetra tristique. Faucibus purus blandit risus nulla tellus. Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam ultrices euismod.",
+            "getResume": "Ver currículo"
+        },
+        "projects": {
+            "title": "Meus Projetos"
+        },
+        "education": {
+            "title": "Formação Acadêmica"
+        },
+        "experience": {
+            "title": "Experiência"
+        },
+        "skills": {
+            "title": "Minhas Habilidades"
+        },
+        "languages": {
+            "title": "Idiomas"
+        },
+        "contact": {
+            "title": "Contato"
+        },
+        "honors": {
+            "title": "Méritos"
+        }
+    },
+    "Project": {
+        "learnMore": "Saiba mais"
     }
-  },
-  "Education": {
-    "fatec": {
-      "title": "Análise e Desenvolvimento de Sistemas",
-      "bulletPoints": [
-        "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-        "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-        "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-        "Prototipei a interface no Figma e a construí usando Bootstrap.",
-        "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
-      ]
-    }
-  },
-  "Languages": {
-    "getCertificate": "Ver certificado",
-    "issuedIn": "Emitido em {date}",
-    "english": {
-      "name": "Inglês",
-      "proficiency": "C1 - Avançado"
-    },
-    "portuguese": {
-      "name": "Português",
-      "proficiency": "Idioma Nativo"
-    }
-  },
-  "Honors": {
-    "best-academic-performance": {
-      "name": "Melhor Rendimento Acadêmico",
-      "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
-    },
-    "10/10-capstone-project": {
-      "name": "TCC Nota Dez",
-      "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
-    },
-    "s": {
-      "name": "10/10 Capstone Project",
-      "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
-    },
-    "viewDetails": "Visualizar"
-  },
-  "Experience": {
-    "habitat": {
-      "title": "Estagiário de TI",
-      "bulletPoints": [
-        "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
-        "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-        "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
-      ]
-    },
-    "habitat-present": {
-      "title": "Estagiário de TI",
-      "bulletPoints": [
-        "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
-        "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-        "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
-      ]
-    }
-  },
-  "Home": {
-    "hero": {
-      "greeting": "Olá! Eu me chamo"
-    },
-    "about": {
-      "title": "Sobre Mim",
-      "text": "Lorem ipsum dolor sit amet consectetur. Pellentesque lectus quis leo in eu pharetra tristique. Faucibus purus blandit risus nulla tellus. Arcu senectus erat dictumst nisl dui leo. Amet mi a odio elit quam ultrices euismod.",
-      "getResume": "Ver currículo"
-    },
-    "projects": {
-      "title": "Meus Projetos"
-    },
-    "education": {
-      "title": "Formação Acadêmica"
-    },
-    "experience": {
-      "title": "Experiência"
-    },
-    "skills": {
-      "title": "Minhas Habilidades"
-    },
-    "languages": {
-      "title": "Idiomas"
-    },
-    "contact": {
-      "title": "Contato"
-    },
-    "honors": {
-      "title": "Méritos"
-    }
-  }
 }
