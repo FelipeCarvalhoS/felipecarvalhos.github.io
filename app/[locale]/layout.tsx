@@ -22,7 +22,7 @@ export async function generateMetadata({
     }
 
     const languages: Record<Locale, string> = Object.fromEntries(
-        routing.locales.map(locale => [locale, `http://localhost:3000/${locale}`]), // TODO: use actual domain from env
+        routing.locales.map(locale => [locale, `${process.env.SITE_URL}/${locale}`]),
     )
 
     return {
@@ -30,7 +30,7 @@ export async function generateMetadata({
         description: t('description'),
 
         alternates: {
-            canonical: 'http://localhost:3000', // TODO: use actual domain from env
+            canonical: process.env.SITE_URL,
             languages: languages,
         },
     }

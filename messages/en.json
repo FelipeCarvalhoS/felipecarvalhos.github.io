@@ -92,7 +92,7 @@
         }
     },
     "Languages": {
-        "getCertificate": "See certificate",
+        "getCertificate": "View certificate",
         "issuedIn": "Issued in {date}",
         "english": {
             "name": "English",
