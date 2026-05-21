@@ -30,7 +30,7 @@ export async function generateMetadata({
         description: t('description'),
 
         alternates: {
-            canonical: 'http://localhost:3000',
+            canonical: 'http://localhost:3000', // TODO: use actual domain from env
             languages: languages,
         },
     }

@@ -7,7 +7,7 @@ const outputDir = './optimized/'
 
 fs.mkdirSync(outputDir, { recursive: true })
 
-const MAX_WIDTH = 150 // change this
+const MAX_WIDTH = 32 // change this
 const QUALITY = 70 // like Squoosh slider
 
 let i = 0
@@ -22,8 +22,8 @@ for (const file of fs.readdirSync(inputDir)) {
 
     await sharp(inputPath)
         .resize({ width: MAX_WIDTH }) // keeps aspect ratio
-        .toFormat('webp', { quality: QUALITY })
-        .toFile(path.join(outputDir, `${name}.webp`))
+        .toFormat('ico', { quality: QUALITY })
+        .toFile(path.join(outputDir, `${name}.ico`))
 
     console.log(`✔ ${file}`)
     i++
