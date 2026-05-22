@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
     return (
         <html lang={locale}>
-            <body className="bg-body-secondary" data-bs-spy="scroll">
+            <body className="bg-body-secondary">
                 <BootstrapClient />
                 <NextIntlClientProvider>
                     <Navbar />

@@ -130,3 +130,22 @@
         @extend .focus-ring-primary;
     }
 }
+
+[data-scrollspy-fade-triggered-by][data-scrollspy-faded]:not([data-scrollspy-faded='true']) {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.75s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

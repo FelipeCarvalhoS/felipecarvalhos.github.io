@@ -1,7 +1,6 @@
 'use client'
 
 import { Nav, Navbar, Offcanvas, Image as BsImage, Tooltip, OverlayTrigger } from 'react-bootstrap'
-import { slugify } from '@/utils'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
@@ -37,12 +36,53 @@ function NavItemWithTooltip({
 
 export default function MyNavbar() {
     const t = useTranslations('Navbar')
-    const links = [t('about'), t('skills'), t('experience'), t('projects'), t('contact')]
-    const locale = useLocale()
-    const [show, setShow] = useState(false)
+    const links = [
+        { key: 'about', visible: true },
+        { key: 'skills', visible: true },
+        { key: 'experience', visible: true },
+        { key: 'education', visible: false },
+        { key: 'projects', visible: true },
+        { key: 'languages', visible: false },
+        { key: 'honors', visible: false },
+        { key: 'contact', visible: true },
+    ].map(link => {
+        return {
+            label: t(link.key + '.label'),
+            slug: t(link.key + '.slug'),
+            visible: link.visible,
+        }
+    })
 
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    const locale = useLocale()
+    const [offcanvasShow, setOffcanvasShow] = useState(false)
+
+    function handleOffcanvasShow() {
+        setOffcanvasShow(true)
+    }
+
+    function handleOffcanvasClose() {
+        setOffcanvasShow(false)
+    }
+
+    function handleNavItemClick(link: (typeof links)[0]) {
+        handleOffcanvasClose()
+
+        const indexClicked = links.indexOf(link)
+
+        for (let i = indexClicked; i >= 0; i--) {
+            document
+                .querySelectorAll(`[data-scrollspy-fade-triggered-by="${links[i].slug}"`)
+                .forEach(element => {
+                    const el = element as HTMLElement
+                    
+                    if (el.dataset.scrollspyFaded === 'false') {
+                        el.classList.add('fade-in')
+                    }
+
+                    el.dataset.scrollspyFaded = 'true'
+                })
+        }
+    }
 
     return (
         <Navbar
@@ -55,13 +95,13 @@ export default function MyNavbar() {
                 <div className="h4 fw-normal me-3 mb-0">
                     <Felipe />
                 </div>
-                <Navbar.Toggle onClick={handleShow} aria-controls="offcanvas-navbar" />
+                <Navbar.Toggle onClick={handleOffcanvasShow} aria-controls="offcanvas-navbar" />
                 <Navbar.Offcanvas
                     id="offcanvas-navbar"
                     placement="end"
                     aria-labelledby="offcanvas-navbar-label"
-                    show={show}
-                    onHide={handleClose}
+                    show={offcanvasShow}
+                    onHide={handleOffcanvasClose}
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title className="fw-normal" id="offcanvas-navbar-label">
@@ -79,10 +119,19 @@ export default function MyNavbar() {
                                 } as CSSProperties
                             }
                         >
-                            {links.map((link: string) => (
-                                <Nav.Item key={link} as="li" onClick={handleClose}>
-                                    <Nav.Link className="px-2" href={'#' + slugify(link)}>
-                                        {link}
+                            {links.map(link => (
+                                <Nav.Item
+                                    key={link.label}
+                                    as="li"
+                                    className={link.visible ? undefined : 'd-none'}
+                                    onClick={() => handleNavItemClick(link)}
+                                >
+                                    <Nav.Link
+                                        className="px-2"
+                                        href={'#' + link.slug}
+                                        data-scrollspy-fade-triggers={link.slug}
+                                    >
+                                        {link.label}
                                     </Nav.Link>
                                 </Nav.Item>
                             ))}

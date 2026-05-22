@@ -10,14 +10,38 @@
         "cv": "/files/cv/Felipe-Carvalho-Python-Django-Developer.pdf"
     },
     "Navbar": {
-        "about": "About",
-        "skills": "Skills",
-        "experience": "Experience",
-        "education": "Education",
-        "projects": "Projects",
-        "languages": "Languages",
-        "honors": "Honors",
-        "contact": "Contact",
+        "about": {
+            "label": "About",
+            "slug": "about"
+        },
+        "skills": {
+            "label": "Skills",
+            "slug": "skills"
+        },
+        "experience": {
+            "label": "Experience",
+            "slug": "experience"
+        },
+        "education": {
+            "label": "Education",
+            "slug": "education"
+        },
+        "projects": {
+            "label": "Projects",
+            "slug": "projects"
+        },
+        "languages": {
+            "label": "Languages",
+            "slug": "languages"
+        },
+        "honors": {
+            "label": "Honors",
+            "slug": "honors"
+        },
+        "contact": {
+            "label": "Contact",
+            "slug": "contact"
+        },
         "changeLocale": "Switch to Portuguese"
     },
     "Projects": {

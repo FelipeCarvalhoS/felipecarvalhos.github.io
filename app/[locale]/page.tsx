@@ -11,7 +11,6 @@ import SkillList from '@/components/SkillList'
 import LanguageList from '@/components/LanguageList'
 import HonorList from '@/components/HonorList'
 import { useTranslations } from 'next-intl'
-import { slugify } from '@/utils'
 
 export default function Home() {
     const n = useTranslations('Navbar')
@@ -63,9 +62,10 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
-                id={slugify(n('about'))}
+                id={n('about.slug')}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
+                data-scrollspy-fade-triggered-by={n('about.slug')}
             >
                 <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
                     <div
@@ -93,10 +93,11 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id={slugify(n('skills'))} className="bg-body-tertiary">
+            <section id={n('skills.slug')} className="bg-body-tertiary">
                 <StandardContainer
                     fluid={false}
                     style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
+                    data-scrollspy-fade-triggered-by={n('skills.slug')}
                 >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('skills.title')}
@@ -105,7 +106,7 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
-                id={slugify(n('experience'))}
+                id={n('experience.slug')}
                 className="spikes"
                 style={
                     {
@@ -125,16 +126,24 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('experience.title')}</h2>
                 </div>
-                <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>
+                <StandardContainer
+                    fluid="lg"
+                    style={{ paddingBlock: '8rem' }}
+                    data-scrollspy-fade-triggered-by={n('experience.slug')}
+                >
                     <ExperienceTimeline />
                 </StandardContainer>
             </section>
             <section
-                id={slugify(n('education'))}
+                id={n('education.slug')}
                 className="bg-body-tertiary spikes"
                 style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
             >
-                <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
+                <StandardContainer
+                    fluid="md"
+                    style={{ paddingBlock: '7rem' }}
+                    data-scrollspy-fade-triggered-by={n('education.slug')}
+                >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('education.title')}
                     </h2>
@@ -145,11 +154,15 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
-                id={slugify(n('projects'))}
+                id={n('projects.slug')}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
-                <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
+                <StandardContainer
+                    fluid={false}
+                    style={{ paddingBlock: '7rem' }}
+                    data-scrollspy-fade-triggered-by={n('projects.slug')}
+                >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('projects.title')}
                     </h2>
@@ -157,11 +170,15 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section
-                id={slugify(n('languages'))}
+                id={n('languages.slug')}
                 className="bg-body-tertiary spikes"
                 style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
             >
-                <StandardContainer fluid="md" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
+                <StandardContainer
+                    fluid="md"
+                    style={{ paddingTop: '7rem', paddingBottom: '7rem' }}
+                    data-scrollspy-fade-triggered-by={n('languages.slug')}
+                >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('languages.title')}
                     </h2>
@@ -171,10 +188,11 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id={slugify(n('honors'))}>
+            <section id={n('honors.slug')}>
                 <StandardContainer
                     fluid="xl"
                     style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
+                    data-scrollspy-fade-triggered-by={n('honors.slug')}
                 >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('honors.title')}
@@ -185,7 +203,7 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id={slugify(n('contact'))}>
+            <section id={n('contact.slug')}>
                 <div
                     className="diagonal-primary p-4 text-center"
                     style={
@@ -198,7 +216,11 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('contact.title')}</h2>
                 </div>
-                <StandardContainer fluid="lg" style={{ paddingBlock: '7rem' }}>
+                <StandardContainer
+                    fluid="lg"
+                    style={{ paddingBlock: '7rem' }}
+                    data-scrollspy-fade-triggered-by={n('contact.slug')}
+                >
                     <div className="mx-auto" style={{ maxWidth: '42rem' }}>
                         a
                     </div>
