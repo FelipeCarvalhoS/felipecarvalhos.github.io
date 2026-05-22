@@ -6,34 +6,6 @@ import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
 import { CSSProperties, useState } from 'react'
 
-function NavItemWithTooltip({
-    children,
-    id,
-    title,
-}: {
-    children: React.ReactNode
-    id: string
-    title: string
-}) {
-    return (
-        <OverlayTrigger placement="bottom" overlay={<Tooltip id={id}>{title}</Tooltip>}>
-            <Nav.Item
-                style={
-                    {
-                        '--bs-box-shadow': 'none',
-                        '--scale': '1.08',
-                        '--duration': '0.2s',
-                    } as CSSProperties
-                }
-                as="li"
-                className="scale-on-hover align-self-md-stretch d-flex justify-content-center align-items-stretch"
-            >
-                {children}
-            </Nav.Item>
-        </OverlayTrigger>
-    )
-}
-
 export default function MyNavbar() {
     const t = useTranslations('Navbar')
     const links = [
@@ -74,7 +46,7 @@ export default function MyNavbar() {
                 .querySelectorAll(`[data-scrollspy-fade-triggered-by="${links[i].slug}"`)
                 .forEach(element => {
                     const el = element as HTMLElement
-                    
+
                     if (el.dataset.scrollspyFaded === 'false') {
                         el.classList.add('fade-in')
                     }
@@ -82,6 +54,14 @@ export default function MyNavbar() {
                     el.dataset.scrollspyFaded = 'true'
                 })
         }
+    }
+
+    function renderChangeLocaleTooltip(props: any) {
+        return (
+            <Tooltip id="change-locale-tooltip" {...props}>
+                {t('changeLocale')}
+            </Tooltip>
+        )
     }
 
     return (
@@ -138,23 +118,37 @@ export default function MyNavbar() {
                             <div className="vr d-none d-md-block text-secondary mx-3"></div>
                             <hr className="d-block d-md-none text-secondary w-100"></hr>
 
-                            <NavItemWithTooltip
-                                title={t('changeLocale')}
-                                id="change-locale-tooltip"
+                            <OverlayTrigger
+                                placement="bottom"
+                                overlay={
+                                    renderChangeLocaleTooltip
+                                }
                             >
-                                <Nav.Link
-                                    className="px-2 d-md-flex align-items-center"
-                                    href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}
-                                    style={{ width: 'fit-content' }}
+                                <Nav.Item
+                                    style={
+                                        {
+                                            '--bs-box-shadow': 'none',
+                                            '--scale': '1.0',
+                                            '--duration': '0.2s',
+                                        } as CSSProperties
+                                    }
+                                    as="li"
+                                    className="scale-on-hover align-self-md-stretch d-flex justify-content-center align-items-stretch"
                                 >
-                                    <div className="visually-hidden">{t('changeLocale')}</div>
-                                    <BsImage
-                                        src="/img/icons/change-locale.webp"
-                                        alt={t('changeLocale')}
-                                        style={{ height: '1.25rem' }}
-                                    />
-                                </Nav.Link>
-                            </NavItemWithTooltip>
+                                    <Nav.Link
+                                        className="px-2 d-md-flex align-items-center"
+                                        href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}
+                                        style={{ width: 'fit-content' }}
+                                    >
+                                        <div className="visually-hidden">{t('changeLocale')}</div>
+                                        <BsImage
+                                            src="/img/icons/change-locale.webp"
+                                            alt={t('changeLocale')}
+                                            style={{ height: '1.25rem' }}
+                                        />
+                                    </Nav.Link>
+                                </Nav.Item>
+                            </OverlayTrigger>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
