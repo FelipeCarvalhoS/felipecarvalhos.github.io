@@ -46,14 +46,15 @@
     },
     "Projects": {
         "loadMore": "Load more",
-        "easytalk-present": {
-            "title": "EasyTalk: Therapy Web App",
+        "smash-ultimate-api": {
+            "title": "Unnofficial Super Smash Bros. Ultimate RESTful API",
             "bulletPoints": [
-                "Design the app's entity-relationship model and implemented it in Django.",
-                "Developed the features of search/filtering of professionals and appointment scheduling.",
-                "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
-                "Prototyped the UI in Figma and built it using Bootstrap.",
-                "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
+                "Used web scraping to obtain data from the Smash Wiki and covert it to JSON.",
+                "Created endpoints to allow retrieval of the data obtained.",
+                "Wrote unit tests with Pytest, reaching 100% of code coverage.",
+                "Set up a GitHub Actions workflow to run the test suite on every push.",
+                "Served static assets using Cloudflare R2 object storage.",
+                "Deployed the API on Vercel."
             ],
             "links": [
                 {
@@ -62,7 +63,34 @@
                         "alt": "GitHub"
                     },
                     "label": "Repository",
-                    "url": "#"
+                    "url": "https://github.com/FelipeCarvalhoS/smash-ultimate-api"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/notepad.svg",
+                        "alt": "Documentation"
+                    },
+                    "label": "API Documentation",
+                    "url": "https://smash-ultimate-api.vercel.app/"
+                }
+            ]
+        },
+        "switchbot": {
+            "title": "SwitchBot™: A Discord Bot",
+            "bulletPoints": [
+                "Developed a Discord bot for me and my friends using Python and Discord.py.",
+                "Used Firestore as the database for some commands, such as the one that creates stickers (figurinhas).",
+                "Containerized the bot using Docker.",
+                "Self-hosted the bot on a home Ubuntu server."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repository",
+                    "url": "https://github.com/FelipeCarvalhoS/switchbot"
                 },
                 {
                     "icon": {
@@ -70,7 +98,25 @@
                         "alt": "YouTube"
                     },
                     "label": "Demonstration Video",
-                    "url": "#"
+                    "url": "https://youtu.be/yWUL_Jxg8LE"
+                }
+            ]
+        },
+        "habitat-website": {
+            "title": "Corporate Website of Habitat Arquitetura & Construção",
+            "bulletPoints": [
+                "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
+                "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
+                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/web.svg",
+                        "alt": "Website"
+                    },
+                    "label": "Visit website",
+                    "url": "https://habitat.net.br"
                 }
             ]
         },
@@ -81,7 +127,7 @@
                 "Developed the features of search/filtering of professionals and appointment scheduling.",
                 "Wrote unit tests that found edge cases and bugs which had not been discovered before.",
                 "Prototyped the UI in Figma and built it using Bootstrap.",
-                "Received a 10/10 grade after presenting EasyTalk as the final project for the Systems Analysis and Development degree."
+                "Received a 10/10 grade after presenting EasyTalk as the capstone project for the Systems Analysis and Development degree."
             ],
             "links": [
                 {
@@ -101,7 +147,32 @@
                     "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
                 }
             ]
-        }
+        },
+        "picross": {
+            "title": "Picross Replica in Python",
+            "bulletPoints": [
+                "Recreated the Picross game with Python and Pygame applying object-oriented concepts."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repository",
+                    "url": "https://github.com/FelipeCarvalhoS/picross-in-python"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/controller.svg",
+                        "alt": "Play"
+                    },
+                    "label": "Play on itch.io",
+                    "url": "https://felipinho5.itch.io/picross"
+                }
+            ]
+        },
+        "learnMore": "Learn more"
     },
     "Education": {
         "fatec": {
@@ -130,17 +201,25 @@
     "Honors": {
         "best-academic-performance": {
             "name": "Best Academic Performance",
-            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+            "description": "Recognized as the best-performing student among my classmates in the Systems Analysis and Development course at Fatec Campinas.",
+            "link": {
+                "label": "View certificate",
+                "url": "#"
+            }
         },
         "10/10-capstone-project": {
             "name": "10/10 Capstone Project",
-            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
+            "description": "Received a 10/10 grade after presenting EasyTalk, the online therapy web app, as my capstone project.",
+            "link": {
+                "label": "Learn more",
+                "url": "#easytalk"
+            }
         },
         "s": {
             "name": "10/10 Capstone Project",
-            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
-        },
-        "viewDetails": "View"
+            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project.",
+            "link": null
+        }
     },
     "Experience": {
         "habitat": {
@@ -190,8 +269,5 @@
         "honors": {
             "title": "Honors"
         }
-    },
-    "Project": {
-        "learnMore": "Learn more"
     }
 }

@@ -51,4 +51,5 @@ export type HonorType = {
     name: string
     description: string
     image: string
+    link: { label: string; url: string } | null
 }

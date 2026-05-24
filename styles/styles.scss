@@ -94,8 +94,7 @@
         transform var(--duration) ease-out,
         box-shadow var(--duration) ease-out;
 
-    &:hover,
-    &:focus-within {
+    &:hover {
         transform: scale(var(--scale));
         @extend .shadow;
     }
@@ -136,13 +135,13 @@
 }
 
 .fade-in {
-    animation: fadeIn 0.75s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;

@@ -37,10 +37,14 @@ export function addLocalizedFields<T extends { slug: string }>(
     fieldNames: (keyof T)[],
 ): T[] {
     return data.map(item => {
-        const localizedFields: Partial<Record<keyof T, any>> = {} // eslint-disable-line @typescript-eslint/no-explicit-any
+        const localizedFields: Partial<Record<keyof T, ReturnType<_Translator['raw']>>> = {}
 
         fieldNames.forEach(fieldName => {
-            localizedFields[fieldName] = t.raw(`${item.slug}.${String(fieldName)}`)
+            const translationPath = `${item.slug}.${String(fieldName)}`
+
+            if (t.has(translationPath)) {
+                localizedFields[fieldName] = t.raw(translationPath)
+            }
         })
 
         return { ...item, ...localizedFields } as T

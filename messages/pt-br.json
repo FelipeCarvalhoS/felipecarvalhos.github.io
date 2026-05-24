@@ -46,14 +46,15 @@
     },
     "Projects": {
         "loadMore": "Carregar mais",
-        "easytalk-present": {
-            "title": "EasyTalk: Web App de Psicoterapia",
+        "smash-ultimate-api": {
+            "title": "RESTful API Não Oficial de Super Smash Bros. Ultimate",
             "bulletPoints": [
-                "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-                "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-                "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-                "Prototipei a interface no Figma e a construí usando Bootstrap.",
-                "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+                "Usei web scraping para obter dados da Smash Wiki e convertê-los para JSON.",
+                "Criei endpoints para permitir acesso aos dados obtidos.",
+                "Escrevi testes unitários com Pytest, alcançando 100% de cobertura de código.",
+                "Configurei um workflow do GitHub Actions para executar o conjunto de testes a cada push.",
+                "Servi recursos estáticos com o Cloudflare R2.",
+                "Hospedei a API na Vercel."
             ],
             "links": [
                 {
@@ -62,15 +63,15 @@
                         "alt": "GitHub"
                     },
                     "label": "Repositório",
-                    "url": "#"
+                    "url": "https://github.com/FelipeCarvalhoS/smash-ultimate-api"
                 },
                 {
                     "icon": {
-                        "src": "/img/icons/youtube.svg",
-                        "alt": "YouTube"
+                        "src": "/img/icons/notepad.svg",
+                        "alt": "Documentação"
                     },
-                    "label": "Vídeo Demonstrativo",
-                    "url": "#"
+                    "label": "Documentação da API",
+                    "url": "https://smash-ultimate-api.vercel.app/"
                 }
             ]
         },
@@ -101,7 +102,77 @@
                     "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
                 }
             ]
-        }
+        },
+        "switchbot": {
+            "title": "SwitchBot™: Um Bot para o Discord",
+            "bulletPoints": [
+                "Desenvolvi um bot do Discord para eu e meus amigos usando Python e Discord.py",
+                "Usei o Firestore como banco de dados para alguns comandos, como o de criar figurinhas.",
+                "Realizei a conteinerização do bot usando Docker.",
+                "Auto-hospedei o bot em um home server de Ubuntu."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repositório",
+                    "url": "https://github.com/FelipeCarvalhoS/switchbot"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/youtube.svg",
+                        "alt": "YouTube"
+                    },
+                    "label": "Vídeo Demonstrativo",
+                    "url": "https://youtu.be/yWUL_Jxg8LE"
+                }
+            ]
+        },
+        "habitat-website": {
+            "title": "Website Corporativo da Habitat Arquitetura & Construção",
+            "bulletPoints": [
+                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
+                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/web.svg",
+                        "alt": "Website"
+                    },
+                    "label": "Visitar site",
+                    "url": "https://habitat.net.br"
+                }
+            ]
+        },
+        "picross": {
+            "title": "Réplica de Picross em Python",
+            "bulletPoints": [
+                "Recriei o jogo Picross com Python e Pygame aplicando conceitos de orientação a objeto."
+            ],
+            "links": [
+                {
+                    "icon": {
+                        "src": "/img/icons/github.svg",
+                        "alt": "GitHub"
+                    },
+                    "label": "Repositório",
+                    "url": "https://github.com/FelipeCarvalhoS/picross-in-python"
+                },
+                {
+                    "icon": {
+                        "src": "/img/icons/controller.svg",
+                        "alt": "Jogar"
+                    },
+                    "label": "Jogar no itch.io",
+                    "url": "https://felipinho5.itch.io/picross"
+                }
+            ]
+        },
+        "learnMore": "Saiba mais"
     },
     "Education": {
         "fatec": {
@@ -129,18 +200,26 @@
     },
     "Honors": {
         "best-academic-performance": {
-            "name": "Melhor Rendimento Acadêmico",
-            "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
+            "name": "Best Academic Performance",
+            "description": "Fui premiado o aluno de melhor desempenho dentre os meus colegas de classe do curso de Análise e Desenvolvimento de Sistemas na Fatec Campinas",
+            "link": {
+                "label": "Ver certificado",
+                "url": "#"
+            }
         },
         "10/10-capstone-project": {
             "name": "TCC Nota Dez",
-            "description": "Recebi a 10/10 grade for outstanding academic performance in the capstone project."
+            "description": "Recebi nota máxima após apresentar EasyTalk, um web app de psicoterapia online, como meu Trabalho de Conclusão de Curso em Análise e Desenvolvimento de Sistemas.",
+            "link": {
+                "label": "Saiba mais",
+                "url": "#easytalk"
+            }
         },
         "s": {
             "name": "10/10 Capstone Project",
-            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project."
-        },
-        "viewDetails": "Visualizar"
+            "description": "Received a 10/10 grade for outstanding academic performance in the capstone project.",
+            "link": null
+        }
     },
     "Experience": {
         "habitat": {
@@ -190,8 +269,5 @@
         "honors": {
             "title": "Méritos"
         }
-    },
-    "Project": {
-        "learnMore": "Saiba mais"
     }
 }

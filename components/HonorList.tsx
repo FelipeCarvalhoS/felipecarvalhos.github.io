@@ -22,7 +22,7 @@ const honorData: Partial<HonorType>[] = addIncrementalIDs([
 export default function HonorList() {
     const t = useTranslations('Honors')
 
-    const honors = addLocalizedFields(t, honorData, ['name', 'description'])
+    const honors = addLocalizedFields(t, honorData, ['name', 'description', 'link'])
 
     return (
         <Row xs={{ cols: 1 }} sm={{ cols: 2 }} lg={{ cols: 3 }} className="g-4">
@@ -37,12 +37,14 @@ export default function HonorList() {
                                 </Card.Title>
                                 <Card.Text>{honor.description}</Card.Text>
                             </div>
-                            <Link
-                                href="#"
-                                className="link-info text-decoration-none stretched-link"
-                            >
-                                <span className="external-link">{t('viewDetails')}</span>
-                            </Link>
+                            {honor.link && (
+                                <Link
+                                    href={honor.link.url}
+                                    className="link-info text-decoration-none stretched-link"
+                                >
+                                    <span className="external-link">{honor.link.label}</span>
+                                </Link>
+                            )}
                         </Card.Body>
                     </Card>
                 </Col>

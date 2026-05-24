@@ -5,17 +5,24 @@ import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap
 
 export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
     const locale = useLocale()
-    const t = useTranslations('Project')
+    const t = useTranslations('Projects')
 
     return (
         <div
-            className={`d-flex justify-content-between gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
+            id={project.slug}
+            className={`d-flex justify-content-between align-items-center gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
+            style={{ scrollMarginTop: '6rem' }}
         >
-            <div>
+            <div style={{ flexBasis: '50%' }}>
                 <h3 className="font-base fs-5 fw-semibold mb-2">{project.title}</h3>
                 <div className="mb-4 text-body-secondary">
-                    {formatDate(project.start, locale, 'long')} -{' '}
-                    {formatDate(project.end, locale, 'long')}
+                    {formatDate(project.start, locale, 'long')}
+                    {String(project.start) !== project.end?.toString() && (
+                        <>
+                            {' - '}
+                            {formatDate(project.end, locale, 'long')}
+                        </>
+                    )}
                 </div>
                 <Stack direction="horizontal" className="flex-wrap gap-2 mb-4">
                     {project.technologies.map(technology => (
@@ -37,14 +44,14 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                         </Badge>
                     ))}
                 </Stack>
-                <ul className="mb-5">
+                <ul className="mb-4">
                     {project.bulletPoints.map((point, index) => (
                         <li key={index}>
                             <p>{point}</p>
                         </li>
                     ))}
                 </ul>
-                <Dropdown>
+                <Dropdown className="pt-2">
                     <Dropdown.Toggle
                         variant="primary"
                         id={`dropdown-${project.id}`}
@@ -58,7 +65,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                             <Dropdown.Item
                                 href={link.url}
                                 key={index}
-                                className="d-flex gap-2 py-2"
+                                className="d-flex gap-2 py-2 text-black"
                                 target="_blank"
                             >
                                 <Ratio aspectRatio="1x1" style={{ width: '1.25em' }}>
@@ -70,7 +77,7 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
-            <div style={{ flexBasis: '70%' }} className="d-flex align-self-center">
+            <div style={{ flexBasis: '50%' }} className="d-flex align-self-center">
                 <BsImage src={project.image} alt="" className="img-fluid object-fit-contain" />
             </div>
         </div>
