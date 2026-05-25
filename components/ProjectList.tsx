@@ -3,6 +3,7 @@ import Project from './Project'
 import { Button } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields } from '@/utils'
 import { useTranslations } from 'next-intl'
+import { useState } from 'react'
 
 const projectData: Partial<ProjectType>[] = addIncrementalIDs([
     {
@@ -15,7 +16,7 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
             { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
             { name: 'Figma', logo: '/img/icons/figma.webp' },
         ],
-        image: '/img/projects/easytalk.webp',
+        image: '/img/projects/easytalk-1.png',
     },
     {
         slug: 'smash-ultimate-api',
@@ -27,7 +28,7 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
             { name: 'GitHub Actions', logo: '/img/icons/github.svg' },
             { name: 'Web Scraping', logo: '/img/icons/web-colorful.svg' },
         ],
-        image: '/img/projects/easytalk.webp',
+        image: '/img/projects/picross-2.png',
     },
     {
         slug: 'habitat-website',
@@ -39,7 +40,7 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
             { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
             { name: 'Figma', logo: '/img/icons/figma.webp' },
         ],
-        image: '/img/projects/easytalk.webp',
+        image: '/img/projects/easytalk-1.png',
     },
     {
         slug: 'switchbot',
@@ -49,8 +50,9 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
             { name: 'Python', logo: '/img/icons/python.webp' },
             { name: 'Discord.py', logo: '/img/icons/discord.webp' },
             { name: 'Firebase', logo: '/img/icons/firebase.webp' },
+            { name: 'Docker', logo: '/img/icons/docker.webp' },
         ],
-        image: '/img/projects/easytalk.webp',
+        image: '/img/projects/picross-2.png',
     },
     {
         slug: 'picross',
@@ -60,23 +62,47 @@ const projectData: Partial<ProjectType>[] = addIncrementalIDs([
             { name: 'Python', logo: '/img/icons/python.webp' },
             { name: 'Pygame', logo: '/img/icons/pygame.webp' },
         ],
-        image: '/img/projects/easytalk.webp',
+        image: '/img/projects/picross-1.png',
     },
 ])
 
 export default function ProjectList() {
     const t = useTranslations('Projects')
-
     const projects = addLocalizedFields(t, projectData, ['title', 'bulletPoints', 'links'])
+
+    const initiallyLoaded = 4
+    const toLoad = 4
+    const [timesLoaded, setTimesLoaded] = useState(0)
+    const end = reachedEndOfArray() ? projects.length : getSliceEnd()
+
+    function getSliceEnd() {
+        return initiallyLoaded + toLoad * timesLoaded
+    }
+
+    function reachedEndOfArray() {
+        return getSliceEnd() >= projects.length
+    }
 
     return (
         <div className="d-flex flex-column align-items-center" style={{ gap: '7rem' }}>
-            {projects.map((project, index) => (
-                <Project key={project.id} project={project} isEven={index % 2 === 0} />
+            {projects.slice(0, end).map((project, index) => (
+                <Project
+                    key={project.id}
+                    project={project}
+                    isEven={index % 2 === 0}
+                    beingLoaded={index >= getSliceEnd() - toLoad}
+                />
             ))}
-            <Button variant="outline-secondary" size="lg" className="rounded-pill">
-                {t('loadMore')}
-            </Button>
+            {!reachedEndOfArray() && (
+                <Button
+                    variant="outline-secondary"
+                    size="lg"
+                    className="rounded-pill"
+                    onClick={() => setTimesLoaded(timesLoaded + 1)}
+                >
+                    {t('loadMore')}
+                </Button>
+            )}
         </div>
     )
 }

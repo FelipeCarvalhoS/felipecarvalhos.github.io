@@ -3,21 +3,29 @@ import { formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap'
 
-export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
+export default function Project({
+    project,
+    isEven,
+    beingLoaded,
+}: {
+    project: ProjectType
+    isEven: boolean
+    beingLoaded: boolean
+}) {
     const locale = useLocale()
     const t = useTranslations('Projects')
 
     return (
         <div
             id={project.slug}
-            className={`d-flex justify-content-between align-items-center gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
+            className={`d-flex justify-content-between align-items-center gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'} ${beingLoaded ? 'fade-in' : ''}`}
             style={{ scrollMarginTop: '6rem' }}
         >
             <div style={{ flexBasis: '50%' }}>
                 <h3 className="font-base fs-5 fw-semibold mb-2">{project.title}</h3>
                 <div className="mb-4 text-body-secondary">
                     {formatDate(project.start, locale, 'long')}
-                    {String(project.start) !== project.end?.toString() && (
+                    {project.start.toString() !== project.end?.toString() && (
                         <>
                             {' - '}
                             {formatDate(project.end, locale, 'long')}
@@ -77,7 +85,10 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
-            <div style={{ flexBasis: '50%' }} className="d-flex align-self-center">
+            <div
+                style={{ flexBasis: '50%' }}
+                className="d-flex align-self-center position-relative"
+            >
                 <BsImage src={project.image} alt="" className="img-fluid object-fit-contain" />
             </div>
         </div>
