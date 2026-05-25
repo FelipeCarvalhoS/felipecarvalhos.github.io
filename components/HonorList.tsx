@@ -1,5 +1,5 @@
 import { HonorType } from '@/types'
-import { Image as BsImage, Button, Card, Col, Row } from 'react-bootstrap'
+import { Image as BsImage, Button, Card, Col, Ratio, Row } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
@@ -29,7 +29,14 @@ export default function HonorList() {
             {honors.map(honor => (
                 <Col key={honor.id}>
                     <Card className="h-100 shadow-sm position-relative scale-on-hover">
-                        <Card.Img variant="top" src={honor.image} />
+                        <Ratio aspectRatio="16x9">
+                            <Card.Img
+                                variant="top"
+                                src={honor.image}
+                                className="img-fluid object-fit-cover"
+                                style={{ objectPosition: '0 0' }}
+                            />
+                        </Ratio>
                         <Card.Body className="d-flex flex-column justify-content-between align-items-start gap-4">
                             <div>
                                 <Card.Title as="h3" className="h5 fw-medium">

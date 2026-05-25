@@ -1,7 +1,8 @@
 import { LanguageType } from '@/types'
-import { Image as BsImage } from 'react-bootstrap'
+import { Image as BsImage, Modal } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
+import { useState, Fragment } from 'react'
 
 const languageData: Partial<LanguageType>[] = addIncrementalIDs([
     {
@@ -32,6 +33,8 @@ export default function LanguageList() {
     const locale = useLocale()
 
     const languages = addLocalizedFields(t, languageData, ['name', 'proficiency'])
+
+    const [modalShow, setModalShow] = useState(false)
 
     return (
         <div className="vstack gap-4">
@@ -78,28 +81,30 @@ export default function LanguageList() {
                         </div>
                     </div>
                     {language.certificates.map((certificate, index) => (
-                        <div
-                            key={index}
-                            className="mt-4 d-flex justify-content-between align-items-center flex-wrap row-gap-2 column-gap-4"
-                        >
-                            <div>
-                                <h4 className="font-base fs-6 fw-semibold mb-2">
-                                    {certificate.name}
-                                </h4>
+                        <Fragment key={index}>
+                            <div className="mt-4 d-flex justify-content-between align-items-center flex-wrap row-gap-2 column-gap-4">
                                 <div>
-                                    {t('issuedIn', {
-                                        date: formatDate(certificate.issued_at, locale, 'long'),
-                                    })}
+                                    <h4 className="font-base fs-6 fw-semibold mb-2">
+                                        {certificate.name}
+                                    </h4>
+                                    <div>
+                                        {t('issuedIn', {
+                                            date: formatDate(certificate.issued_at, locale, 'long'),
+                                        })}
+                                    </div>
                                 </div>
+                                <a
+                                    role="button"
+                                    className="link-info text-decoration-none d-flex align-items-center gap-2"
+                                    onClick={() => setModalShow(true)}
+                                >
+                                    <span className="">{t('getCertificate')}</span>
+                                </a>
                             </div>
-                            <a
-                                href={certificate.url}
-                                target="_blank"
-                                className="link-info text-decoration-none d-flex align-items-center gap-2"
-                            >
-                                <span className="external-link">{t('getCertificate')}</span>
-                            </a>
-                        </div>
+                            <Modal centered show={modalShow} onHide={() => setModalShow(false)}>
+                                a
+                            </Modal>
+                        </Fragment>
                     ))}
                 </div>
             ))}

@@ -5,15 +5,6 @@ import { useTranslations } from 'next-intl'
 
 const experienceData: Partial<ExperienceType>[] = addIncrementalIDs([
     {
-        slug: 'habitat-present',
-        company: {
-            name: 'Habitat Arquitetura & Construção',
-            logo: '/img/experiences/logos/habitat.webp',
-        },
-        start: new Date('September 2025'),
-        end: null,
-    },
-    {
         slug: 'habitat',
         company: {
             name: 'Habitat Arquitetura & Construção',

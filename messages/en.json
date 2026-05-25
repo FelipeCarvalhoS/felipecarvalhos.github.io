@@ -47,7 +47,7 @@
     "Projects": {
         "loadMore": "Load more",
         "smash-ultimate-api": {
-            "title": "Unnofficial Super Smash Bros. Ultimate RESTful API",
+            "title": "Unofficial Super Smash Bros. Ultimate RESTful API",
             "bulletPoints": [
                 "Used web scraping to obtain data from the Smash Wiki and covert it to JSON.",
                 "Created endpoints to allow retrieval of the data obtained.",
@@ -103,7 +103,7 @@
             ]
         },
         "habitat-website": {
-            "title": "Corporate Website of Habitat Arquitetura & Construção",
+            "title": "Corporate Website of Habitat Arquitetura & Construção (Architecture & Construction)",
             "bulletPoints": [
                 "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
                 "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
@@ -184,6 +184,26 @@
                 "I prototyped the interface in Figma and built it using Bootstrap.",
                 "I received a perfect grade after presenting the work to the evaluation committee."
             ]
+        },
+        "high-school": {
+            "title": "American High School",
+            "bulletPoints": [
+                "I elaborated the entity-relationship model of the system and implemented it in Django.",
+                "I implemented the functions for searching professionals and scheduling consultations.",
+                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+                "I prototyped the interface in Figma and built it using Bootstrap.",
+                "I received a perfect grade after presenting the work to the evaluation committee."
+            ]
+        },
+        "ensino-medio": {
+            "title": "Brazilian High School",
+            "bulletPoints": [
+                "I elaborated the entity-relationship model of the system and implemented it in Django.",
+                "I implemented the functions for searching professionals and scheduling consultations.",
+                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+                "I prototyped the interface in Figma and built it using Bootstrap.",
+                "I received a perfect grade after presenting the work to the evaluation committee."
+            ]
         }
     },
     "Languages": {
@@ -223,14 +243,6 @@
     },
     "Experience": {
         "habitat": {
-            "title": "IT Intern",
-            "bulletPoints": [
-                "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",
-                "Set up an administrator panel that interacts with the MySQL database to allow the website's mantainer to update its contents with ease.",
-                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
-            ]
-        },
-        "habitat-present": {
             "title": "IT Intern",
             "bulletPoints": [
                 "Rebuilt, in 3 months and using Django, the company's corporate website that was previously made in WordPress.",

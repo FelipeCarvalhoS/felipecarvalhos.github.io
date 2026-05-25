@@ -11,8 +11,26 @@ const educationData: Partial<EducationType>[] = addIncrementalIDs([
             name: 'Fatec Campinas',
             logo: '/img/experiences/logos/habitat.webp',
         },
-        start: new Date('September 2021'),
-        end: null,
+        start: new Date('February 2023'),
+        end: new Date('December 2025'),
+    },
+    {
+        slug: 'high-school',
+        institution: {
+            name: 'Griggs International Academy',
+            logo: '/img/experiences/logos/habitat.webp',
+        },
+        start: new Date('March 2020'),
+        end: new Date('December 2022'),
+    },
+    {
+        slug: 'ensino-medio',
+        institution: {
+            name: 'Colégio Adventista de Campinas',
+            logo: '/img/experiences/logos/habitat.webp',
+        },
+        start: new Date('February 2020'),
+        end: new Date('December 2022'),
     },
 ])
 

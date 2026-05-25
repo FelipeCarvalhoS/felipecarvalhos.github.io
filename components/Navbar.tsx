@@ -103,7 +103,7 @@ export default function MyNavbar() {
                                 <Nav.Item
                                     key={link.label}
                                     as="li"
-                                    className={link.visible ? undefined : 'd-none'}
+                                    className={link.visible ? undefined : 'd-md-none'}
                                     onClick={() => handleNavItemClick(link)}
                                 >
                                     <Nav.Link
@@ -118,17 +118,12 @@ export default function MyNavbar() {
                             <div className="vr d-none d-md-block text-secondary mx-3"></div>
                             <hr className="d-block d-md-none text-secondary w-100"></hr>
 
-                            <OverlayTrigger
-                                placement="bottom"
-                                overlay={
-                                    renderChangeLocaleTooltip
-                                }
-                            >
+                            <OverlayTrigger placement="bottom" overlay={renderChangeLocaleTooltip}>
                                 <Nav.Item
                                     style={
                                         {
                                             '--bs-box-shadow': 'none',
-                                            '--scale': '1.0',
+                                            '--scale': '1.05',
                                             '--duration': '0.2s',
                                         } as CSSProperties
                                     }

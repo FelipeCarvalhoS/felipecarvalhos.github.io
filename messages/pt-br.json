@@ -184,6 +184,26 @@
                 "Prototipei a interface no Figma e a construí usando Bootstrap.",
                 "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
             ]
+        },
+        "high-school": {
+            "title": "High School (Ensino Médio Americano)",
+            "bulletPoints": [
+                "I elaborated the entity-relationship model of the system and implemented it in Django.",
+                "I implemented the functions for searching professionals and scheduling consultations.",
+                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+                "I prototyped the interface in Figma and built it using Bootstrap.",
+                "I received a perfect grade after presenting the work to the evaluation committee."
+            ]
+        },
+        "ensino-medio": {
+            "title": "Ensino Médio",
+            "bulletPoints": [
+                "I elaborated the entity-relationship model of the system and implemented it in Django.",
+                "I implemented the functions for searching professionals and scheduling consultations.",
+                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+                "I prototyped the interface in Figma and built it using Bootstrap.",
+                "I received a perfect grade after presenting the work to the evaluation committee."
+            ]
         }
     },
     "Languages": {
@@ -223,14 +243,6 @@
     },
     "Experience": {
         "habitat": {
-            "title": "Estagiário de TI",
-            "bulletPoints": [
-                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
-                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
-            ]
-        },
-        "habitat-present": {
             "title": "Estagiário de TI",
             "bulletPoints": [
                 "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",

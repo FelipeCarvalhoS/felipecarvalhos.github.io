@@ -40,7 +40,7 @@ export function addLocalizedFields<T extends { slug: string }>(
         const localizedFields: Partial<Record<keyof T, ReturnType<_Translator['raw']>>> = {}
 
         fieldNames.forEach(fieldName => {
-            const translationPath = `${item.slug}.${String(fieldName)}`
+            const translationPath = `${item.slug}.${fieldName.toString()}`
 
             if (t.has(translationPath)) {
                 localizedFields[fieldName] = t.raw(translationPath)
