@@ -12,7 +12,11 @@ export function addIncrementalIDs<T>(arr: T[]): (T & { id: number })[] {
     return arr.map((item, index) => ({ id: index + 1, ...item }))
 }
 
-export function formatDate(date: Date | null, locale: string, monthType: 'long' | 'short'): string {
+export function formatDate(
+    date: Date | undefined,
+    locale: string,
+    monthType: 'long' | 'short',
+): string {
     if (!date)
         switch (locale) {
             case 'pt-br':

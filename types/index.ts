@@ -4,7 +4,7 @@ export type ExperienceType = {
     title: string
     company: { name: string; logo: string }
     start: Date
-    end: Date | null
+    end: Date
     bulletPoints: string[]
 }
 
@@ -13,7 +13,7 @@ export type ProjectType = {
     slug: string
     title: string
     start: Date
-    end: Date | null
+    end: Date
     technologies: { name: string; logo: string }[]
     image: string
     bulletPoints: string[]
@@ -25,9 +25,12 @@ export type EducationType = {
     slug: string
     title: string
     institution: { name: string; logo: string }
+    grade: { value: number; maxValue: number; type: 'average' | 'gpa' }
+    attachment?: { image: string; type: 'diploma' | 'transcript' }
     start: Date
-    end: Date | null
+    end: Date
     bulletPoints: string[]
+    extraParagraphs?: string[]
 }
 
 export type SkillType = {
@@ -51,5 +54,5 @@ export type HonorType = {
     name: string
     description: string
     image: string
-    link: { label: string; url: string } | null
+    link: { label: string; url: string }
 }

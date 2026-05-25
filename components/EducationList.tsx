@@ -9,8 +9,10 @@ const educationData: Partial<EducationType>[] = addIncrementalIDs([
         slug: 'fatec',
         institution: {
             name: 'Fatec Campinas',
-            logo: '/img/experiences/logos/habitat.webp',
+            logo: '/img/education/logos/fatec.webp',
         },
+        grade: { value: 9.4, maxValue: 10, type: 'average' },
+        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'diploma' },
         start: new Date('February 2023'),
         end: new Date('December 2025'),
     },
@@ -18,8 +20,10 @@ const educationData: Partial<EducationType>[] = addIncrementalIDs([
         slug: 'high-school',
         institution: {
             name: 'Griggs International Academy',
-            logo: '/img/experiences/logos/habitat.webp',
+            logo: '/img/education/logos/griggs.webp',
         },
+        grade: { value: 3.97, maxValue: 4, type: 'gpa' },
+        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'transcript' },
         start: new Date('March 2020'),
         end: new Date('December 2022'),
     },
@@ -27,8 +31,10 @@ const educationData: Partial<EducationType>[] = addIncrementalIDs([
         slug: 'ensino-medio',
         institution: {
             name: 'Colégio Adventista de Campinas',
-            logo: '/img/experiences/logos/habitat.webp',
+            logo: '/img/education/logos/adventista.png',
         },
+        grade: { value: 0, maxValue: 10, type: 'average' },
+        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'diploma' },
         start: new Date('February 2020'),
         end: new Date('December 2022'),
     },
@@ -38,7 +44,11 @@ export default function EducationList() {
     const t = useTranslations('Education')
     const locale = useLocale()
 
-    const educations = addLocalizedFields(t, educationData, ['title', 'bulletPoints'])
+    const educations = addLocalizedFields(t, educationData, [
+        'title',
+        'bulletPoints',
+        'extraParagraphs',
+    ])
 
     return (
         <Accordion
@@ -65,7 +75,7 @@ export default function EducationList() {
                             <div className="d-none d-sm-block" style={{ minWidth: '5rem' }}>
                                 <div className="ratio ratio-1x1">
                                     <BsImage
-                                        className="object-fit-contain"
+                                        className={`object-fit-contain ${education.slug === 'ensino-medio' ? 'p-2' : ''}`}
                                         src={education.institution.logo}
                                         alt={education.institution.name}
                                     />
@@ -104,6 +114,43 @@ export default function EducationList() {
                                 </li>
                             ))}
                         </ul>
+                        {education.extraParagraphs && (
+                            <div className="mt-4">
+                                {education.extraParagraphs.map(
+                                    (paragraph, index, extraParagraphs) => (
+                                        <p
+                                            key={index}
+                                            className={
+                                                index === extraParagraphs.length - 1
+                                                    ? 'mb-0'
+                                                    : undefined
+                                            }
+                                        >
+                                            {paragraph}
+                                        </p>
+                                    ),
+                                )}
+                            </div>
+                        )}
+                        {(education.attachment || education.grade) && (
+                            <div className="mt-4 d-flex flex-wrap column-gap-3 row-gap-2">
+                                {education.grade && (
+                                    <div className="fw-medium">
+                                        {t(education.grade.type, {
+                                            value: education.grade.value,
+                                            maxValue: education.grade.maxValue,
+                                        })}
+                                    </div>
+                                )}
+                                {education.attachment && (
+                                    <a className="link-info text-decoration-none" role="button">
+                                        {t('getAttachment', {
+                                            attachmentType: t(education.attachment.type),
+                                        })}
+                                    </a>
+                                )}
+                            </div>
+                        )}
                     </Accordion.Body>
                 </Accordion.Item>
             ))}
