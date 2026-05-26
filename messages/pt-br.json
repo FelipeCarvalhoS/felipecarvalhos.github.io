@@ -56,24 +56,11 @@
         "Servi recursos estáticos com o Cloudflare R2.",
         "Hospedei a API na Vercel."
       ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "https://github.com/FelipeCarvalhoS/smash-ultimate-api"
-        },
-        {
-          "icon": {
-            "src": "/img/icons/notepad.svg",
-            "alt": "Documentação"
-          },
-          "label": "Documentação da API",
-          "url": "https://smash-ultimate-api.vercel.app/"
-        }
-      ]
+      "links": {
+        "repository": "Repositório",
+        "docAlt": "Documentação",
+        "documentation": "Documentação da API"
+      }
     },
     "easytalk": {
       "title": "EasyTalk: Web App de Psicoterapia",
@@ -84,24 +71,10 @@
         "Prototipei a interface no Figma e a construí usando Bootstrap.",
         "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
       ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "https://github.com/TG-Easy-Talk/django-easy-talk"
-        },
-        {
-          "icon": {
-            "src": "/img/icons/youtube.svg",
-            "alt": "YouTube"
-          },
-          "label": "Vídeo Demonstrativo",
-          "url": "https://youtu.be/dy_LrgH9iHo?si=Dxhs_SjoercwWu9W"
-        }
-      ]
+      "links": {
+        "repository": "Repositório",
+        "video": "Vídeo Demonstrativo"
+      }
     },
     "switchbot": {
       "title": "SwitchBot™: Um Bot para o Discord",
@@ -111,24 +84,10 @@
         "Realizei a conteinerização do bot usando Docker.",
         "Auto-hospedei o bot em um home server de Ubuntu."
       ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "https://github.com/FelipeCarvalhoS/switchbot"
-        },
-        {
-          "icon": {
-            "src": "/img/icons/youtube.svg",
-            "alt": "YouTube"
-          },
-          "label": "Vídeo Demonstrativo",
-          "url": "https://youtu.be/yWUL_Jxg8LE"
-        }
-      ]
+      "links": {
+        "repository": "Repositório",
+        "video": "Vídeo Demonstrativo"
+      }
     },
     "habitat-website": {
       "title": "Website Corporativo da Habitat Arquitetura & Construção",
@@ -137,50 +96,33 @@
         "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
         "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
       ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/web.svg",
-            "alt": "Website"
-          },
-          "label": "Visitar site",
-          "url": "https://habitat.net.br"
-        }
-      ]
+      "links": {
+        "webAlt": "Website",
+        "website": "Visitar site"
+      }
     },
     "picross": {
       "title": "Réplica de Picross em Python",
       "bulletPoints": [
         "Recriei o jogo Picross com Python e Pygame aplicando conceitos de orientação a objeto."
       ],
-      "links": [
-        {
-          "icon": {
-            "src": "/img/icons/github.svg",
-            "alt": "GitHub"
-          },
-          "label": "Repositório",
-          "url": "https://github.com/FelipeCarvalhoS/picross-in-python"
-        },
-        {
-          "icon": {
-            "src": "/img/icons/controller.svg",
-            "alt": "Jogar"
-          },
-          "label": "Jogar no itch.io",
-          "url": "https://felipinho5.itch.io/picross"
-        }
-      ]
+      "links": {
+        "repository": "Repositório",
+        "playAlt": "Jogar",
+        "play": "Jogar no itch.io"
+      }
     },
     "learnMore": "Saiba mais"
   },
   "Education": {
-    "gpa": "GPA: {value}/{maxValue}",
-    "average": "Média: {value}/{maxValue}",
-    "diploma": "diploma",
-    "transcript": "boletim",
     "fatec": {
       "title": "Análise e Desenvolvimento de Sistemas",
+      "grade": {
+        "label": "Média: {value}/{maxValue}"
+      },
+      "attachment": {
+        "label": "Ver diploma"
+      },
       "bulletPoints": [
         "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
         "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
@@ -191,6 +133,12 @@
     },
     "high-school": {
       "title": "High School (Ensino Médio Americano)",
+      "grade": {
+        "label": "GPA: {value}/{maxValue}"
+      },
+      "attachment": {
+        "label": "Ver boletim"
+      },
       "bulletPoints": [
         "Fui co-professor da matéria de informática, ministrando aulas de Google Workspace e elaborando atividades relacionadas para meus colegas de classe.",
         "Realizei 60 horas de serviço comunitário por meio de diversas atividades, como divertir as crianças do núcleo social Cássia Lasca em Campinas, criar arte promocional para campanhas beneficentes e auxiliar colegas a estudar para provas.",
@@ -204,6 +152,12 @@
     },
     "ensino-medio": {
       "title": "Ensino Médio",
+      "grade": {
+        "label": "Média: {value}/{maxValue}"
+      },
+      "attachment": {
+        "label": "Ver diploma"
+      },
       "bulletPoints": [
         "I elaborated the entity-relationship model of the system and implemented it in Django.",
         "I implemented the functions for searching professionals and scheduling consultations.",
@@ -211,8 +165,7 @@
         "I prototyped the interface in Figma and built it using Bootstrap.",
         "I received a perfect grade after presenting the work to the evaluation committee."
       ]
-    },
-    "getAttachment": "Ver {attachmentType}"
+    }
   },
   "Languages": {
     "getCertificate": "Ver certificado",
@@ -228,19 +181,25 @@
   },
   "Honors": {
     "best-academic-performance": {
-      "name": "Best Academic Performance",
-      "description": "Fui premiado o aluno de melhor desempenho dentre os meus colegas de classe do curso de Análise e Desenvolvimento de Sistemas na Fatec Campinas",
+      "name": "Melhor Rendimento Acadêmico",
+      "description": "Fui premiado o aluno de melhor desempenho dentre os meus colegas de classe do curso de Análise e Desenvolvimento de Sistemas na Fatec Campinas.",
       "link": {
         "label": "Ver certificado",
         "url": "#"
+      },
+      "attachment": {
+        "label": "Ver certificado"
       }
     },
-    "10/10-capstone-project": {
+    "10-10-capstone-project": {
       "name": "TCC Nota Dez",
       "description": "Recebi nota máxima após apresentar EasyTalk, um web app de psicoterapia online, como meu Trabalho de Conclusão de Curso em Análise e Desenvolvimento de Sistemas.",
       "link": {
         "label": "Saiba mais",
         "url": "#easytalk"
+      },
+      "attachment": {
+        "label": "Ir ao projeto"
       }
     },
     "s": {

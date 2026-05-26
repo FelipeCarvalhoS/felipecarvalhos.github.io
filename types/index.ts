@@ -25,8 +25,8 @@ export type EducationType = {
     slug: string
     title: string
     institution: { name: string; logo: string }
-    grade: { value: number; maxValue: number; type: 'average' | 'gpa' }
-    attachment?: { image: string; type: 'diploma' | 'transcript' }
+    grade: { value: number; maxValue: number; label: string }
+    attachment?: { image: string; label: string }
     start: Date
     end: Date
     bulletPoints: string[]
@@ -54,5 +54,5 @@ export type HonorType = {
     name: string
     description: string
     image: string
-    link: { label: string; url: string }
+    attachment?: { url: string; label: string; type: 'link' | 'image' }
 }

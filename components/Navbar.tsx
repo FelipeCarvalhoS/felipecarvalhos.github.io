@@ -5,6 +5,7 @@ import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
 import { CSSProperties, useState } from 'react'
+import Link from 'next/link'
 
 export default function MyNavbar() {
     const t = useTranslations('Navbar')
@@ -130,10 +131,10 @@ export default function MyNavbar() {
                                     as="li"
                                     className="scale-on-hover align-self-md-stretch d-flex justify-content-center align-items-stretch"
                                 >
-                                    <Nav.Link
-                                        className="px-2 d-md-flex align-items-center"
+                                    <Link
                                         href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}
-                                        style={{ width: 'fit-content' }}
+                                        scroll={false}
+                                        className="px-2 d-md-flex align-items-center focus-ring focus-ring-primary"
                                     >
                                         <div className="visually-hidden">{t('changeLocale')}</div>
                                         <BsImage
@@ -141,7 +142,7 @@ export default function MyNavbar() {
                                             alt={t('changeLocale')}
                                             style={{ height: '1.25rem' }}
                                         />
-                                    </Nav.Link>
+                                    </Link>
                                 </Nav.Item>
                             </OverlayTrigger>
                         </Nav>

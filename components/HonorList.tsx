@@ -2,29 +2,42 @@
 
 import { HonorType } from '@/types'
 import { Card, Col, Ratio, Row } from 'react-bootstrap'
-import { addIncrementalIDs, addLocalizedFields } from '@/utils'
+import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
-
-const honorData: Partial<HonorType>[] = addIncrementalIDs([
-    {
-        slug: 'best-academic-performance',
-        image: '/img/honors/best-academic-performance.webp',
-    },
-    {
-        slug: '10/10-capstone-project',
-        image: '/img/honors/best-academic-performance.webp',
-    },
-    {
-        slug: 's',
-        image: '/img/honors/best-academic-performance.webp',
-    },
-])
 
 export default function HonorList() {
     const t = useTranslations('Honors')
 
-    const honors = addLocalizedFields(t, honorData, ['name', 'description', 'link'])
+    const honors: HonorType[] = addIncrementalIDs([
+        {
+            slug: 'best-academic-performance',
+            name: t('best-academic-performance.name'),
+            description: t('best-academic-performance.description'),
+            image: '/img/honors/best-academic-performance.webp',
+            attachment: {
+                url: '/img/honors/best-academic-performance.webp',
+                label: t('best-academic-performance.attachment.label'),
+                type: 'image',
+            },
+        },
+        {
+            slug: '10-10-capstone-project',
+            name: t('10-10-capstone-project.name'),
+            description: t('10-10-capstone-project.description'),
+            image: '/img/honors/best-academic-performance.webp',
+            attachment: {
+                url: '#easytalk',
+                label: t('10-10-capstone-project.attachment.label'),
+                type: 'link',
+            },
+        },
+        {
+            slug: 's',
+            name: t('s.name'),
+            description: t('s.description'),
+            image: '/img/honors/best-academic-performance.webp',
+        },
+    ])
 
     return (
         <Row xs={{ cols: 1 }} sm={{ cols: 2 }} lg={{ cols: 3 }} className="g-4">
@@ -46,13 +59,19 @@ export default function HonorList() {
                                 </Card.Title>
                                 <Card.Text>{honor.description}</Card.Text>
                             </div>
-                            {honor.link && (
-                                <Link
-                                    href={honor.link.url}
-                                    className="link-info text-decoration-none stretched-link"
-                                >
-                                    <span className="external-link">{honor.link.label}</span>
-                                </Link>
+                            {honor.attachment && (
+                                <>
+                                    {honor.attachment.type === 'link' && (
+                                        <a
+                                            href={honor.attachment.url}
+                                            className="link-info text-decoration-none stretched-link"
+                                        >
+                                            <span className="external-link">
+                                                {honor.attachment.label}
+                                            </span>
+                                        </a>
+                                    )}
+                                </>
                             )}
                         </Card.Body>
                     </Card>

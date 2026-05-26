@@ -3,53 +3,76 @@
 import { EducationType } from '@/types'
 import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
-import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
+import { addIncrementalIDs, capitalizeFirst, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
-
-const educationData: Partial<EducationType>[] = addIncrementalIDs([
-    {
-        slug: 'fatec',
-        institution: {
-            name: 'Fatec Campinas',
-            logo: '/img/education/logos/fatec.webp',
-        },
-        grade: { value: 9.4, maxValue: 10, type: 'average' },
-        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'diploma' },
-        start: new Date('February 2023'),
-        end: new Date('December 2025'),
-    },
-    {
-        slug: 'high-school',
-        institution: {
-            name: 'Griggs International Academy',
-            logo: '/img/education/logos/griggs.webp',
-        },
-        grade: { value: 3.97, maxValue: 4, type: 'gpa' },
-        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'transcript' },
-        start: new Date('March 2020'),
-        end: new Date('December 2022'),
-    },
-    {
-        slug: 'ensino-medio',
-        institution: {
-            name: 'Colégio Adventista de Campinas',
-            logo: '/img/education/logos/adventista.png',
-        },
-        grade: { value: 0, maxValue: 10, type: 'average' },
-        attachment: { image: '/img/education/attachments/fatec-diploma.webp', type: 'diploma' },
-        start: new Date('February 2020'),
-        end: new Date('December 2022'),
-    },
-])
+import ImageModal from './ImageModal'
 
 export default function EducationList() {
     const t = useTranslations('Education')
     const locale = useLocale()
 
-    const educations = addLocalizedFields(t, educationData, [
-        'title',
-        'bulletPoints',
-        'extraParagraphs',
+    const educations: EducationType[] = addIncrementalIDs([
+        {
+            slug: 'fatec',
+            title: t('fatec.title'),
+            institution: {
+                name: 'Fatec Campinas',
+                logo: '/img/education/logos/fatec.webp',
+            },
+            grade: {
+                value: 9.4,
+                maxValue: 10,
+                label: t('fatec.grade.label', { value: 9.4, maxValue: 10 }),
+            },
+            attachment: {
+                image: '/img/education/attachments/fatec-diploma.webp',
+                label: t('fatec.attachment.label'),
+            },
+            start: new Date('February 2023'),
+            end: new Date('December 2025'),
+            bulletPoints: t.raw('fatec.bulletPoints'),
+        },
+        {
+            slug: 'high-school',
+            title: t('high-school.title'),
+            institution: {
+                name: 'Griggs International Academy',
+                logo: '/img/education/logos/griggs.webp',
+            },
+            grade: {
+                value: 3.97,
+                maxValue: 4,
+                label: t('high-school.grade.label', { value: 3.97, maxValue: 4 }),
+            },
+            attachment: {
+                image: '/img/education/attachments/fatec-diploma.webp',
+                label: t('high-school.attachment.label'),
+            },
+            start: new Date('March 2020'),
+            end: new Date('December 2022'),
+            bulletPoints: t.raw('high-school.bulletPoints'),
+            extraParagraphs: t.raw('high-school.extraParagraphs'),
+        },
+        {
+            slug: 'ensino-medio',
+            title: t('ensino-medio.title'),
+            institution: {
+                name: 'Colégio Adventista de Campinas',
+                logo: '/img/education/logos/adventista.png',
+            },
+            grade: {
+                value: 0,
+                maxValue: 10,
+                label: t('ensino-medio.grade.label', { value: 0, maxValue: 10 }),
+            },
+            attachment: {
+                image: '/img/education/attachments/fatec-diploma.webp',
+                label: t('ensino-medio.attachment.label'),
+            },
+            start: new Date('February 2020'),
+            end: new Date('December 2022'),
+            bulletPoints: t.raw('ensino-medio.bulletPoints'),
+        },
     ])
 
     return (
@@ -137,19 +160,17 @@ export default function EducationList() {
                         {(education.attachment || education.grade) && (
                             <div className="mt-4 d-flex flex-wrap column-gap-3 row-gap-2">
                                 {education.grade && (
-                                    <div className="fw-medium">
-                                        {t(education.grade.type, {
-                                            value: education.grade.value,
-                                            maxValue: education.grade.maxValue,
-                                        })}
-                                    </div>
+                                    <div className="fw-medium">{education.grade.label}</div>
                                 )}
                                 {education.attachment && (
-                                    <a className="link-info text-decoration-none" role="button">
-                                        {t('getAttachment', {
-                                            attachmentType: t(education.attachment.type),
-                                        })}
-                                    </a>
+                                    <ImageModal
+                                        src={education.attachment.image}
+                                        alt={`${education.title} - ${education.attachment.label}`}
+                                    >
+                                        <a className="link-info text-decoration-none" role="button">
+                                            {education.attachment.label}
+                                        </a>
+                                    </ImageModal>
                                 )}
                             </div>
                         )}

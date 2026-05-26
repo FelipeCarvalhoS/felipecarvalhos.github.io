@@ -2,40 +2,42 @@
 
 import { LanguageType } from '@/types'
 import { Image as BsImage } from 'react-bootstrap'
-import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
+import { addIncrementalIDs, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Fragment, useContext } from 'react'
 import ImageModal from './ImageModal'
-
-const languageData: Partial<LanguageType>[] = addIncrementalIDs([
-    {
-        slug: 'english',
-        flags: ['/img/languages/flag-us.webp', '/img/languages/flag-uk.webp'],
-        certificates: [
-            {
-                name: 'TOEIC Listening & Reading - Score 940',
-                issued_at: new Date('June 2025'),
-                url: '/files/toeic/TOEIC-2025-Certificate.jpg',
-            },
-            {
-                name: 'TOEIC Listening & Reading - Score 950',
-                issued_at: new Date('April 2023'),
-                url: '/files/toeic/TOEIC-2023-Certificate.jpg',
-            },
-        ],
-    },
-    {
-        slug: 'portuguese',
-        flags: ['/img/languages/flag-br.webp'],
-        certificates: [],
-    },
-])
 
 export default function LanguageList() {
     const t = useTranslations('Languages')
     const locale = useLocale()
 
-    const languages = addLocalizedFields(t, languageData, ['name', 'proficiency'])
+    const languages: LanguageType[] = addIncrementalIDs([
+        {
+            slug: 'english',
+            name: t('english.name'),
+            proficiency: t('english.proficiency'),
+            flags: ['/img/languages/flag-us.webp', '/img/languages/flag-uk.webp'],
+            certificates: [
+                {
+                    name: 'TOEIC Listening & Reading - Score 940',
+                    issued_at: new Date('June 2025'),
+                    url: '/files/toeic/TOEIC-2025-Certificate.jpg',
+                },
+                {
+                    name: 'TOEIC Listening & Reading - Score 950',
+                    issued_at: new Date('April 2023'),
+                    url: '/files/toeic/TOEIC-2023-Certificate.jpg',
+                },
+            ],
+        },
+        {
+            slug: 'portuguese',
+            name: t('portuguese.name'),
+            proficiency: t('portuguese.proficiency'),
+            flags: ['/img/languages/flag-br.webp'],
+            certificates: [],
+        },
+    ])
 
     return (
         <div className="vstack gap-4">

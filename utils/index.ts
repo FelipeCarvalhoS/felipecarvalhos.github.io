@@ -8,6 +8,10 @@ export function slugify(str: string): string {
         .replace(/\s+/g, '-')
 }
 
+export function capitalizeFirst(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 export function addIncrementalIDs<T>(arr: T[]): (T & { id: number })[] {
     return arr.map((item, index) => ({ id: index + 1, ...item }))
 }
@@ -25,12 +29,12 @@ export function formatDate(
                 return 'Present'
         }
 
-    let formatted = new Intl.DateTimeFormat(locale, { month: monthType, year: 'numeric' }).format(
-        date,
-    )
+    let formatted = new Intl.DateTimeFormat(locale, { month: monthType, year: 'numeric' })
+        .format(date)
+        .replace('.', '')
+        .replace('de ', '')
 
-    formatted = formatted.replace('.', '').replace('de ', '')
-    formatted = formatted.charAt(0).toUpperCase() + formatted.slice(1)
+    formatted = capitalizeFirst(formatted)
 
     return formatted
 }
