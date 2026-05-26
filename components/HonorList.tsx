@@ -1,7 +1,9 @@
+'use client'
+
 import { HonorType } from '@/types'
-import { Image as BsImage, Button, Card, Col, Ratio, Row } from 'react-bootstrap'
-import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
-import { useLocale, useTranslations } from 'next-intl'
+import { Card, Col, Ratio, Row } from 'react-bootstrap'
+import { addIncrementalIDs, addLocalizedFields } from '@/utils'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 const honorData: Partial<HonorType>[] = addIncrementalIDs([

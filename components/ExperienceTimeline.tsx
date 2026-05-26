@@ -1,3 +1,5 @@
+'use client'
+
 import { ExperienceType } from '@/types'
 import Experience from './Experience'
 import { addIncrementalIDs, addLocalizedFields } from '@/utils'

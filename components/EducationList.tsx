@@ -1,3 +1,5 @@
+'use client'
+
 import { EducationType } from '@/types'
 import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'

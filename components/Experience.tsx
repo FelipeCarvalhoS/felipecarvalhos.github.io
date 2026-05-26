@@ -1,3 +1,5 @@
+'use client'
+
 import { ExperienceType } from '@/types'
 import { formatDate } from '@/utils'
 import { useLocale } from 'next-intl'

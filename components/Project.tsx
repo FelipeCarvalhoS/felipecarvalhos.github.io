@@ -1,3 +1,5 @@
+'use client'
+
 import { ProjectType } from '@/types'
 import { formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'

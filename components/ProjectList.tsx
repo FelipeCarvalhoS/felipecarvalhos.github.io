@@ -1,3 +1,5 @@
+'use client'
+
 import { ProjectType } from '@/types'
 import Project from './Project'
 import { Button } from 'react-bootstrap'
