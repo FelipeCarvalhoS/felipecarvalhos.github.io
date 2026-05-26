@@ -1,8 +1,11 @@
+'use client'
+
 import { LanguageType } from '@/types'
-import { Image as BsImage, Modal } from 'react-bootstrap'
+import { Image as BsImage } from 'react-bootstrap'
 import { addIncrementalIDs, addLocalizedFields, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
-import { useState, Fragment } from 'react'
+import { Fragment, useContext } from 'react'
+import ImageModal from './ImageModal'
 
 const languageData: Partial<LanguageType>[] = addIncrementalIDs([
     {
@@ -33,8 +36,6 @@ export default function LanguageList() {
     const locale = useLocale()
 
     const languages = addLocalizedFields(t, languageData, ['name', 'proficiency'])
-
-    const [modalShow, setModalShow] = useState(false)
 
     return (
         <div className="vstack gap-4">
@@ -93,17 +94,15 @@ export default function LanguageList() {
                                         })}
                                     </div>
                                 </div>
-                                <a
-                                    role="button"
-                                    className="link-info text-decoration-none d-flex align-items-center gap-2"
-                                    onClick={() => setModalShow(true)}
-                                >
-                                    <span className="">{t('getCertificate')}</span>
-                                </a>
+                                <ImageModal src={certificate.url} alt={certificate.name}>
+                                    <a
+                                        role="button"
+                                        className="link-info text-decoration-none d-flex align-items-center gap-2"
+                                    >
+                                        <span className="">{t('getCertificate')}</span>
+                                    </a>
+                                </ImageModal>
                             </div>
-                            <Modal centered show={modalShow} onHide={() => setModalShow(false)}>
-                                a
-                            </Modal>
                         </Fragment>
                     ))}
                 </div>
