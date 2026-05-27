@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Modal, Image as BsImage, ModalProps } from 'react-bootstrap'
+import UnstyledButton from './UnstyledButton'
 
 export default function ImageModal({
     src,
@@ -16,8 +17,7 @@ export default function ImageModal({
             <div onClick={() => setShow(true)}>{children}</div>
             <Modal centered show={show} onHide={() => setShow(false)} {...props}>
                 <BsImage thumbnail src={src} alt={alt} />
-                <a
-                    role="button"
+                <UnstyledButton
                     style={{
                         top: 'var(--bs-border-width)',
                         right: 'var(--bs-border-width)',
@@ -35,7 +35,7 @@ export default function ImageModal({
                         className="m-2"
                         style={{ width: '1rem' }}
                     />
-                </a>
+                </UnstyledButton>
             </Modal>
         </>
     )

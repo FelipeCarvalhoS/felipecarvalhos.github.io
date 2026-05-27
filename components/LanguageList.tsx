@@ -6,6 +6,7 @@ import { addIncrementalIDs, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Fragment, useContext } from 'react'
 import ImageModal from './ImageModal'
+import UnstyledButton from './UnstyledButton'
 
 export default function LanguageList() {
     const t = useTranslations('Languages')
@@ -97,12 +98,9 @@ export default function LanguageList() {
                                     </div>
                                 </div>
                                 <ImageModal src={certificate.url} alt={certificate.name}>
-                                    <a
-                                        role="button"
-                                        className="link-info text-decoration-none d-flex align-items-center gap-2"
-                                    >
+                                    <UnstyledButton className="link-info text-decoration-none d-flex align-items-center gap-2">
                                         <span className="">{t('getCertificate')}</span>
-                                    </a>
+                                    </UnstyledButton>
                                 </ImageModal>
                             </div>
                         </Fragment>

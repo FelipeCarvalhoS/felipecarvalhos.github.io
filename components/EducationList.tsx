@@ -6,6 +6,7 @@ import { CSSProperties } from 'react'
 import { addIncrementalIDs, capitalizeFirst, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import ImageModal from './ImageModal'
+import UnstyledButton from './UnstyledButton'
 
 export default function EducationList() {
     const t = useTranslations('Education')
@@ -167,9 +168,9 @@ export default function EducationList() {
                                         src={education.attachment.image}
                                         alt={`${education.title} - ${education.attachment.label}`}
                                     >
-                                        <a className="link-info text-decoration-none" role="button">
+                                        <UnstyledButton className="link-info text-decoration-none">
                                             {education.attachment.label}
-                                        </a>
+                                        </UnstyledButton>
                                     </ImageModal>
                                 )}
                             </div>

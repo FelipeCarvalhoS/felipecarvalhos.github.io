@@ -148,3 +148,8 @@
         transform: translateY(0px);
     }
 }
+
+.btn-unstyled {
+    all: unset;
+    cursor: pointer;
+}

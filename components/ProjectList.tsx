@@ -5,7 +5,7 @@ import Project from './Project'
 import { Button } from 'react-bootstrap'
 import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 export default function ProjectList() {
     const t = useTranslations('Projects')
