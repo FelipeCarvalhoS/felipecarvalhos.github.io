@@ -15,12 +15,27 @@ export default function ImageModal({
         <>
             <div onClick={() => setShow(true)}>{children}</div>
             <Modal centered show={show} onHide={() => setShow(false)} {...props}>
-                <BsImage
-                    thumbnail
-                    src={src}
-                    alt={alt}
-                    style={{ maxWidth: '80vw', maxHeight: '80vh' }}
-                />
+                <BsImage thumbnail src={src} alt={alt} />
+                <a
+                    role="button"
+                    style={{
+                        top: 'var(--bs-border-width)',
+                        right: 'var(--bs-border-width)',
+                        borderTopRightRadius: 'var(--bs-border-radius)',
+                        borderBottomLeftRadius: 'var(--bs-border-radius)',
+                        background: 'inherit',
+                    }}
+                    className="position-absolute"
+                    onClick={() => setShow(false)}
+                >
+                    <BsImage
+                        src="/img/icons/x.svg"
+                        alt="Close"
+                        fluid
+                        className="m-2"
+                        style={{ width: '1rem' }}
+                    />
+                </a>
             </Modal>
         </>
     )
