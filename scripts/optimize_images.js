@@ -21,9 +21,9 @@ for (const file of fs.readdirSync(inputDir)) {
     const name = path.parse(file).name
 
     await sharp(inputPath)
-        .resize({ width: MAX_WIDTH }) // keeps aspect ratio
-        .toFormat('ico', { quality: QUALITY })
-        .toFile(path.join(outputDir, `${name}.ico`))
+        // .resize({ width: MAX_WIDTH }) // keeps aspect ratio
+        .toFormat('webp', { quality: QUALITY })
+        .toFile(path.join(outputDir, `${name}.webp`))
 
     console.log(`✔ ${file}`)
     i++

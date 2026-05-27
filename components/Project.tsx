@@ -91,7 +91,11 @@ export default function Project({
                 style={{ flexBasis: '50%' }}
                 className="d-flex align-self-center position-relative"
             >
-                <BsImage src={project.image} alt="" className="img-fluid object-fit-contain" />
+                <BsImage
+                    src={`${project.image.partialUrl}-${isEven ? '1' : '2'}.${project.image.extension}`}
+                    alt=""
+                    className="img-fluid object-fit-contain"
+                />
             </div>
         </div>
     )

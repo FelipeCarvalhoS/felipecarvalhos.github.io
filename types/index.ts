@@ -15,7 +15,7 @@ export type ProjectType = {
     start: Date
     end: Date
     technologies: { name: string; logo: string }[]
-    image: string
+    image: { partialUrl: string; extension: string }
     bulletPoints: string[]
     links: { icon: { src: string; alt: string }; label: string; url: string }[]
 }

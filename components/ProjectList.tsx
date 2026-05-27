@@ -5,7 +5,7 @@ import Project from './Project'
 import { Button } from 'react-bootstrap'
 import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 export default function ProjectList() {
     const t = useTranslations('Projects')
@@ -22,7 +22,10 @@ export default function ProjectList() {
                 { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
                 { name: 'Figma', logo: '/img/icons/figma.webp' },
             ],
-            image: '/img/projects/easytalk-1.png',
+            image: {
+                partialUrl: '/img/projects/easytalk',
+                extension: 'webp',
+            },
             bulletPoints: t.raw('easytalk.bulletPoints'),
             links: [
                 {
@@ -48,7 +51,10 @@ export default function ProjectList() {
                 { name: 'GitHub Actions', logo: '/img/icons/github.svg' },
                 { name: 'Web Scraping', logo: '/img/icons/web-colorful.svg' },
             ],
-            image: '/img/projects/picross-2.png',
+            image: {
+                partialUrl: '/img/projects/smash-ultimate-api',
+                extension: 'webp',
+            },
             bulletPoints: t.raw('smash-ultimate-api.bulletPoints'),
             links: [
                 {
@@ -77,11 +83,17 @@ export default function ProjectList() {
                 { name: 'Bootstrap', logo: '/img/icons/bootstrap.webp' },
                 { name: 'Figma', logo: '/img/icons/figma.webp' },
             ],
-            image: '/img/projects/easytalk-1.png',
+            image: {
+                partialUrl: '/img/projects/habitat-website',
+                extension: 'webp',
+            },
             bulletPoints: t.raw('habitat-website.bulletPoints'),
             links: [
                 {
-                    icon: { src: '/img/icons/web.svg', alt: t('habitat-website.links.webAlt') },
+                    icon: {
+                        src: '/img/icons/web.svg',
+                        alt: t('habitat-website.links.webAlt'),
+                    },
                     label: t('habitat-website.links.website'),
                     url: 'https://habitat.net.br',
                 },
@@ -98,7 +110,10 @@ export default function ProjectList() {
                 { name: 'Firebase', logo: '/img/icons/firebase.webp' },
                 { name: 'Docker', logo: '/img/icons/docker.webp' },
             ],
-            image: '/img/projects/picross-2.png',
+            image: {
+                partialUrl: '/img/projects/switchbot',
+                extension: 'webp',
+            },
             bulletPoints: t.raw('switchbot.bulletPoints'),
             links: [
                 {
@@ -122,7 +137,10 @@ export default function ProjectList() {
                 { name: 'Python', logo: '/img/icons/python.webp' },
                 { name: 'Pygame', logo: '/img/icons/pygame.webp' },
             ],
-            image: '/img/projects/picross-1.png',
+            image: {
+                partialUrl: '/img/projects/picross',
+                extension: 'webp',
+            },
             bulletPoints: t.raw('picross.bulletPoints'),
             links: [
                 {
@@ -131,7 +149,10 @@ export default function ProjectList() {
                     url: 'https://github.com/FelipeCarvalhoS/picross-in-python',
                 },
                 {
-                    icon: { src: '/img/icons/controller.svg', alt: t('picross.links.playAlt') },
+                    icon: {
+                        src: '/img/icons/controller.svg',
+                        alt: t('picross.links.playAlt'),
+                    },
                     label: t('picross.links.play'),
                     url: 'https://felipinho5.itch.io/picross',
                 },
