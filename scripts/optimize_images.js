@@ -22,8 +22,9 @@ for (const file of fs.readdirSync(inputDir)) {
 
     await sharp(inputPath)
         // .resize({ width: MAX_WIDTH }) // keeps aspect ratio
-        .toFormat('webp', { quality: QUALITY })
-        .toFile(path.join(outputDir, `${name}.webp`))
+        // .toFormat('webp', { quality: QUALITY })
+        .rotate(90)
+        .toFile(path.join(outputDir, `${name}.jpg`))
 
     console.log(`✔ ${file}`)
     i++
