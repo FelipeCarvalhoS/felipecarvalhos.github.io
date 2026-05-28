@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 export default function ExperienceTimeline() {
     const t = useTranslations('Experience')
 
-    const experiences: ExperienceType[] = addIncrementalIDs([
+    const experiences: ExperienceType[] = addIncrementalIDs<ExperienceType>([
         {
             slug: 'habitat',
             title: t('habitat.title'),

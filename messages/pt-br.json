@@ -121,7 +121,7 @@
         "label": "Média: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "Ver diploma"
+        "label": "diploma"
       },
       "bulletPoints": [
         "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
@@ -137,7 +137,7 @@
         "label": "GPA: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "Ver boletim"
+        "label": "boletim"
       },
       "bulletPoints": [
         "Fui co-professor da matéria de informática, ministrando aulas de Google Workspace e elaborando atividades relacionadas para meus colegas de classe.",
@@ -156,7 +156,7 @@
         "label": "Média: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "Ver diploma"
+        "label": "diploma"
       },
       "bulletPoints": [
         "I elaborated the entity-relationship model of the system and implemented it in Django.",
@@ -165,7 +165,8 @@
         "I prototyped the interface in Figma and built it using Bootstrap.",
         "I received a perfect grade after presenting the work to the evaluation committee."
       ]
-    }
+    },
+    "getImage": "Ver {label}"
   },
   "Languages": {
     "getCertificate": "Ver certificado",

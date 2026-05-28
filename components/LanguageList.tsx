@@ -12,7 +12,7 @@ export default function LanguageList() {
     const t = useTranslations('Languages')
     const locale = useLocale()
 
-    const languages: LanguageType[] = addIncrementalIDs([
+    const languages: LanguageType[] = addIncrementalIDs<LanguageType>([
         {
             slug: 'english',
             name: t('english.name'),

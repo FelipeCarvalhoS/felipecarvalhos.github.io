@@ -10,7 +10,7 @@ import { useState } from 'react'
 export default function ProjectList() {
     const t = useTranslations('Projects')
 
-    const projects: ProjectType[] = addIncrementalIDs([
+    const projects: ProjectType[] = addIncrementalIDs<ProjectType>([
         {
             slug: 'easytalk',
             title: t('easytalk.title'),

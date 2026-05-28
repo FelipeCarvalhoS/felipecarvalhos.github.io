@@ -12,8 +12,8 @@ export function capitalizeFirst(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export function addIncrementalIDs<T>(arr: T[]): (T & { id: number })[] {
-    return arr.map((item, index) => ({ id: index + 1, ...item }))
+export function addIncrementalIDs<T>(arr: Partial<T>[]): T[] {
+    return arr.map((item, index) => ({ id: index + 1, ...item })) as T[]
 }
 
 export function formatDate(

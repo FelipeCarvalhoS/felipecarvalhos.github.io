@@ -26,7 +26,7 @@ export type EducationType = {
     title: string
     institution: { name: string; logo: string }
     grade: { value: number; maxValue: number; label: string }
-    attachment?: { image: string; label: string }
+    image?: { url: string; label: string }
     start: Date
     end: Date
     bulletPoints: string[]

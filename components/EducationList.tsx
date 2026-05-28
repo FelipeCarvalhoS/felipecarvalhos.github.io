@@ -12,7 +12,7 @@ export default function EducationList() {
     const t = useTranslations('Education')
     const locale = useLocale()
 
-    const educations: EducationType[] = addIncrementalIDs([
+    const educations: EducationType[] = addIncrementalIDs<EducationType>([
         {
             slug: 'fatec',
             title: t('fatec.title'),
@@ -25,8 +25,8 @@ export default function EducationList() {
                 maxValue: 10,
                 label: t('fatec.grade.label', { value: 9.4, maxValue: 10 }),
             },
-            attachment: {
-                image: '/img/education/attachments/fatec-diploma.webp',
+            image: {
+                url: '/img/education/attachments/fatec-diploma.webp',
                 label: t('fatec.attachment.label'),
             },
             start: new Date('February 2023'),
@@ -45,8 +45,8 @@ export default function EducationList() {
                 maxValue: 4,
                 label: t('high-school.grade.label', { value: 3.97, maxValue: 4 }),
             },
-            attachment: {
-                image: '/img/education/attachments/fatec-diploma.webp',
+            image: {
+                url: '/img/education/attachments/fatec-diploma.webp',
                 label: t('high-school.attachment.label'),
             },
             start: new Date('March 2020'),
@@ -66,8 +66,8 @@ export default function EducationList() {
                 maxValue: 10,
                 label: t('ensino-medio.grade.label', { value: 0, maxValue: 10 }),
             },
-            attachment: {
-                image: '/img/education/attachments/fatec-diploma.webp',
+            image: {
+                url: '/img/education/attachments/fatec-diploma.webp',
                 label: t('ensino-medio.attachment.label'),
             },
             start: new Date('February 2020'),
@@ -158,18 +158,18 @@ export default function EducationList() {
                                 )}
                             </div>
                         )}
-                        {(education.attachment || education.grade) && (
+                        {(education.image || education.grade) && (
                             <div className="mt-4 d-flex flex-wrap column-gap-3 row-gap-2">
                                 {education.grade && (
                                     <div className="fw-medium">{education.grade.label}</div>
                                 )}
-                                {education.attachment && (
+                                {education.image && (
                                     <ImageModal
-                                        src={education.attachment.image}
-                                        alt={`${education.title} - ${education.attachment.label}`}
+                                        src={education.image.url}
+                                        alt={`${education.title} - ${capitalizeFirst(education.image.label)}`}
                                     >
                                         <UnstyledButton className="link-info text-decoration-none">
-                                            {education.attachment.label}
+                                            {t('getImage', { label: education.image.label })}
                                         </UnstyledButton>
                                     </ImageModal>
                                 )}
