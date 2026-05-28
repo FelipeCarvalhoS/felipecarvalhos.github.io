@@ -162,33 +162,33 @@ export default function ProjectList() {
 
     const initiallyLoaded = 4
     const toLoad = 4
-    const [timesLoaded, setTimesLoaded] = useState(0)
-    const end = reachedEndOfArray() ? projects.length : getSliceEnd()
-
-    function getSliceEnd() {
-        return initiallyLoaded + toLoad * timesLoaded
-    }
-
-    function reachedEndOfArray() {
-        return getSliceEnd() >= projects.length
-    }
+    const [loadedProjects, setLoadedProjects] = useState(projects.slice(0, initiallyLoaded))
 
     return (
         <div className="d-flex flex-column align-items-center" style={{ gap: '7rem' }}>
-            {projects.slice(0, end).map((project, index) => (
+            {loadedProjects.map((project, index) => (
                 <Project
                     key={project.id}
                     project={project}
                     isEven={index % 2 === 0}
-                    beingLoaded={index >= getSliceEnd() - toLoad}
+                    beingLoaded={index >= loadedProjects.length - toLoad}
                 />
             ))}
-            {!reachedEndOfArray() && (
+            {loadedProjects.length < projects.length && (
                 <Button
                     variant="outline-secondary"
                     size="lg"
                     className="rounded-pill"
-                    onClick={() => setTimesLoaded(timesLoaded + 1)}
+                    onClick={() =>
+                        setLoadedProjects(
+                            loadedProjects.concat(
+                                projects.slice(
+                                    loadedProjects.length,
+                                    loadedProjects.length + toLoad,
+                                ),
+                            ),
+                        )
+                    }
                 >
                     {t('loadMore')}
                 </Button>
