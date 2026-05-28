@@ -22,12 +22,12 @@ export default function LanguageList() {
                 {
                     name: 'TOEIC Listening & Reading - Score 940',
                     issued_at: new Date('June 2025'),
-                    url: '/files/toeic/TOEIC-2025-Certificate.jpg',
+                    url: '/img/languages/TOEIC-2025-Certificate.webp',
                 },
                 {
                     name: 'TOEIC Listening & Reading - Score 950',
                     issued_at: new Date('April 2023'),
-                    url: '/files/toeic/TOEIC-2023-Certificate.jpg',
+                    url: '/img/languages/TOEIC-2023-Certificate.webp',
                 },
             ],
         },

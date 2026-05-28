@@ -12,34 +12,26 @@ export default function ImageModal({
 }: ModalProps & { src: string; alt: string; children: React.ReactNode }) {
     const [show, setShow] = useState(false)
 
-    useEffect(function addModalContentClickCloseEvent() {
-        const modalContent = document.querySelector('.modal-content')
-
-        modalContent?.addEventListener('click', e => {
-            if (e.target === e.currentTarget) {
-                setShow(false)
-            }
-        })
-    }, [show])
-
-    function handleOpen() {
-        setShow(true)
-    }
-
     return (
         <>
-            <div onClick={handleOpen}>{children}</div>
+            <div onClick={() => setShow(true)}>{children}</div>
             <Modal
                 centered
                 show={show}
                 onHide={() => setShow(false)}
                 className="d-flex justify-content-center p-0"
                 dialogClassName="image-modal-size justify-content-center align-items-stretch"
-                contentClassName="w-auto bg-transparent border-0 justify-content-center align-items-center"
+                contentClassName="w-auto bg-transparent border-0 justify-content-center align-items-center pe-none"
                 {...props}
             >
-                <div className="mw-100 mh-100 position-relative">
-                    <BsImage fluid thumbnail className="mh-100" src={src} alt={alt} />
+                <div className="mw-100 mh-100 position-relative pe-auto">
+                    <BsImage
+                        fluid
+                        thumbnail
+                        className="w-100 h-100 object-fit-contain"
+                        src={src}
+                        alt={alt}
+                    />
                     <UnstyledButton
                         style={{
                             top: 'var(--bs-border-width)',
