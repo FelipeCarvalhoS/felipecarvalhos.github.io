@@ -1,3 +1,9 @@
+export type AttachmentType = {
+    url: string
+    label: string
+    type: 'link' | 'image' | 'anchor'
+}
+
 export type ExperienceType = {
     id: number
     slug: string
@@ -26,10 +32,10 @@ export type EducationType = {
     title: string
     institution: { name: string; logo: string }
     grade: { value: number; maxValue: number; label: string }
-    image?: { url: string; label: string }
+    attachment?: AttachmentType & { name: string }
     start: Date
     end: Date
-    bulletPoints: string[]
+    bulletPoints?: string[]
     extraParagraphs?: string[]
 }
 
@@ -54,5 +60,5 @@ export type HonorType = {
     name: string
     description: string
     image: string
-    attachment?: { url: string; label: string; type: 'link' | 'image' }
+    attachment?: AttachmentType
 }

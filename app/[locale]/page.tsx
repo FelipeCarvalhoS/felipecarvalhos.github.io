@@ -78,13 +78,16 @@ export default function Home() {
                             <Button
                                 as="a"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 href={f('cv')}
                                 variant="primary"
                                 size="lg"
                                 className="fs-5 rounded-pill d-flex align-items-center gap-3"
                                 style={{ width: 'fit-content' }}
                             >
-                                <span className="external-link">{t('about.getResume')}</span>
+                                <span className="icon-after icon-after-link">
+                                    {t('about.getResume')}
+                                </span>
                             </Button>
                         </div>
                         <div>

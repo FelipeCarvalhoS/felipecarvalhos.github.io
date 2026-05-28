@@ -121,14 +121,11 @@
         "label": "Average grade: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "diploma"
+        "label": "View diploma",
+        "name": "Diploma"
       },
-      "bulletPoints": [
-        "I elaborated the entity-relationship model of the system and implemented it in Django.",
-        "I implemented the functions for searching professionals and scheduling consultations.",
-        "I wrote unit tests that found edge cases and bugs that had not been considered before.",
-        "I prototyped the interface in Figma and built it using Bootstrap.",
-        "I received a perfect grade after presenting the work to the evaluation committee."
+      "extraParagraphs": [
+        "Subjects studied: Web Programming, Software Engineering, Databases, Algorithms, Data Structures, Object-Oriented Programming, Operating Systems, Human-Computer Interaction, etc."
       ]
     },
     "high-school": {
@@ -137,7 +134,8 @@
         "label": "GPA: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "transcript"
+        "label": "View transcript",
+        "name": "Transcript"
       },
       "bulletPoints": [
         "Served as a co-teacher in the Computers subject, teaching classes on Google Workspace and creating related activities for my classmates.",
@@ -156,7 +154,7 @@
         "label": "Average grade: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "diploma"
+        "label": "View diploma"
       },
       "bulletPoints": [
         "I elaborated the entity-relationship model of the system and implemented it in Django.",

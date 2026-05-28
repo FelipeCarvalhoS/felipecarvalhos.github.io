@@ -4,6 +4,7 @@ import { HonorType } from '@/types'
 import { Card, Col, Ratio, Row } from 'react-bootstrap'
 import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
+import Attachment from './Attachment'
 
 export default function HonorList() {
     const t = useTranslations('Honors')
@@ -13,7 +14,7 @@ export default function HonorList() {
             slug: 'best-academic-performance',
             name: t('best-academic-performance.name'),
             description: t('best-academic-performance.description'),
-            image: '/img/honors/best-academic-performance.webp',
+            image: '/img/honors/best-academic-performance-small.webp',
             attachment: {
                 url: '/img/honors/best-academic-performance.webp',
                 label: t('best-academic-performance.attachment.label'),
@@ -28,7 +29,7 @@ export default function HonorList() {
             attachment: {
                 url: '#easytalk',
                 label: t('10-10-capstone-project.attachment.label'),
-                type: 'link',
+                type: 'anchor',
             },
         },
         {
@@ -60,18 +61,7 @@ export default function HonorList() {
                                 <Card.Text>{honor.description}</Card.Text>
                             </div>
                             {honor.attachment && (
-                                <>
-                                    {honor.attachment.type === 'link' && (
-                                        <a
-                                            href={honor.attachment.url}
-                                            className="link-info text-decoration-none stretched-link"
-                                        >
-                                            <span className="external-link">
-                                                {honor.attachment.label}
-                                            </span>
-                                        </a>
-                                    )}
-                                </>
+                                <Attachment attachment={honor.attachment} stretchLink />
                             )}
                         </Card.Body>
                     </Card>

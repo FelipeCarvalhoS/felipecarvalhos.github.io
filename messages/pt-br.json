@@ -121,14 +121,11 @@
         "label": "Média: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "diploma"
+        "label": "Ver diploma",
+        "name": "Diploma"
       },
-      "bulletPoints": [
-        "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-        "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-        "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-        "Prototipei a interface no Figma e a construí usando Bootstrap.",
-        "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+      "extraParagraphs": [
+        "Assuntos estudados: Programação Web, Engenharia de Software, Banco de Dados, Algoritmos, Estruturas de Dados, Programação Orientada a Objetos, Sistemas Operacionais, Interação Humano-Computador, etc."
       ]
     },
     "high-school": {
@@ -137,7 +134,8 @@
         "label": "GPA: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "boletim"
+        "label": "Ver boletim",
+        "name": "Boletim"
       },
       "bulletPoints": [
         "Fui co-professor da matéria de informática, ministrando aulas de Google Workspace e elaborando atividades relacionadas para meus colegas de classe.",
@@ -156,7 +154,7 @@
         "label": "Média: {value}/{maxValue}"
       },
       "attachment": {
-        "label": "diploma"
+        "label": "Ver diploma"
       },
       "bulletPoints": [
         "I elaborated the entity-relationship model of the system and implemented it in Django.",

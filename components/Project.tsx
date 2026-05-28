@@ -77,6 +77,7 @@ export default function Project({
                                 key={index}
                                 className="d-flex gap-2 py-2 text-black"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <Ratio aspectRatio="1x1" style={{ width: '1.25em' }}>
                                     <BsImage src={link.icon.src} alt={link.icon.alt} />
