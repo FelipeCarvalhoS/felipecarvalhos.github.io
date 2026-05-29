@@ -1,273 +1,273 @@
 {
-  "Metadata": {
-    "title": {
-      "template": "%s | Felipe Carvalho",
-      "default": "Felipe Carvalho"
+    "Metadata": {
+        "title": {
+            "template": "%s | Felipe Carvalho",
+            "default": "Felipe Carvalho"
+        },
+        "description": "Portfólio de Felipe Carvalho"
     },
-    "description": "Portfólio de Felipe Carvalho"
-  },
-  "Files": {
-    "cv": "/files/cv/Felipe-Carvalho-Desenvolvedor-Python-Django.pdf"
-  },
-  "Navbar": {
-    "about": {
-      "label": "Sobre",
-      "slug": "sobre"
+    "Files": {
+        "cv": "/files/cv/Felipe-Carvalho-Desenvolvedor-Python-Django.pdf"
     },
-    "skills": {
-      "label": "Habilidades",
-      "slug": "habilidades"
+    "Navbar": {
+        "about": {
+            "label": "Sobre",
+            "slug": "sobre"
+        },
+        "skills": {
+            "label": "Habilidades",
+            "slug": "habilidades"
+        },
+        "experience": {
+            "label": "Experiência",
+            "slug": "experiencia"
+        },
+        "education": {
+            "label": "Educação",
+            "slug": "educacao"
+        },
+        "projects": {
+            "label": "Projetos",
+            "slug": "projetos"
+        },
+        "languages": {
+            "label": "Idiomas",
+            "slug": "idiomas"
+        },
+        "honors": {
+            "label": "Méritos",
+            "slug": "meritos"
+        },
+        "contact": {
+            "label": "Contato",
+            "slug": "contato"
+        },
+        "changeLocale": "Mudar para inglês"
     },
-    "experience": {
-      "label": "Experiência",
-      "slug": "experiencia"
+    "Projects": {
+        "loadMore": "Carregar mais",
+        "smash-ultimate-api": {
+            "title": "RESTful API Não Oficial de Super Smash Bros. Ultimate",
+            "bulletPoints": [
+                "Usei web scraping para obter dados da Smash Wiki e convertê-los para JSON.",
+                "Criei endpoints para permitir acesso aos dados obtidos.",
+                "Escrevi testes unitários com Pytest, alcançando 100% de cobertura de código.",
+                "Configurei um workflow do GitHub Actions para executar o conjunto de testes a cada push.",
+                "Servi recursos estáticos com o Cloudflare R2.",
+                "Hospedei a API na Vercel."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "docAlt": "Documentação",
+                "documentation": "Documentação da API"
+            }
+        },
+        "easytalk": {
+            "title": "EasyTalk: Web App de Psicoterapia",
+            "bulletPoints": [
+                "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
+                "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
+                "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
+                "Prototipei a interface no Figma e a construí usando Bootstrap.",
+                "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "video": "Vídeo Demonstrativo"
+            }
+        },
+        "switchbot": {
+            "title": "SwitchBot™: Um Bot para o Discord",
+            "bulletPoints": [
+                "Desenvolvi um bot do Discord para meus amigos e eu usando Python e Discord.py",
+                "Usei o Firestore como banco de dados para alguns comandos, como o de criar figurinhas.",
+                "Realizei a conteinerização do bot usando Docker.",
+                "Auto-hospedei o bot em um home server de Ubuntu."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "video": "Vídeo Demonstrativo"
+            }
+        },
+        "habitat-website": {
+            "title": "Website Corporativo da Habitat Arquitetura & Construção",
+            "bulletPoints": [
+                "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
+                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+            ],
+            "links": {
+                "webAlt": "Website",
+                "website": "Visitar site"
+            }
+        },
+        "picross": {
+            "title": "Réplica de Picross em Python",
+            "bulletPoints": [
+                "Recriei o jogo Picross com Python e Pygame aplicando conceitos de orientação a objeto."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "playAlt": "Jogar",
+                "play": "Jogar no itch.io"
+            }
+        },
+        "learnMore": "Saiba mais",
+        "portfolio-site": {
+            "title": "Meu Site de Portfólio",
+            "bulletPoints": [
+                "Sim, é este site que você está visitando!",
+                "Alimentei os componentes dinamicamente com listas de objetos tipados para tornar o conteúdo do site mais fácil de manter e atualizar.",
+                "Implementei internacionalização com a biblioteca next-intl.",
+                "Hospedei o site no GitHub Pages."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "video": "Vídeo Demonstrativo"
+            },
+            "image": {
+                "partialUrl": "/img/projects/portfolio-site-pt-br"
+            }
+        }
     },
-    "education": {
-      "label": "Educação",
-      "slug": "educacao"
+    "Education": {
+        "fatec": {
+            "title": "Análise e Desenvolvimento de Sistemas",
+            "grade": {
+                "label": "Média: {value}/{maxValue}"
+            },
+            "attachment": {
+                "label": "Ver diploma",
+                "name": "Diploma",
+                "comingSoon": "(O diploma será emitido em breve.)"
+            },
+            "extraParagraphs": [
+                "Assuntos estudados: Programação Web, Engenharia de Software, Banco de Dados, Algoritmos, Estruturas de Dados, Programação Orientada a Objetos, Sistemas Operacionais, Interação Humano-Computador, etc."
+            ]
+        },
+        "high-school": {
+            "title": "High School (Ensino Médio Americano)",
+            "grade": {
+                "label": "GPA: {value}/{maxValue}"
+            },
+            "attachment": {
+                "label": "Ver boletim",
+                "name": "Boletim"
+            },
+            "bulletPoints": [
+                "Fui co-professor da matéria de informática, ministrando aulas de Google Workspace e elaborando atividades relacionadas para meus colegas de classe.",
+                "Realizei 60 horas de serviço comunitário por meio de diversas atividades, como divertir as crianças do núcleo social Cássia Lasca em Campinas, criar arte promocional para campanhas beneficentes e auxiliar colegas a estudar para provas.",
+                "Escrevi 3 roteiros de peças encenadas pelos meus colegas de classe às crianças do núcleo social Cássia Lasca."
+            ],
+            "extraParagraphs": [
+                "O High School é um programa oferecido pela Griggs International Academy o qual permite que o estudante obtenha um diploma de ensino médio internacional juntamente ao nacional.",
+                "Durante meus três anos de ensino médio nacional, tive aulas adicionais no contraturno como parte do High School. Essas aulas eram ministradas totalmente em inglês e abordavam matérias como informática, literatura americana britânica, governo americano, história americana, saúde e arte.",
+                "Foi uma ótima oportunidade de imersão na língua inglesa para aprimorar minha proficiência."
+            ]
+        },
+        "ensino-medio": {
+            "title": "Ensino Médio",
+            "grade": {
+                "label": "Média: {value}/{maxValue}"
+            },
+            "attachment": {
+                "label": "Ver diploma"
+            },
+            "bulletPoints": [
+                "I elaborated the entity-relationship model of the system and implemented it in Django.",
+                "I implemented the functions for searching professionals and scheduling consultations.",
+                "I wrote unit tests that found edge cases and bugs that had not been considered before.",
+                "I prototyped the interface in Figma and built it using Bootstrap.",
+                "I received a perfect grade after presenting the work to the evaluation committee."
+            ]
+        },
+        "getImage": "Ver {label}"
     },
-    "projects": {
-      "label": "Projetos",
-      "slug": "projetos"
+    "Languages": {
+        "getCertificate": "Ver certificado",
+        "issuedIn": "Emitido em {date}",
+        "english": {
+            "name": "Inglês",
+            "proficiency": "C1 - Avançado"
+        },
+        "portuguese": {
+            "name": "Português",
+            "proficiency": "Idioma Nativo"
+        }
     },
-    "languages": {
-      "label": "Idiomas",
-      "slug": "idiomas"
+    "Honors": {
+        "best-academic-performance": {
+            "name": "Melhor Rendimento Acadêmico",
+            "description": "Fui premiado o aluno de melhor desempenho dentre os meus colegas de classe do curso de Análise e Desenvolvimento de Sistemas na Fatec Campinas.",
+            "link": {
+                "label": "Ver certificado",
+                "url": "#"
+            },
+            "attachment": {
+                "label": "Ver certificado"
+            }
+        },
+        "10-10-capstone-project": {
+            "name": "TCC Nota Dez",
+            "description": "Recebi nota máxima após apresentar EasyTalk, um web app de psicoterapia online, como meu Trabalho de Conclusão de Curso em Análise e Desenvolvimento de Sistemas.",
+            "link": {
+                "label": "Saiba mais",
+                "url": "#easytalk"
+            },
+            "attachment": {
+                "label": "Ir ao projeto"
+            }
+        },
+        "diamond-student": {
+            "name": "Aluno Diamante",
+            "description": "Obtive numerosos certificados de Aluno Diamante durante o Ensino Fundamental e Médio por alcançar média maior que 9,5 ao final de cada período letivo.",
+            "attachment": {
+                "label": "Ver certificado"
+            }
+        }
     },
-    "honors": {
-      "label": "Méritos",
-      "slug": "meritos"
+    "Experience": {
+        "habitat": {
+            "title": "Estagiário de TI",
+            "bulletPoints": [
+                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
+                "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+            ],
+            "attachment": {
+                "label": "Visite o site"
+            }
+        }
     },
-    "contact": {
-      "label": "Contato",
-      "slug": "contato"
-    },
-    "changeLocale": "Mudar para inglês"
-  },
-  "Projects": {
-    "loadMore": "Carregar mais",
-    "smash-ultimate-api": {
-      "title": "RESTful API Não Oficial de Super Smash Bros. Ultimate",
-      "bulletPoints": [
-        "Usei web scraping para obter dados da Smash Wiki e convertê-los para JSON.",
-        "Criei endpoints para permitir acesso aos dados obtidos.",
-        "Escrevi testes unitários com Pytest, alcançando 100% de cobertura de código.",
-        "Configurei um workflow do GitHub Actions para executar o conjunto de testes a cada push.",
-        "Servi recursos estáticos com o Cloudflare R2.",
-        "Hospedei a API na Vercel."
-      ],
-      "links": {
-        "repository": "Repositório",
-        "docAlt": "Documentação",
-        "documentation": "Documentação da API"
-      }
-    },
-    "easytalk": {
-      "title": "EasyTalk: Web App de Psicoterapia",
-      "bulletPoints": [
-        "Elaborei o modelo entidade-relacionamento do sistema e o implementei em Django.",
-        "Implementei as funções de pesquisa de profissionais e agendamento de consultas.",
-        "Escrevi testes unitários que encontraram edge cases e bugs que antes não haviam sido considerados.",
-        "Prototipei a interface no Figma e a construí usando Bootstrap.",
-        "Obtive nota dez após apresentar o trabalho à banca de avaliadores."
-      ],
-      "links": {
-        "repository": "Repositório",
-        "video": "Vídeo Demonstrativo"
-      }
-    },
-    "switchbot": {
-      "title": "SwitchBot™: Um Bot para o Discord",
-      "bulletPoints": [
-        "Desenvolvi um bot do Discord para eu e meus amigos usando Python e Discord.py",
-        "Usei o Firestore como banco de dados para alguns comandos, como o de criar figurinhas.",
-        "Realizei a conteinerização do bot usando Docker.",
-        "Auto-hospedei o bot em um home server de Ubuntu."
-      ],
-      "links": {
-        "repository": "Repositório",
-        "video": "Vídeo Demonstrativo"
-      }
-    },
-    "habitat-website": {
-      "title": "Website Corporativo da Habitat Arquitetura & Construção",
-      "bulletPoints": [
-        "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
-        "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-        "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
-      ],
-      "links": {
-        "webAlt": "Website",
-        "website": "Visitar site"
-      }
-    },
-    "picross": {
-      "title": "Réplica de Picross em Python",
-      "bulletPoints": [
-        "Recriei o jogo Picross com Python e Pygame aplicando conceitos de orientação a objeto."
-      ],
-      "links": {
-        "repository": "Repositório",
-        "playAlt": "Jogar",
-        "play": "Jogar no itch.io"
-      }
-    },
-    "learnMore": "Saiba mais",
-    "portfolio-site": {
-      "title": "Meu Site de Portfólio",
-      "bulletPoints": [
-        "Sim, é este site que você está visitando!",
-        "Alimentei os componentes dinamicamente com listas de objetos tipados para tornar o conteúdo do site mais fácil de manter e atualizar.",
-        "Implementei internacionalização com a biblioteca next-intl.",
-        "Hospedei o site no GitHub Pages."
-      ],
-      "links": {
-        "repository": "Repositório",
-        "video": "Vídeo Demonstrativo"
-      },
-      "image": {
-        "partialUrl": "/img/projects/portfolio-site-pt-br"
-      }
+    "Home": {
+        "hero": {
+            "greeting": "Olá! Eu me chamo"
+        },
+        "about": {
+            "title": "Sobre Mim",
+            "text": "Olá, sou o Felipe! Sou um desenvolvedor full-stack de Python e TypeScript com foco em Django e React. Neste site, você pode conhecer minhas habilidades, formação e experiência, bem como dar uma olhada em que projetos eu tenho trabalhado.",
+            "getResume": "Ver currículo"
+        },
+        "projects": {
+            "title": "Meus Projetos"
+        },
+        "education": {
+            "title": "Formação Acadêmica"
+        },
+        "experience": {
+            "title": "Experiência"
+        },
+        "skills": {
+            "title": "Minhas Habilidades"
+        },
+        "languages": {
+            "title": "Idiomas"
+        },
+        "contact": {
+            "title": "Contato"
+        },
+        "honors": {
+            "title": "Méritos"
+        }
     }
-  },
-  "Education": {
-    "fatec": {
-      "title": "Análise e Desenvolvimento de Sistemas",
-      "grade": {
-        "label": "Média: {value}/{maxValue}"
-      },
-      "attachment": {
-        "label": "Ver diploma",
-        "name": "Diploma",
-        "comingSoon": "(O diploma será emitido em breve.)"
-      },
-      "extraParagraphs": [
-        "Assuntos estudados: Programação Web, Engenharia de Software, Banco de Dados, Algoritmos, Estruturas de Dados, Programação Orientada a Objetos, Sistemas Operacionais, Interação Humano-Computador, etc."
-      ]
-    },
-    "high-school": {
-      "title": "High School (Ensino Médio Americano)",
-      "grade": {
-        "label": "GPA: {value}/{maxValue}"
-      },
-      "attachment": {
-        "label": "Ver boletim",
-        "name": "Boletim"
-      },
-      "bulletPoints": [
-        "Fui co-professor da matéria de informática, ministrando aulas de Google Workspace e elaborando atividades relacionadas para meus colegas de classe.",
-        "Realizei 60 horas de serviço comunitário por meio de diversas atividades, como divertir as crianças do núcleo social Cássia Lasca em Campinas, criar arte promocional para campanhas beneficentes e auxiliar colegas a estudar para provas.",
-        "Escrevi 3 roteiros de peças encenadas pelos meus colegas de classe às crianças do núcleo social Cássia Lasca."
-      ],
-      "extraParagraphs": [
-        "O High School é um programa oferecido pela Griggs International Academy o qual permite que o estudante obtenha um diploma de ensino médio internacional juntamente ao nacional.",
-        "Durante meus três anos de ensino médio nacional, tive aulas adicionais no contraturno como parte do High School. Essas aulas eram ministradas totalmente em inglês e abordavam matérias como informática, literatura americana britânica, governo americano, história americana, saúde e arte.",
-        "Foi uma ótima oportunidade de imersão na língua inglesa para aprimorar minha proficiência."
-      ]
-    },
-    "ensino-medio": {
-      "title": "Ensino Médio",
-      "grade": {
-        "label": "Média: {value}/{maxValue}"
-      },
-      "attachment": {
-        "label": "Ver diploma"
-      },
-      "bulletPoints": [
-        "I elaborated the entity-relationship model of the system and implemented it in Django.",
-        "I implemented the functions for searching professionals and scheduling consultations.",
-        "I wrote unit tests that found edge cases and bugs that had not been considered before.",
-        "I prototyped the interface in Figma and built it using Bootstrap.",
-        "I received a perfect grade after presenting the work to the evaluation committee."
-      ]
-    },
-    "getImage": "Ver {label}"
-  },
-  "Languages": {
-    "getCertificate": "Ver certificado",
-    "issuedIn": "Emitido em {date}",
-    "english": {
-      "name": "Inglês",
-      "proficiency": "C1 - Avançado"
-    },
-    "portuguese": {
-      "name": "Português",
-      "proficiency": "Idioma Nativo"
-    }
-  },
-  "Honors": {
-    "best-academic-performance": {
-      "name": "Melhor Rendimento Acadêmico",
-      "description": "Fui premiado o aluno de melhor desempenho dentre os meus colegas de classe do curso de Análise e Desenvolvimento de Sistemas na Fatec Campinas.",
-      "link": {
-        "label": "Ver certificado",
-        "url": "#"
-      },
-      "attachment": {
-        "label": "Ver certificado"
-      }
-    },
-    "10-10-capstone-project": {
-      "name": "TCC Nota Dez",
-      "description": "Recebi nota máxima após apresentar EasyTalk, um web app de psicoterapia online, como meu Trabalho de Conclusão de Curso em Análise e Desenvolvimento de Sistemas.",
-      "link": {
-        "label": "Saiba mais",
-        "url": "#easytalk"
-      },
-      "attachment": {
-        "label": "Ir ao projeto"
-      }
-    },
-    "diamond-student": {
-      "name": "Aluno Diamante",
-      "description": "Obtive numerosos certificados de Aluno Diamante durante o Ensino Fundamental e Médio por alcançar média maior que 9,5 ao final de cada período letivo.",
-      "attachment": {
-        "label": "Ver certificado"
-      }
-    }
-  },
-  "Experience": {
-    "habitat": {
-      "title": "Estagiário de TI",
-      "bulletPoints": [
-        "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
-        "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-        "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
-      ],
-      "attachment": {
-        "label": "Visite o site"
-      }
-    }
-  },
-  "Home": {
-    "hero": {
-      "greeting": "Olá! Eu me chamo"
-    },
-    "about": {
-      "title": "Sobre Mim",
-      "text": "Olá, sou o Felipe! Sou um desenvolvedor full-stack de Python e TypeScript com foco em Django e React. Neste site, você pode conhecer minhas habilidades, formação e experiência, bem como dar uma olhada em que projetos eu tenho trabalhado.",
-      "getResume": "Ver currículo"
-    },
-    "projects": {
-      "title": "Meus Projetos"
-    },
-    "education": {
-      "title": "Formação Acadêmica"
-    },
-    "experience": {
-      "title": "Experiência"
-    },
-    "skills": {
-      "title": "Minhas Habilidades"
-    },
-    "languages": {
-      "title": "Idiomas"
-    },
-    "contact": {
-      "title": "Contato"
-    },
-    "honors": {
-      "title": "Méritos"
-    }
-  }
 }
