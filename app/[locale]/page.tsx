@@ -74,7 +74,10 @@ export default function Home() {
                     >
                         <div style={{ flexBasis: '50%' }}>
                             <h2 className="display-2 h1 mb-4">{t('about.title')}</h2>
-                            <p className="fs-5 lh-sm mb-5">{t('about.text')}</p>
+                            <p
+                                dangerouslySetInnerHTML={{ __html: t.raw('about.text') }}
+                                className="fs-5 lh-sm mb-5"
+                            ></p>
                             <Button
                                 as="a"
                                 target="_blank"

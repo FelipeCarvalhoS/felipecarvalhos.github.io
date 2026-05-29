@@ -23,7 +23,7 @@ export default function Attachment({
                     <UnstyledButton
                         className={`link-info text-decoration-none ${stretchLinkClass}`}
                     >
-                        {attachment.label}
+                        <span className="icon-after icon-after-image">{attachment.label}</span>
                     </UnstyledButton>
                 </ImageModal>
             )

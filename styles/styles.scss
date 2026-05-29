@@ -62,7 +62,12 @@
         rgb(var(--secondary-stripe-rgb)) 75%,
         rgb(var(--secondary-stripe-rgb)) 100%
     );
+
     animation: pan 180s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
 }
 
 @keyframes pan {
@@ -114,7 +119,11 @@
     }
 
     &-anchor::after {
-        mask-image: url('/img/icons/external-link.svg');
+        mask-image: url('/img/icons/anchor-up.svg');
+    }
+
+    &-image::after {
+        mask-image: url('/img/icons/image.svg');
     }
 
     &::after {

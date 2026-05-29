@@ -4,6 +4,7 @@ import { ExperienceType } from '@/types'
 import { formatDate } from '@/utils'
 import { useLocale } from 'next-intl'
 import { Image as BsImage } from 'react-bootstrap'
+import Attachment from './Attachment'
 
 export default function Experience({
     experience,
@@ -53,7 +54,7 @@ export default function Experience({
                     )}
                 </div>
                 <div className={`flex-grow-1 ${isLast ? 'mb-0' : 'mb-5'}`}>
-                    <div className="bg-body border px-4 py-3 rounded-3 d-flex flex-wrap gap-4 align-items-center mb-4">
+                    <div className="bg-body border px-4 py-3 rounded-3 d-flex flex-wrap gap-4 align-items-center">
                         <div className="d-none d-sm-block" style={{ minWidth: '5rem' }}>
                             <div className="ratio ratio-1x1">
                                 <BsImage
@@ -77,7 +78,7 @@ export default function Experience({
                             </div>
                         </div>
                     </div>
-                    <ul className="mb-0">
+                    <ul className="mt-4 mb-0">
                         {experience.bulletPoints.map((point, index) => (
                             <li key={index}>
                                 <p
@@ -92,6 +93,11 @@ export default function Experience({
                             </li>
                         ))}
                     </ul>
+                    {experience.attachment && (
+                        <div className="mt-4">
+                            <Attachment attachment={experience.attachment} />
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

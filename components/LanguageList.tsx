@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Fragment, useContext } from 'react'
 import ImageModal from './ImageModal'
 import UnstyledButton from './UnstyledButton'
+import Attachment from './Attachment'
 
 export default function LanguageList() {
     const t = useTranslations('Languages')
@@ -97,11 +98,14 @@ export default function LanguageList() {
                                         })}
                                     </div>
                                 </div>
-                                <ImageModal src={certificate.url} alt={certificate.name}>
-                                    <UnstyledButton className="link-info text-decoration-none d-flex align-items-center gap-2">
-                                        <span className="">{t('getCertificate')}</span>
-                                    </UnstyledButton>
-                                </ImageModal>
+                                <Attachment
+                                    attachment={{
+                                        url: certificate.url,
+                                        label: t('getCertificate'),
+                                        type: 'image',
+                                    }}
+                                    alt={certificate.name}
+                                />
                             </div>
                         </Fragment>
                     ))}

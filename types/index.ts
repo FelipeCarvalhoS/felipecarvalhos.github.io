@@ -12,6 +12,7 @@ export type ExperienceType = {
     start: Date
     end: Date
     bulletPoints: string[]
+    attachment?: AttachmentType
 }
 
 export type ProjectType = {
@@ -59,6 +60,6 @@ export type HonorType = {
     slug: string
     name: string
     description: string
-    image: string
+    image: { url: string; objectPosition?: string }
     attachment?: AttachmentType
 }

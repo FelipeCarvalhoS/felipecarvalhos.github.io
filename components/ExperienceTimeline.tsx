@@ -19,6 +19,11 @@ export default function ExperienceTimeline() {
             start: new Date('September 2025'),
             end: new Date('November 2025'),
             bulletPoints: t.raw('habitat.bulletPoints'),
+            attachment: {
+                url: 'https://habitat.net.br',
+                label: t('habitat.attachment.label'),
+                type: 'link',
+            },
         },
     ])
 

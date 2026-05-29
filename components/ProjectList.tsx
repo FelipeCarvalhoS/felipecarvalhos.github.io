@@ -4,11 +4,12 @@ import { ProjectType } from '@/types'
 import Project from './Project'
 import { Button } from 'react-bootstrap'
 import { addIncrementalIDs } from '@/utils'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 export default function ProjectList() {
     const t = useTranslations('Projects')
+    const locale = useLocale()
 
     const projects: ProjectType[] = addIncrementalIDs<ProjectType>([
         {
@@ -96,6 +97,30 @@ export default function ProjectList() {
                     },
                     label: t('habitat-website.links.website'),
                     url: 'https://habitat.net.br',
+                },
+            ],
+        },
+        {
+            slug: 'portfolio-site',
+            title: t('portfolio-site.title'),
+            start: new Date('March 2026'),
+            end: new Date('May 2026'),
+            technologies: [
+                { name: 'React', logo: '/img/icons/react-darker.svg' },
+                { name: 'Next.js', logo: '/img/icons/next-js.svg' },
+                { name: 'TypeScript', logo: '/img/icons/typescript.svg' },
+                { name: 'React Bootstrap', logo: '/img/icons/react-bootstrap.svg' },
+            ],
+            image: {
+                partialUrl: `/img/projects/portfolio-site-${locale}`,
+                extension: 'webp',
+            },
+            bulletPoints: t.raw('portfolio-site.bulletPoints'),
+            links: [
+                {
+                    icon: { src: '/img/icons/github.svg', alt: 'GitHub' },
+                    label: t('portfolio-site.links.repository'),
+                    url: 'https://github.com/FelipeCarvalhoS/portfolio-site',
                 },
             ],
         },

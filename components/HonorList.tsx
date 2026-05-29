@@ -14,7 +14,10 @@ export default function HonorList() {
             slug: 'best-academic-performance',
             name: t('best-academic-performance.name'),
             description: t('best-academic-performance.description'),
-            image: '/img/honors/best-academic-performance-small.webp',
+            image: {
+                url: '/img/honors/best-academic-performance-small.webp',
+                objectPosition: '0 0',
+            },
             attachment: {
                 url: '/img/honors/best-academic-performance.webp',
                 label: t('best-academic-performance.attachment.label'),
@@ -25,7 +28,7 @@ export default function HonorList() {
             slug: '10-10-capstone-project',
             name: t('10-10-capstone-project.name'),
             description: t('10-10-capstone-project.description'),
-            image: '/img/honors/best-academic-performance.webp',
+            image: { url: '/img/honors/easytalk.webp' },
             attachment: {
                 url: '#easytalk',
                 label: t('10-10-capstone-project.attachment.label'),
@@ -36,7 +39,7 @@ export default function HonorList() {
             slug: 's',
             name: t('s.name'),
             description: t('s.description'),
-            image: '/img/honors/best-academic-performance.webp',
+            image: { url: '/img/honors/best-academic-performance.webp' },
         },
     ])
 
@@ -48,9 +51,9 @@ export default function HonorList() {
                         <Ratio aspectRatio="16x9">
                             <Card.Img
                                 variant="top"
-                                src={honor.image}
-                                className="img-fluid object-fit-cover"
-                                style={{ objectPosition: '0 0' }}
+                                src={honor.image.url}
+                                className="img-fluid object-fit-cover border-bottom"
+                                style={{ objectPosition: honor.image.objectPosition || undefined }}
                             />
                         </Ratio>
                         <Card.Body className="d-flex flex-column justify-content-between align-items-start gap-4">

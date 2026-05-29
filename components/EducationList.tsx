@@ -24,12 +24,12 @@ export default function EducationList() {
                 maxValue: 10,
                 label: t('fatec.grade.label', { value: 9.4, maxValue: 10 }),
             },
-            attachment: {
-                url: '/img/education/attachments/fatec-diploma.webp',
-                label: t('fatec.attachment.label'),
-                type: 'image',
-                name: t('fatec.attachment.name'),
-            },
+            // attachment: {
+            //     url: '/img/education/attachments/fatec-diploma.webp',
+            //     label: t('fatec.attachment.label'),
+            //     type: 'image',
+            //     name: t('fatec.attachment.name'),
+            // },
             start: new Date('February 2023'),
             end: new Date('December 2025'),
             extraParagraphs: t.raw('fatec.extraParagraphs'),
