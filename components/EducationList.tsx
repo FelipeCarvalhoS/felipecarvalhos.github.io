@@ -166,7 +166,7 @@ export default function EducationList() {
                             </div>
                         )}
                         {(education.attachment || education.grade) && (
-                            <div className="d-flex flex-wrap column-gap-3 row-gap-2">
+                            <div className="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-2">
                                 {education.grade && (
                                     <div className="fw-medium">{education.grade.label}</div>
                                 )}
@@ -175,6 +175,11 @@ export default function EducationList() {
                                         attachment={education.attachment}
                                         alt={`${education.title} - ${capitalizeFirst(education.attachment.name)}`}
                                     />
+                                )}
+                                {education.slug === 'fatec' && (
+                                    <div className="text-body-secondary small">
+                                        {t('fatec.attachment.comingSoon')}
+                                    </div>
                                 )}
                             </div>
                         )}

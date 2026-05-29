@@ -36,10 +36,15 @@ export default function HonorList() {
             },
         },
         {
-            slug: 's',
-            name: t('s.name'),
-            description: t('s.description'),
-            image: { url: '/img/honors/best-academic-performance.webp' },
+            slug: 'diamond-student',
+            name: t('diamond-student.name'),
+            description: t('diamond-student.description'),
+            image: { url: '/img/honors/3-EM-diamond-student-certificate-small.webp' },
+            attachment: {
+                url: '/img/honors/3-EM-diamond-student-certificate.webp',
+                label: t('diamond-student.attachment.label'),
+                type: 'image',
+            },
         },
     ])
 
