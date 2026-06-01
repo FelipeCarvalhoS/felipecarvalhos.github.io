@@ -42,7 +42,9 @@
       "label": "Contato",
       "slug": "contato"
     },
-    "changeLocale": "Mudar para inglês"
+    "changeLocale": "Mudar para inglês",
+    "toggleNavigation": "Abrir menu de navegação",
+    "closeNavigation": "Fechar menu de navegação"
   },
   "Projects": {
     "loadMore": "Carregar mais",
@@ -268,7 +270,8 @@
     "email": {
       "label": "Copie meu e-mail",
       "copied": "E-mail copiado!",
-      "copyFailed": "Falha ao copiar e-mail."
+      "copyFailed": "Falha ao copiar e-mail.",
+      "copy": "Copiar endereço de e-mail"
     },
     "linkedin": {
       "label": "Conecte-se no LinkedIn"
@@ -279,5 +282,8 @@
     "whatsapp": {
       "label": "Envie uma mensagem"
     }
+  },
+  "General": {
+    "close": "Fechar"
   }
 }

@@ -28,7 +28,7 @@ export default function ExperienceTimeline() {
     ])
 
     return (
-        <div style={{ maxWidth: '50rem' }} className="mx-auto">
+        <ol style={{ maxWidth: '50rem' }} className="ps-0 my-0 mx-auto">
             {experiences.map((experience, index) => (
                 <Experience
                     key={experience.id}
@@ -37,6 +37,6 @@ export default function ExperienceTimeline() {
                     experience={experience}
                 />
             ))}
-        </div>
+        </ol>
     )
 }

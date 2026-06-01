@@ -14,6 +14,7 @@ import {
 } from 'react-bootstrap'
 
 export default function ContactList() {
+    const g = useTranslations('General')
     const t = useTranslations('Contacts')
 
     const contacts: ContactType[] = addIncrementalIDs<ContactType>([
@@ -106,8 +107,12 @@ export default function ContactList() {
                 show={showCopyEmailAlert}
                 variant={copyEmailAlertVariant}
                 onClose={() => setShowCopyEmailAlert(false)}
-                dismissible
                 className="position-fixed bottom-0 end-0 mb-4 me-4 fade-in"
+                dismissible
+                closeLabel={g('close')}
+                transition={false}
+                role="status"
+                aria-live="polite"
             >
                 <span className="me-3">{copyEmailAlertText}</span>
             </Alert>
@@ -124,6 +129,7 @@ export default function ContactList() {
                         className="rounded-pill"
                         style={{ padding: '0.75rem' }}
                         variant={email.slug}
+                        aria-label={t('email.copy')}
                     >
                         <span className="icon-before icon-email px-1">{email.value}</span>
                     </Button>

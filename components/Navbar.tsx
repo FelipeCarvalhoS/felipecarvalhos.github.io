@@ -84,7 +84,11 @@ export default function MyNavbar() {
                 <div className="h4 fw-normal me-3 mb-0">
                     <Felipe />
                 </div>
-                <Navbar.Toggle onClick={handleOffcanvasShow} aria-controls="offcanvas-navbar" />
+                <Navbar.Toggle
+                    onClick={handleOffcanvasShow}
+                    aria-label={t('toggleNavigation')}
+                    aria-controls="offcanvas-navbar"
+                />
                 <Navbar.Offcanvas
                     id="offcanvas-navbar"
                     placement="end"
@@ -92,7 +96,7 @@ export default function MyNavbar() {
                     show={offcanvasShow}
                     onHide={handleOffcanvasClose}
                 >
-                    <Offcanvas.Header closeButton>
+                    <Offcanvas.Header closeButton closeLabel={t('closeNavigation')}>
                         <Offcanvas.Title className="fw-normal" id="offcanvas-navbar-label">
                             <Felipe />
                         </Offcanvas.Title>
@@ -137,7 +141,6 @@ export default function MyNavbar() {
                                         scroll={false}
                                         className="px-2 d-md-flex align-items-center focus-ring focus-ring-primary"
                                     >
-                                        <div className="visually-hidden">{t('changeLocale')}</div>
                                         <BsImage
                                             src="/img/icons/change-locale.webp"
                                             alt={t('changeLocale')}

@@ -42,7 +42,9 @@
       "label": "Contact",
       "slug": "contact"
     },
-    "changeLocale": "Switch to Portuguese"
+    "changeLocale": "Switch to Portuguese",
+    "toggleNavigation": "Toggle navigation",
+    "closeNavigation": "Close navigation"
   },
   "Projects": {
     "loadMore": "Load more",
@@ -267,7 +269,8 @@
     "email": {
       "label": "Copy my email",
       "copied": "Email copied!",
-      "copyFailed": "Failed to copy email."
+      "copyFailed": "Failed to copy email.",
+      "copy": "Copy email address"
     },
     "linkedin": {
       "label": "Connect on LinkedIn"
@@ -278,5 +281,8 @@
     "whatsapp": {
       "label": "Send me a message"
     }
+  },
+  "General": {
+    "close": "Close"
   }
 }

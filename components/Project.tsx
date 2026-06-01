@@ -46,7 +46,7 @@ export default function Project({
                             <Ratio aspectRatio="1x1" style={{ width: '1.33em' }}>
                                 <BsImage
                                     src={technology.logo}
-                                    alt={technology.name}
+                                    alt=""
                                     className="object-fit-contain"
                                 />
                             </Ratio>

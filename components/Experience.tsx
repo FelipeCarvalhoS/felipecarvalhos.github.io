@@ -18,11 +18,12 @@ export default function Experience({
     const locale = useLocale()
 
     return (
-        <div className="d-flex justify-content-center">
+        <li className="d-flex justify-content-center">
             <div className="d-flex column-gap-4 column-gap-md-5">
                 <div
                     style={{ minWidth: '6.25rem' }}
                     className="d-none d-sm-flex flex-column align-items-center"
+                    aria-hidden="true"
                 >
                     <div
                         className={`vr text-secondary align-self-center ${isFirst ? 'opacity-0' : 'opacity-100'}`}
@@ -60,7 +61,7 @@ export default function Experience({
                                 <BsImage
                                     className="object-fit-contain"
                                     src={experience.company.logo}
-                                    alt={experience.company.name}
+                                    alt=""
                                 />
                             </div>
                         </div>
@@ -100,6 +101,6 @@ export default function Experience({
                     )}
                 </div>
             </div>
-        </div>
+        </li>
     )
 }

@@ -1,8 +1,9 @@
 'use client'
 
-import { CSSProperties, useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Modal, Image as BsImage, ModalProps } from 'react-bootstrap'
 import UnstyledButton from './UnstyledButton'
+import { useTranslations } from 'next-intl'
 
 export default function ImageModal({
     src,
@@ -11,6 +12,7 @@ export default function ImageModal({
     ...props
 }: ModalProps & { src: string; alt: string; children: React.ReactNode }) {
     const [show, setShow] = useState(false)
+    const t = useTranslations('General')
 
     return (
         <>
@@ -42,11 +44,11 @@ export default function ImageModal({
                         }}
                         className="position-absolute"
                         onClick={() => setShow(false)}
+                        aria-label={t('close')}
                     >
                         <BsImage
                             src="/img/icons/x.svg"
-                            alt="Close"
-                            aria-label="Close"
+                            alt={t('close')}
                             fluid
                             className="m-2"
                             style={{ width: '1rem' }}

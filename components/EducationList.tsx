@@ -101,14 +101,14 @@ export default function EducationList() {
                     eventKey={education.id.toString()}
                     className="border focus-ring focus-ring-primary"
                 >
-                    <Accordion.Header>
+                    <Accordion.Header as="header">
                         <div className="d-flex gap-4 align-items-center font-base me-4">
                             <div className="d-none d-sm-block" style={{ minWidth: '5rem' }}>
                                 <div className="ratio ratio-1x1">
                                     <BsImage
                                         className={`object-fit-contain ${education.slug === 'ensino-medio' ? 'p-2' : ''}`}
                                         src={education.institution.logo}
-                                        alt={education.institution.name}
+                                        alt=""
                                     />
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ export default function EducationList() {
                                 {education.attachment && (
                                     <Attachment
                                         attachment={education.attachment}
-                                        alt={`${education.title} - ${capitalizeFirst(education.attachment.name)}`}
+                                        alt={`${education.title} - ${education.attachment.name}`}
                                     />
                                 )}
                                 {education.slug === 'fatec' && (
