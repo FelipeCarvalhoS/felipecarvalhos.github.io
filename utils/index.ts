@@ -1,11 +1,9 @@
-import { _Translator } from 'next-intl'
-
-export function capitalizeFirst(str: string): string {
-    return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
 export function addIncrementalIDs<T extends { id: number }>(arr: Omit<T, 'id'>[]): T[] {
     return arr.map((item, index) => ({ ...item, id: index + 1 })) as T[]
+}
+
+function capitalizeFirst(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
 export function formatDate(

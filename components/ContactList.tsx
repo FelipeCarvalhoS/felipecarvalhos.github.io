@@ -1,3 +1,5 @@
+'use client'
+
 import { ContactType } from '@/types'
 import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
@@ -13,8 +15,83 @@ import {
     Alert,
 } from 'react-bootstrap'
 
-export default function ContactList() {
+function ContactTooltip({
+    contact,
+    children,
+}: { contact: ContactType } & Omit<OverlayTriggerProps, 'overlay'>) {
+    function renderTooltip({ id, text, ...props }: { id: string; text: string } & TooltipProps) {
+        return (
+            <Tooltip id={id} {...props}>
+                {text}
+            </Tooltip>
+        )
+    }
+
+    return (
+        <OverlayTrigger
+            placement="top"
+            overlay={props =>
+                renderTooltip({
+                    id: `tooltip-${contact.id}`,
+                    text: contact.label,
+                    ...props,
+                })
+            }
+            key={contact.id}
+        >
+            {children}
+        </OverlayTrigger>
+    )
+}
+
+function CopyEmailAlert({ email, children }: { email: ContactType; children: React.ReactNode }) {
     const g = useTranslations('General')
+    const t = useTranslations('Contacts')
+
+    const [copyEmailAlertText, setCopyEmailAlertText] = useState(email.label)
+    const [showCopyEmailAlert, setShowCopyEmailAlert] = useState(false)
+    const [copyEmailAlertVariant, setCopyEmailAlertVariant] = useState<'success' | 'danger'>(
+        'success',
+    )
+
+    function handleEmailClick(text: string) {
+        setShowCopyEmailAlert(false)
+
+        function onFulfilled() {
+            setShowCopyEmailAlert(true)
+            setCopyEmailAlertText(t('email.copied'))
+            setCopyEmailAlertVariant('success')
+        }
+
+        function onRejected() {
+            setShowCopyEmailAlert(true)
+            setCopyEmailAlertText(t('email.copyFailed'))
+            setCopyEmailAlertVariant('danger')
+        }
+
+        navigator.clipboard.writeText(text).then(onFulfilled, onRejected)
+    }
+    return (
+        <>
+            <div onClick={() => handleEmailClick(email.value)}>{children}</div>
+            <Alert
+                show={showCopyEmailAlert}
+                variant={copyEmailAlertVariant}
+                onClose={() => setShowCopyEmailAlert(false)}
+                className="position-fixed bottom-0 end-0 mb-4 me-4 fade-in"
+                dismissible
+                closeLabel={g('close')}
+                transition={false}
+                role="status"
+                aria-live="polite"
+            >
+                <span className="me-3">{copyEmailAlertText}</span>
+            </Alert>
+        </>
+    )
+}
+
+export default function ContactList() {
     const t = useTranslations('Contacts')
 
     const contacts: ContactType[] = addIncrementalIDs<ContactType>([
@@ -48,92 +125,22 @@ export default function ContactList() {
     ])
 
     const email = contacts.find(contact => contact.slug === 'email')!
-    const [copyEmailAlertText, setCopyEmailAlertText] = useState(email.label)
-    const [showCopyEmailAlert, setShowCopyEmailAlert] = useState(false)
-    const [copyEmailAlertVariant, setCopyEmailAlertVariant] = useState<'success' | 'danger'>(
-        'success',
-    )
-
-    function renderTooltip({ id, text, ...props }: { id: string; text: string } & TooltipProps) {
-        return (
-            <Tooltip id={id} {...props}>
-                {text}
-            </Tooltip>
-        )
-    }
-
-    function handleEmailClick(text: string) {
-        setShowCopyEmailAlert(false)
-
-        function onFulfilled() {
-            setShowCopyEmailAlert(true)
-            setCopyEmailAlertText(t('email.copied'))
-            setCopyEmailAlertVariant('success')
-        }
-
-        function onRejected() {
-            setShowCopyEmailAlert(true)
-            setCopyEmailAlertText(t('email.copyFailed'))
-            setCopyEmailAlertVariant('danger')
-        }
-
-        navigator.clipboard.writeText(text).then(onFulfilled, onRejected)
-    }
-
-    function ContactTooltip({
-        contact,
-        children,
-    }: { contact: ContactType } & Omit<OverlayTriggerProps, 'overlay'>) {
-        return (
-            <OverlayTrigger
-                placement="top"
-                overlay={props =>
-                    renderTooltip({
-                        id: `tooltip-${contact.id}`,
-                        text: contact.label,
-                        ...props,
-                    })
-                }
-                key={contact.id}
-            >
-                {children}
-            </OverlayTrigger>
-        )
-    }
-
-    function CopyEmailToast() {
-        return (
-            <Alert
-                show={showCopyEmailAlert}
-                variant={copyEmailAlertVariant}
-                onClose={() => setShowCopyEmailAlert(false)}
-                className="position-fixed bottom-0 end-0 mb-4 me-4 fade-in"
-                dismissible
-                closeLabel={g('close')}
-                transition={false}
-                role="status"
-                aria-live="polite"
-            >
-                <span className="me-3">{copyEmailAlertText}</span>
-            </Alert>
-        )
-    }
 
     return (
         <div className="d-flex flex-column-reverse flex-md-row align-items-center row-gap-4 column-gap-3">
-            <CopyEmailToast></CopyEmailToast>
             <div className="d-none d-md-block">
-                <ContactTooltip contact={email}>
-                    <Button
-                        onClick={() => handleEmailClick(email.value)}
-                        className="rounded-pill"
-                        style={{ padding: '0.75rem' }}
-                        variant={email.slug}
-                        aria-label={t('email.copy')}
-                    >
-                        <span className="icon-before icon-email px-1">{email.value}</span>
-                    </Button>
-                </ContactTooltip>
+                <CopyEmailAlert email={email}>
+                    <ContactTooltip contact={email}>
+                        <Button
+                            className="rounded-pill"
+                            style={{ padding: '0.75rem' }}
+                            variant={email.slug}
+                            aria-label={t('email.copy')}
+                        >
+                            <span className="icon-before icon-email px-1">{email.value}</span>
+                        </Button>
+                    </ContactTooltip>
+                </CopyEmailAlert>
             </div>
             <div className="d-none d-sm-block d-md-none">
                 <div style={{ padding: '0.75rem' }}>

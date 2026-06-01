@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import UnstyledButton from './UnstyledButton'
-import { useTranslations } from 'next-intl'
 import { AttachmentType } from '@/types'
 import ImageModal from './ImageModal'
 
@@ -13,7 +12,6 @@ export default function Attachment({
     alt?: string
     stretchLink?: boolean
 }) {
-    const t = useTranslations('Attachment')
     const stretchLinkClass = stretchLink ? 'stretched-link' : ''
 
     switch (attachment.type) {

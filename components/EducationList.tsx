@@ -3,7 +3,7 @@
 import { EducationType } from '@/types'
 import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
-import { addIncrementalIDs, capitalizeFirst, formatDate } from '@/utils'
+import { addIncrementalIDs, formatDate } from '@/utils'
 import { useFormatter, useLocale, useTranslations } from 'next-intl'
 import Attachment from './Attachment'
 

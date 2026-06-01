@@ -4,9 +4,7 @@ import { LanguageType } from '@/types'
 import { Image as BsImage } from 'react-bootstrap'
 import { addIncrementalIDs, formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
-import { Fragment, useContext } from 'react'
-import ImageModal from './ImageModal'
-import UnstyledButton from './UnstyledButton'
+import { Fragment } from 'react'
 import Attachment from './Attachment'
 
 export default function LanguageList() {
