@@ -1,6 +1,14 @@
 'use client'
 
-import { Nav, Navbar, Offcanvas, Image as BsImage, Tooltip, OverlayTrigger } from 'react-bootstrap'
+import {
+    Nav,
+    Navbar,
+    Offcanvas,
+    Image as BsImage,
+    Tooltip,
+    OverlayTrigger,
+    TooltipProps,
+} from 'react-bootstrap'
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
@@ -57,7 +65,7 @@ export default function MyNavbar() {
         }
     }
 
-    function renderChangeLocaleTooltip(props: any) {
+    function renderChangeLocaleTooltip(props: TooltipProps) {
         return (
             <Tooltip id="change-locale-tooltip" {...props}>
                 {t('changeLocale')}
@@ -121,15 +129,8 @@ export default function MyNavbar() {
 
                             <OverlayTrigger placement="bottom" overlay={renderChangeLocaleTooltip}>
                                 <Nav.Item
-                                    style={
-                                        {
-                                            '--bs-box-shadow': 'none',
-                                            '--scale': '1.05',
-                                            '--duration': '0.2s',
-                                        } as CSSProperties
-                                    }
                                     as="li"
-                                    className="scale-on-hover align-self-md-stretch d-flex justify-content-center align-items-stretch"
+                                    className="align-self-md-stretch d-flex justify-content-center align-items-stretch"
                                 >
                                     <Link
                                         href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}

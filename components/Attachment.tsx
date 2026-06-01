@@ -23,7 +23,7 @@ export default function Attachment({
                     <UnstyledButton
                         className={`link-info text-decoration-none ${stretchLinkClass}`}
                     >
-                        <span className="icon-after icon-after-image">{attachment.label}</span>
+                        <span className="icon-after icon-image">{attachment.label}</span>
                     </UnstyledButton>
                 </ImageModal>
             )
@@ -34,7 +34,7 @@ export default function Attachment({
                     href={attachment.url}
                     className={`link-info text-decoration-none ${stretchLinkClass}`}
                 >
-                    <span className="icon-after icon-after-link">{attachment.label}</span>
+                    <span className="icon-after icon-external-link">{attachment.label}</span>
                 </Link>
             )
         case 'anchor':
@@ -43,7 +43,7 @@ export default function Attachment({
                     href={attachment.url}
                     className={`link-info text-decoration-none ${stretchLinkClass}`}
                 >
-                    <span className="icon-after icon-after-anchor">{attachment.label}</span>
+                    <span className="icon-after icon-anchor">{attachment.label}</span>
                 </a>
             )
         default:

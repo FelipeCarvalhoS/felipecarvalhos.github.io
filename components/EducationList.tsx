@@ -4,12 +4,13 @@ import { EducationType } from '@/types'
 import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
 import { addIncrementalIDs, capitalizeFirst, formatDate } from '@/utils'
-import { useLocale, useTranslations } from 'next-intl'
+import { useFormatter, useLocale, useTranslations } from 'next-intl'
 import Attachment from './Attachment'
 
 export default function EducationList() {
     const t = useTranslations('Education')
     const locale = useLocale()
+    const format = useFormatter()
 
     const educations: EducationType[] = addIncrementalIDs<EducationType>([
         {
@@ -22,7 +23,7 @@ export default function EducationList() {
             grade: {
                 value: 9.4,
                 maxValue: 10,
-                label: t('fatec.grade.label', { value: 9.4, maxValue: 10 }),
+                label: t('fatec.grade.label'),
             },
             // attachment: {
             //     url: '/img/education/attachments/fatec-diploma.webp',
@@ -44,7 +45,7 @@ export default function EducationList() {
             grade: {
                 value: 3.97,
                 maxValue: 4,
-                label: t('high-school.grade.label', { value: 3.97, maxValue: 4 }),
+                label: t('high-school.grade.label'),
             },
             attachment: {
                 url: '/img/education/attachments/High-School-Official-Transcript.pdf',
@@ -65,19 +66,18 @@ export default function EducationList() {
                 logo: '/img/education/logos/adventista.png',
             },
             grade: {
-                value: 0,
+                value: 9.8,
                 maxValue: 10,
-                label: t('ensino-medio.grade.label', { value: 0, maxValue: 10 }),
+                label: t('ensino-medio.grade.label'),
             },
             attachment: {
-                url: '/img/education/attachments/fatec-diploma.webp',
+                url: '/img/education/attachments/ensino-medio-certificate.webp',
                 label: t('ensino-medio.attachment.label'),
                 type: 'image',
-                name: 'Diploma',
+                name: t('ensino-medio.attachment.name'),
             },
             start: new Date('February 2020'),
             end: new Date('December 2022'),
-            bulletPoints: t.raw('ensino-medio.bulletPoints'),
         },
     ])
 
@@ -101,7 +101,7 @@ export default function EducationList() {
                     eventKey={education.id.toString()}
                     className="border focus-ring focus-ring-primary"
                 >
-                    <Accordion.Header className="accordion-header-shadow-on-focus-visible">
+                    <Accordion.Header>
                         <div className="d-flex gap-4 align-items-center font-base me-4">
                             <div className="d-none d-sm-block" style={{ minWidth: '5rem' }}>
                                 <div className="ratio ratio-1x1">
@@ -168,7 +168,11 @@ export default function EducationList() {
                         {(education.attachment || education.grade) && (
                             <div className="d-flex flex-wrap align-items-baseline column-gap-3 row-gap-2">
                                 {education.grade && (
-                                    <div className="fw-medium">{education.grade.label}</div>
+                                    <div className="fw-medium">
+                                        {education.grade.label}:{' '}
+                                        {format.number(education.grade.value)}/
+                                        {format.number(education.grade.maxValue)}
+                                    </div>
                                 )}
                                 {education.attachment && (
                                     <Attachment

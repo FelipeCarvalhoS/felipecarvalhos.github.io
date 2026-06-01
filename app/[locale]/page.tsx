@@ -10,6 +10,7 @@ import EducationList from '@/components/EducationList'
 import SkillList from '@/components/SkillList'
 import LanguageList from '@/components/LanguageList'
 import HonorList from '@/components/HonorList'
+import ContactList from '@/components/ContactList'
 import { useTranslations } from 'next-intl'
 
 export default function Home() {
@@ -88,7 +89,7 @@ export default function Home() {
                                 className="fs-5 rounded-pill d-flex align-items-center gap-3"
                                 style={{ width: 'fit-content' }}
                             >
-                                <span className="icon-after icon-after-link">
+                                <span className="icon-after icon-external-link">
                                     {t('about.getResume')}
                                 </span>
                             </Button>
@@ -108,7 +109,9 @@ export default function Home() {
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                         {t('skills.title')}
                     </h2>
-                    <SkillList />
+                    <div className="mx-auto" style={{ maxWidth: '64rem' }}>
+                        <SkillList />
+                    </div>
                 </StandardContainer>
             </section>
             <section
@@ -175,14 +178,10 @@ export default function Home() {
                     <ProjectList />
                 </StandardContainer>
             </section>
-            <section
-                id={n('languages.slug')}
-                className="bg-body-tertiary spikes"
-                style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
-            >
+            <section id={n('languages.slug')} className="bg-body-tertiary">
                 <StandardContainer
                     fluid="md"
-                    style={{ paddingTop: '7rem', paddingBottom: '7rem' }}
+                    style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
                     data-scrollspy-fade-triggered-by={n('languages.slug')}
                 >
                     <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
@@ -194,41 +193,47 @@ export default function Home() {
                     </div>
                 </StandardContainer>
             </section>
-            <section id={n('honors.slug')}>
-                <StandardContainer
-                    fluid="xl"
-                    style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
-                    data-scrollspy-fade-triggered-by={n('honors.slug')}
-                >
-                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        {t('honors.title')}
-                    </h2>
-
-                    <div className="mx-auto">
-                        <HonorList />
-                    </div>
-                </StandardContainer>
-            </section>
-            <section id={n('contact.slug')}>
+            <section
+                id={n('honors.slug')}
+                className="spikes"
+                style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
+            >
                 <div
                     className="diagonal-primary p-4 text-center"
                     style={
                         {
-                            '--upper-background': 'var(--bs-secondary-bg)',
+                            '--upper-background': 'var(--bs-tertiary-bg)',
                             '--lower-background': 'var(--bs-secondary-bg)',
                             '--skew-angle-sign': 1,
                         } as CSSProperties
                     }
                 >
-                    <h2 className="display-2">{t('contact.title')}</h2>
+                    <h2 className="display-2">{t('honors.title')}</h2>
                 </div>
                 <StandardContainer
+                    fluid="xl"
+                    style={{ paddingBlock: '8rem' }}
+                    data-scrollspy-fade-triggered-by={n('honors.slug')}
+                >
+                    <div className="mx-auto">
+                        <HonorList />
+                    </div>
+                </StandardContainer>
+            </section>
+            <section id={n('contact.slug')} className="bg-body-tertiary">
+                <StandardContainer
                     fluid="lg"
-                    style={{ paddingBlock: '7rem' }}
+                    style={{ paddingBlock: '4rem' }}
                     data-scrollspy-fade-triggered-by={n('contact.slug')}
                 >
-                    <div className="mx-auto" style={{ maxWidth: '42rem' }}>
-                        a
+                    {/* <div className="d-flex flex-column row-gap-5 align-items-center justify-content-between">
+                        <h2 className="display-2 text-center">{t('contact.title')}</h2>
+                        <ContactList />
+                    </div> */}
+                    <div className="d-flex flex-column flex-lg-row column-gap-4 row-gap-5 align-items-center justify-content-between">
+                        <h2 className="display-2 text-center">{t('contact.title')}</h2>
+
+                        <ContactList />
                     </div>
                 </StandardContainer>
             </section>

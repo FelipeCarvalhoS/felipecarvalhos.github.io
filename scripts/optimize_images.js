@@ -7,7 +7,7 @@ const outputDir = './optimized/'
 
 fs.mkdirSync(outputDir, { recursive: true })
 
-const MAX_WIDTH = 500 // change this
+const MAX_WIDTH = 200 // change this
 const QUALITY = 70 // like Squoosh slider
 
 let i = 0
@@ -23,8 +23,9 @@ for (const file of fs.readdirSync(inputDir)) {
     await sharp(inputPath)
         .resize({ width: MAX_WIDTH }) // keeps aspect ratio
         // .rotate(90)
-        .toFormat('webp', { quality: QUALITY })
-        .toFile(path.join(outputDir, `${name}.webp`))
+        .trim()
+        // .toFormat('svg', { quality: QUALITY })
+        .toFile(path.join(outputDir, `${name}.svg`))
 
     console.log(`✔ ${file}`)
     i++

@@ -1,3 +1,3 @@
-export default function Felipe() {
-    return <span lang="pt-br">Felipe Carvalho</span>
+export default function Felipe({ fullName = false }: { fullName?: boolean }) {
+    return <span lang="pt-br">{fullName ? 'Felipe de Carvalho Santos' : 'Felipe Carvalho'}</span>
 }

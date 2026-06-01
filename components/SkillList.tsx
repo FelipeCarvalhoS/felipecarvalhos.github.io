@@ -64,10 +64,7 @@ const skills: SkillType[] = addIncrementalIDs<SkillType>([
 
 export default function SkillList() {
     return (
-        <div
-            className="mx-auto d-flex flex-wrap gap-4 justify-content-center"
-            style={{ maxWidth: '64rem' }}
-        >
+        <div className="d-flex flex-wrap gap-4 justify-content-center">
             {skills.map(skill => (
                 <Card
                     key={skill.id}

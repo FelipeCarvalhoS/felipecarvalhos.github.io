@@ -7,6 +7,7 @@ import { Locale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import BootstrapClient from '@/components/BootstrapClient'
+import Felipe from '@/components/Felipe'
 
 export async function generateMetadata({
     params,
@@ -58,7 +59,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     {children}
                     <footer>
                         <div className="bg-body text-center text-body-secondary py-4 small border border-top">
-                            &copy; {new Date().getFullYear()} Felipe de Carvalho Santos
+                            &copy; {new Date().getFullYear()} <Felipe fullName></Felipe>
                         </div>
                     </footer>
                 </NextIntlClientProvider>

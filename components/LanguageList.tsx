@@ -44,7 +44,7 @@ export default function LanguageList() {
     return (
         <div className="vstack gap-4">
             {languages.map(language => (
-                <div key={language.id} className="bg-body border px-4 py-3 rounded-3 shadow-sm">
+                <div key={language.id} className="bg-body border px-4 py-3 rounded-3">
                     <div className="rounded-3 d-flex flex-wrap gap-4 align-items-center">
                         <div
                             className="d-block d-sm-block"
