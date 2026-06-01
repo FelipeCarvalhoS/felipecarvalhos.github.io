@@ -10,7 +10,6 @@ export default function BootstrapClient() {
 
             new ScrollSpy(body, {
                 target: '#navbar',
-                rootMargin: '0px 0px 0px',
             })
 
             function alreadyFaded(element: Element) {
