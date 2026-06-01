@@ -36,7 +36,7 @@ export default function Home() {
                     <Stack className="flex-grow-1 align-self-center text-center">
                         <span className="fs-3 fw-normal">{t('hero.greeting')}</span>
                         <div
-                            className="d-flex justify-content-between align-self-center w-100"
+                            className="d-flex align-items-center justify-content-between align-self-center w-100"
                             style={{ maxWidth: '48rem' }}
                         >
                             <BsImage
@@ -221,15 +221,7 @@ export default function Home() {
                 </StandardContainer>
             </section>
             <section id={n('contact.slug')} className="bg-body-tertiary">
-                <StandardContainer
-                    fluid="lg"
-                    style={{ paddingBlock: '4rem' }}
-                    data-scrollspy-fade-triggered-by={n('contact.slug')}
-                >
-                    {/* <div className="d-flex flex-column row-gap-5 align-items-center justify-content-between">
-                        <h2 className="display-2 text-center">{t('contact.title')}</h2>
-                        <ContactList />
-                    </div> */}
+                <StandardContainer fluid="lg" style={{ paddingBlock: '4rem' }}>
                     <div className="d-flex flex-column flex-lg-row column-gap-4 row-gap-5 align-items-center justify-content-between">
                         <h2 className="display-2 text-center">{t('contact.title')}</h2>
 

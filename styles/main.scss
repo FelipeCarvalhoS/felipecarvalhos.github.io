@@ -61,6 +61,8 @@ $primary: hsl(50, 100%, 52%);
 $primary-darker: hsl(50, 100%, 49%);
 $secondary: #f18701;
 $info: hsl(216, 98%, 48%);
+$success: hsl(120, 100%, 40%);
+$danger: hsl(0, 100%, 50%);
 
 //
 // Navbar
@@ -187,11 +189,11 @@ $theme-colors: map-merge(
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/pagination";
 @import 'bootstrap/scss/badge';
-// @import "bootstrap/scss/alert";
+@import 'bootstrap/scss/alert';
 // @import "bootstrap/scss/progress";
 // @import "bootstrap/scss/list-group";
 @import 'bootstrap/scss/close';
-// @import "bootstrap/scss/toasts";
+// @import 'bootstrap/scss/toasts';
 @import 'bootstrap/scss/modal';
 @import 'bootstrap/scss/tooltip';
 // @import "bootstrap/scss/popover";

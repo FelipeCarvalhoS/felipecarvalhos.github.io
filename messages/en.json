@@ -133,7 +133,7 @@
     "fatec": {
       "title": "Systems Analysis and Development",
       "grade": {
-        "label": "Average grade: {value}/{maxValue}"
+        "label": "Average grade"
       },
       "attachment": {
         "label": "View diploma",
@@ -147,7 +147,7 @@
     "high-school": {
       "title": "American High School",
       "grade": {
-        "label": "GPA: {value}/{maxValue}"
+        "label": "GPA"
       },
       "attachment": {
         "label": "View transcript",
@@ -167,18 +167,12 @@
     "ensino-medio": {
       "title": "Brazilian High School",
       "grade": {
-        "label": "Average grade: {value}/{maxValue}"
+        "label": "Average grade"
       },
       "attachment": {
-        "label": "View diploma"
-      },
-      "bulletPoints": [
-        "I elaborated the entity-relationship model of the system and implemented it in Django.",
-        "I implemented the functions for searching professionals and scheduling consultations.",
-        "I wrote unit tests that found edge cases and bugs that had not been considered before.",
-        "I prototyped the interface in Figma and built it using Bootstrap.",
-        "I received a perfect grade after presenting the work to the evaluation committee."
-      ]
+        "label": "View diploma",
+        "name": "Certificate"
+      }
     },
     "getImage": "View {label}"
   },
@@ -267,6 +261,22 @@
     },
     "honors": {
       "title": "Honors"
+    }
+  },
+  "Contacts": {
+    "email": {
+      "label": "Copy my email",
+      "copied": "Email copied!",
+      "copyFailed": "Failed to copy email."
+    },
+    "linkedin": {
+      "label": "Connect on LinkedIn"
+    },
+    "github": {
+      "label": "Visit my GitHub"
+    },
+    "whatsapp": {
+      "label": "Send me a message"
     }
   }
 }

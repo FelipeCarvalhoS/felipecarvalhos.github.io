@@ -113,29 +113,53 @@
     }
 }
 
-.icon-after {
-    &-link::after {
-        mask-image: url('/img/icons/external-link.svg');
+.icon {
+    &-external-link {
+        &::before,
+        &::after {
+            mask-image: url('/img/icons/external-link.svg');
+        }
     }
 
-    &-anchor::after {
-        mask-image: url('/img/icons/anchor-up.svg');
+    &-anchor {
+        &::before,
+        &::after {
+            mask-image: url('/img/icons/anchor-up.svg');
+        }
     }
 
-    &-image::after {
-        mask-image: url('/img/icons/image.svg');
+    &-image {
+        &::before,
+        &::after {
+            mask-image: url('/img/icons/image.svg');
+        }
     }
 
-    &::after {
+    &-email {
+        &::before,
+        &::after {
+            mask-image: url('/img/icons/email.svg');
+        }
+    }
+
+    &-before::before,
+    &-after::after {
         content: '';
         display: inline-block;
         width: 1em;
-        height: 1em;
+        aspect-ratio: 1 / 1;
         mask-size: contain;
         mask-repeat: no-repeat;
         background-color: currentColor;
-        vertical-align: middle;
+        vertical-align: text-bottom;
+    }
+
+    &-after::after {
         margin-left: 0.75ch;
+    }
+
+    &-before::before {
+        margin-right: 0.75ch;
     }
 }
 
@@ -177,4 +201,27 @@
 .image-modal-size {
     max-width: 90vw;
     max-height: calc(100% - var(--bs-modal-margin) * 2);
+}
+
+.btn-linkedin {
+    $color: #0077b5;
+    @include button-variant($color, $color);
+}
+
+.btn-whatsapp {
+    $color: #25d366;
+    @include button-variant($color, $color);
+}
+
+.btn-github {
+    $color: #333;
+    @include button-variant($color, $color);
+}
+
+.btn-email {
+    $color: $secondary;
+
+    @include media-breakpoint-up(md) {
+        @include button-outline-variant($color, $white, $color, $color, $white);
+    }
 }

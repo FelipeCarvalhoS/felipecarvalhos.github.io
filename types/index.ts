@@ -63,3 +63,12 @@ export type HonorType = {
     image: { url: string; objectPosition?: string }
     attachment?: AttachmentType
 }
+
+export type ContactType = {
+    id: number
+    slug: string
+    label: string
+    value: string
+    url?: string
+    icon: { src: string; alt: string }
+}

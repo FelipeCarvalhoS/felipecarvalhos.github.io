@@ -10,14 +10,25 @@ export default function BootstrapClient() {
 
             new ScrollSpy(body, {
                 target: '#navbar',
-                offset: 0,
+                rootMargin: '0px 0px 0px',
             })
+
+            function alreadyFaded(element: Element) {
+                return (element as HTMLElement).dataset.scrollspyFaded === 'true'
+            }
 
             document.querySelectorAll('[data-scrollspy-fade-triggered-by]').forEach(element => {
                 const el = element as HTMLElement
                 const rect = el.getBoundingClientRect()
                 const aboveViewport = rect.top <= window.innerHeight
                 el.dataset.scrollspyFaded = aboveViewport ? 'true' : 'false'
+
+                el.addEventListener('focusin', () => {
+                    if (!alreadyFaded(el)) {
+                        el.classList.add('fade-in')
+                        el.dataset.scrollspyFaded = 'true'
+                    }
+                })
             })
 
             body.addEventListener('activate.bs.scrollspy', event => {
@@ -29,9 +40,8 @@ export default function BootstrapClient() {
 
                 relatedElements.forEach(element => {
                     const el = element as HTMLElement
-                    const alreadyFaded = el.dataset.scrollspyFaded === 'true'
 
-                    if (!alreadyFaded) {
+                    if (!alreadyFaded(el)) {
                         el.classList.add('fade-in')
                         el.dataset.scrollspyFaded = 'true'
                     }
