@@ -1,3 +1,5 @@
+Use Motion for fade-in animation
+Add image optimization (with Cloudinary maybe)
+
 LATER
-Optimize images?
 Scan in lighthouse
