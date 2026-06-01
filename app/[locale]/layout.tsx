@@ -3,11 +3,12 @@ import '@/styles/main.scss'
 import { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { routing } from '@/i18n/routing'
-import { Locale, NextIntlClientProvider } from 'next-intl'
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import BootstrapClient from '@/components/BootstrapClient'
 import Felipe from '@/components/Felipe'
+import { notFound } from 'next/navigation'
 
 export async function generateMetadata({
     params,
@@ -41,13 +42,19 @@ export function generateStaticParams() {
     return routing.locales.map(locale => ({ locale }))
 }
 
-type Props = {
+export default async function LocaleLayout({
+    children,
+    params,
+}: {
     children: React.ReactNode
     params: Promise<{ locale: string }>
-}
-
-export default async function LocaleLayout({ children, params }: Props) {
+}) {
     const { locale } = await params
+
+    if (!hasLocale(routing.locales, locale)) {
+        notFound()
+    }
+
     setRequestLocale(locale)
 
     return (
