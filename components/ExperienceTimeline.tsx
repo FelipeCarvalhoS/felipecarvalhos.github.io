@@ -28,7 +28,7 @@ export default function ExperienceTimeline() {
     ])
 
     return (
-        <ol style={{ maxWidth: '50rem' }} className="ps-0 my-0 mx-auto">
+        <ol style={{ maxWidth: '50rem' }} className="list-unstyled my-0 mx-auto">
             {experiences.map((experience, index) => (
                 <Experience
                     key={experience.id}

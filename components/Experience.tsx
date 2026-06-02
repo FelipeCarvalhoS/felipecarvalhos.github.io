@@ -79,7 +79,7 @@ export default function Experience({
                             </div>
                         </div>
                     </div>
-                    <ul className="mt-4 mb-0">
+                    <ul className="mt-4 mb-0" style={{ listStyleType: 'disc' }}>
                         {experience.bulletPoints.map((point, index) => (
                             <li key={index}>
                                 <p
