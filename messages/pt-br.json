@@ -96,7 +96,10 @@
             "bulletPoints": [
                 "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
                 "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.",
+                "Apliquei geração de site estático (SSG) com a biblioteca django-distill.",
+                "Implementei envio de e-mails por meio do formulário de contato.",
+                "Configurei um workflow do GitHub Actions para fazer o rebuild e o redeployment do site a cada push, bem como um backup do banco de dados."
             ],
             "links": {
                 "webAlt": "Website",
@@ -232,7 +235,7 @@
         "habitat": {
             "title": "Estagiário de TI",
             "bulletPoints": [
-                "Usando Django, reconstruí, em 3 meses, o site corporativo da empresa que antes era em WordPress.",
+                "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
                 "Configurei um painel administrativo que interage com o banco de dados MySQL para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
                 "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
             ],
