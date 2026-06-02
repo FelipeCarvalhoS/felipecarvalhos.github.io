@@ -12,30 +12,42 @@ import {
 import Felipe from './Felipe'
 import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
-import { CSSProperties, useState } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
 import Link from 'next/link'
+
+const BREAKPOINT_MD = 768
 
 export default function MyNavbar() {
     const t = useTranslations('Navbar')
+    const locale = useLocale()
+    const [offcanvasShow, setOffcanvasShow] = useState(false)
+
     const links = [
-        { key: 'about', visible: true },
-        { key: 'skills', visible: true },
-        { key: 'experience', visible: true },
-        { key: 'education', visible: false },
-        { key: 'projects', visible: true },
-        { key: 'languages', visible: false },
-        { key: 'honors', visible: false },
-        { key: 'contact', visible: true },
+        { key: 'about', onlyVisibleInOffcanvas: false },
+        { key: 'skills', onlyVisibleInOffcanvas: false },
+        { key: 'experience', onlyVisibleInOffcanvas: false },
+        { key: 'education', onlyVisibleInOffcanvas: true },
+        { key: 'projects', onlyVisibleInOffcanvas: false },
+        { key: 'languages', onlyVisibleInOffcanvas: true },
+        { key: 'honors', onlyVisibleInOffcanvas: true },
+        { key: 'contact', onlyVisibleInOffcanvas: false },
     ].map(link => {
         return {
             label: t(link.key + '.label'),
             slug: t(link.key + '.slug'),
-            visible: link.visible,
+            onlyVisibleInOffcanvas: link.onlyVisibleInOffcanvas,
         }
     })
 
-    const locale = useLocale()
-    const [offcanvasShow, setOffcanvasShow] = useState(false)
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= BREAKPOINT_MD) {
+                const offcanvas = document.getElementById('offcanvas-navbar')!
+                offcanvas.style.transition = 'none'
+                setOffcanvasShow(false)
+            }
+        })
+    }, [])
 
     function handleOffcanvasShow() {
         setOffcanvasShow(true)
@@ -74,14 +86,9 @@ export default function MyNavbar() {
     }
 
     return (
-        <Navbar
-            id="navbar"
-            bg="body"
-            expand="md"
-            className="sticky-top py-2 ps-3 ps-md-4 shadow-sm"
-        >
-            <StandardContainer className="flex-nowrap">
-                <div className="h4 fw-normal me-3 mb-0">
+        <Navbar id="navbar" bg="body" expand="md" className="sticky-top py-2 ps-2 shadow-sm">
+            <StandardContainer className="flex-nowrap column-gap-3">
+                <div className="h4 fw-normal mb-0">
                     <Felipe />
                 </div>
                 <Navbar.Toggle
@@ -116,7 +123,9 @@ export default function MyNavbar() {
                                 <Nav.Item
                                     key={link.label}
                                     as="li"
-                                    className={link.visible ? undefined : 'd-md-none'}
+                                    className={
+                                        link.onlyVisibleInOffcanvas ? 'd-md-none' : undefined
+                                    }
                                     onClick={() => handleNavItemClick(link)}
                                 >
                                     <Nav.Link
@@ -128,13 +137,14 @@ export default function MyNavbar() {
                                     </Nav.Link>
                                 </Nav.Item>
                             ))}
+
+                            <hr className="d-md-none text-secondary w-100"></hr>
                             <div className="vr d-none d-md-block text-secondary mx-3"></div>
-                            <hr className="d-block d-md-none text-secondary w-100"></hr>
 
                             <OverlayTrigger placement="bottom" overlay={renderChangeLocaleTooltip}>
                                 <Nav.Item
                                     as="li"
-                                    className="align-self-md-stretch d-flex justify-content-center align-items-stretch"
+                                    className={`align-self-md-stretch d-flex justify-content-center align-items-stretch`}
                                 >
                                     <Link
                                         href={'/' + (locale === 'pt-br' ? 'en' : 'pt-br')}
