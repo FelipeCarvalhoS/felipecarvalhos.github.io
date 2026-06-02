@@ -72,7 +72,7 @@ export default function SkillList() {
                     style={{ '--scale': '1.08', '--duration': '0.2s' } as CSSProperties}
                 >
                     <Ratio aspectRatio="1x1" style={{ width: '50%' }} className="mb-3">
-                        <BsImage src={skill.logo} className="object-fit-contain" />
+                        <BsImage src={skill.logo} alt="" className="object-fit-contain" />
                     </Ratio>
                     <Card.Body className="p-0">
                         <Card.Title as="h3" className="fs-6 font-base fw-normal mb-0">

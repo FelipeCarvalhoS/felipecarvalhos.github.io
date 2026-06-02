@@ -16,6 +16,7 @@ export default function HonorList() {
             description: t('best-academic-performance.description'),
             image: {
                 url: '/img/honors/best-academic-performance-small.webp',
+                alt: t('best-academic-performance.image.alt'),
                 objectPosition: '0 0',
             },
             attachment: {
@@ -28,7 +29,7 @@ export default function HonorList() {
             slug: '10-10-capstone-project',
             name: t('10-10-capstone-project.name'),
             description: t('10-10-capstone-project.description'),
-            image: { url: '/img/honors/easytalk.webp' },
+            image: { url: '/img/honors/easytalk.webp', alt: '' },
             attachment: {
                 url: '#easytalk',
                 label: t('10-10-capstone-project.attachment.label'),
@@ -39,7 +40,10 @@ export default function HonorList() {
             slug: 'diamond-student',
             name: t('diamond-student.name'),
             description: t('diamond-student.description'),
-            image: { url: '/img/honors/3-EM-diamond-student-certificate-small.webp' },
+            image: {
+                url: '/img/honors/3-EM-diamond-student-certificate-small.webp',
+                alt: t('diamond-student.image.alt'),
+            },
             attachment: {
                 url: '/img/honors/3-EM-diamond-student-certificate.webp',
                 label: t('diamond-student.attachment.label'),
@@ -57,6 +61,7 @@ export default function HonorList() {
                             <Card.Img
                                 variant="top"
                                 src={honor.image.url}
+                                alt=""
                                 className="img-fluid object-fit-cover border-bottom"
                                 style={{ objectPosition: honor.image.objectPosition || undefined }}
                             />
@@ -69,7 +74,11 @@ export default function HonorList() {
                                 <Card.Text>{honor.description}</Card.Text>
                             </div>
                             {honor.attachment && (
-                                <Attachment attachment={honor.attachment} stretchLink />
+                                <Attachment
+                                    attachment={honor.attachment}
+                                    alt={honor.image.alt}
+                                    stretchLink
+                                />
                             )}
                         </Card.Body>
                     </Card>

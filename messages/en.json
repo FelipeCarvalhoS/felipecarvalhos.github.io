@@ -200,6 +200,9 @@
       },
       "attachment": {
         "label": "View certificate"
+      },
+      "image": {
+        "alt": "Best academic performance certificate"
       }
     },
     "10-10-capstone-project": {
@@ -215,9 +218,12 @@
     },
     "diamond-student": {
       "name": "Diamond Student",
-      "description": "Achieved numerous Diamond Student certificates during middle and high school for reaching an average grade higher than 9.5 at the end of each term.",
+      "description": "Achieved numerous diamond student certificates during middle and high school for reaching an average grade higher than 9.5 at the end of each term.",
       "attachment": {
         "label": "View certificate"
+      },
+      "image": {
+        "alt": "Diamond student certificate"
       }
     }
   },

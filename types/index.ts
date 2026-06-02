@@ -60,7 +60,7 @@ export type HonorType = {
     slug: string
     name: string
     description: string
-    image: { url: string; objectPosition?: string }
+    image: { url: string; alt: string; objectPosition?: string }
     attachment?: AttachmentType
 }
 
