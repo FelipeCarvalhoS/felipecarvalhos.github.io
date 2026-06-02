@@ -3,7 +3,7 @@
 import { ContactType } from '@/types'
 import { addIncrementalIDs } from '@/utils'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { RefObject, useRef, useState } from 'react'
 import {
     Image as BsImage,
     Ratio,
@@ -14,6 +14,8 @@ import {
     OverlayTriggerProps,
     Alert,
 } from 'react-bootstrap'
+
+const FADE_DURATION_SECONDS = 0.5
 
 function ContactTooltip({
     contact,
@@ -48,36 +50,54 @@ function CopyEmailAlert({ email, children }: { email: ContactType; children: Rea
     const g = useTranslations('General')
     const t = useTranslations('Contacts')
 
-    const [copyEmailAlertText, setCopyEmailAlertText] = useState(email.label)
-    const [showCopyEmailAlert, setShowCopyEmailAlert] = useState(false)
-    const [copyEmailAlertVariant, setCopyEmailAlertVariant] = useState<'success' | 'danger'>(
-        'success',
-    )
+    const [copyText, setText] = useState(email.label)
+    const [show, setShow] = useState(false)
+    const [variant, setVariant] = useState<'success' | 'danger'>('success')
+    const [fadeOutTimeout, setFadeOutTimeout] = useState<NodeJS.Timeout | null>(null)
+    const alertRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>
 
-    function handleEmailClick(text: string) {
-        setShowCopyEmailAlert(false)
+    function handleClick(text: string) {
+        if (fadeOutTimeout) {
+            clearTimeout(fadeOutTimeout)
+            setFadeOutTimeout(null)
+        }
+
+        setShow(false)
 
         function onFulfilled() {
-            setShowCopyEmailAlert(true)
-            setCopyEmailAlertText(t('email.copied'))
-            setCopyEmailAlertVariant('success')
+            setShow(true)
+            setText(t('email.copied'))
+            setVariant('success')
         }
 
         function onRejected() {
-            setShowCopyEmailAlert(true)
-            setCopyEmailAlertText(t('email.copyFailed'))
-            setCopyEmailAlertVariant('danger')
+            setShow(true)
+            setText(t('email.copyFailed'))
+            setVariant('danger')
         }
 
         navigator.clipboard.writeText(text).then(onFulfilled, onRejected)
     }
+
+    function handleClose() {
+        alertRef.current.classList.remove('fade-in')
+        alertRef.current.classList.add('fade-out')
+
+        const timeout = setTimeout(() => {
+            setShow(false)
+        }, FADE_DURATION_SECONDS * 1000)
+
+        setFadeOutTimeout(timeout)
+    }
+
     return (
         <>
-            <div onClick={() => handleEmailClick(email.value)}>{children}</div>
+            <div onClick={() => handleClick(email.value)}>{children}</div>
             <Alert
-                show={showCopyEmailAlert}
-                variant={copyEmailAlertVariant}
-                onClose={() => setShowCopyEmailAlert(false)}
+                ref={alertRef}
+                show={show}
+                variant={variant}
+                onClose={handleClose}
                 className="position-fixed bottom-0 end-0 mb-4 me-4 fade-in"
                 dismissible
                 closeLabel={g('close')}
@@ -85,7 +105,7 @@ function CopyEmailAlert({ email, children }: { email: ContactType; children: Rea
                 role="status"
                 aria-live="polite"
             >
-                <span className="me-3">{copyEmailAlertText}</span>
+                <span className="me-3">{copyText}</span>
             </Alert>
         </>
     )
