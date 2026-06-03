@@ -9,6 +9,7 @@ import { getTranslations } from 'next-intl/server'
 import BootstrapClient from '@/components/BootstrapClient'
 import Felipe from '@/components/Felipe'
 import { notFound } from 'next/navigation'
+import { MotionConfig } from 'motion/react'
 
 export async function generateMetadata({
     params,
@@ -62,13 +63,15 @@ export default async function LocaleLayout({
             <body className="bg-body-secondary">
                 <BootstrapClient />
                 <NextIntlClientProvider>
-                    <Navbar />
-                    {children}
-                    <footer>
-                        <div className="bg-body text-center text-body-secondary py-4 small border border-top">
-                            &copy; {new Date().getFullYear()} <Felipe fullName></Felipe>
-                        </div>
-                    </footer>
+                    <MotionConfig reducedMotion="user">
+                        <Navbar />
+                        {children}
+                        <footer>
+                            <div className="bg-body text-center text-body-secondary py-4 small border border-top">
+                                &copy; {new Date().getFullYear()} <Felipe fullName></Felipe>
+                            </div>
+                        </footer>
+                    </MotionConfig>
                 </NextIntlClientProvider>
             </body>
         </html>
