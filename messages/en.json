@@ -42,7 +42,8 @@
             "label": "Contact",
             "slug": "contact"
         },
-        "changeLocale": "Switch to Portuguese",
+        "changeLocale": "<pt-br>Mudar para português</pt-br>",
+        "changeLocaleAlt": "Switch to Portuguese",
         "toggleNavigation": "Toggle navigation",
         "closeNavigation": "Close navigation"
     },
@@ -258,7 +259,7 @@
         },
         "about": {
             "title": "About Me",
-            "text": "Hi, I'm <span lang=pt-br>Felipe</span>! I am a full-stack Python & TypeScript developer with a focus on Django and React. On this site, you can get to know my skills, education, and experience, as well as check out the projects I have been up to.",
+            "text": "Hi, I'm Felipe! I am a full-stack Python & TypeScript developer with a focus on Django and React. On this site, you can get to know my skills, education, and experience, as well as check out the projects I have been up to.",
             "getResume": "View résumé"
         },
         "skills": {

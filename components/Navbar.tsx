@@ -14,6 +14,7 @@ import StandardContainer from './StandardContainer'
 import { useLocale, useTranslations } from 'next-intl'
 import { CSSProperties, useEffect, useState } from 'react'
 import Link from 'next/link'
+import LocaleRichText from './LocaleRichText'
 
 const BREAKPOINT_MD = 768
 
@@ -57,7 +58,7 @@ export default function MyNavbar() {
         setOffcanvasShow(false)
     }
 
-    function handleNavItemClick(link: (typeof links)[0]) {
+    function handleNavItemClick(link: (typeof links)[number]) {
         handleOffcanvasClose()
 
         const indexClicked = links.indexOf(link)
@@ -80,7 +81,7 @@ export default function MyNavbar() {
     function renderChangeLocaleTooltip(props: TooltipProps) {
         return (
             <Tooltip id="change-locale-tooltip" {...props}>
-                {t('changeLocale')}
+                <LocaleRichText>{tags => t.rich('changeLocale', tags)}</LocaleRichText>
             </Tooltip>
         )
     }
@@ -153,7 +154,7 @@ export default function MyNavbar() {
                                     >
                                         <BsImage
                                             src="/img/icons/change-locale.webp"
-                                            alt={t('changeLocale')}
+                                            alt={t('changeLocaleAlt')}
                                             style={{ height: '1.25rem' }}
                                         />
                                     </Link>

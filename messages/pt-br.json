@@ -42,7 +42,8 @@
             "label": "Contato",
             "slug": "contato"
         },
-        "changeLocale": "Mudar para inglês",
+        "changeLocale": "<en>Switch to English</en>",
+        "changeLocaleAlt": "Mudar para inglês",
         "toggleNavigation": "Abrir menu de navegação",
         "closeNavigation": "Fechar menu de navegação"
     },

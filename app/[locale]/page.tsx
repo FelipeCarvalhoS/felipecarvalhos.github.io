@@ -12,6 +12,7 @@ import LanguageList from '@/components/LanguageList'
 import HonorList from '@/components/HonorList'
 import ContactList from '@/components/ContactList'
 import { useTranslations } from 'next-intl'
+import LocaleRichText from '@/components/LocaleRichText'
 
 export default function Home() {
     const n = useTranslations('Navbar')
@@ -75,10 +76,11 @@ export default function Home() {
                     >
                         <div style={{ flexBasis: '50%' }}>
                             <h2 className="display-2 h1 mb-4">{t('about.title')}</h2>
-                            <p
-                                dangerouslySetInnerHTML={{ __html: t.raw('about.text') }}
-                                className="fs-5 lh-sm mb-5"
-                            ></p>
+                            <p className="fs-5 lh-sm mb-5">
+                                <LocaleRichText>
+                                    {tags => t.rich('about.text', tags)}
+                                </LocaleRichText>
+                            </p>
                             <Button
                                 as="a"
                                 target="_blank"
