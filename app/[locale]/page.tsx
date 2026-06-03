@@ -13,7 +13,7 @@ import HonorList from '@/components/HonorList'
 import ContactList from '@/components/ContactList'
 import { useTranslations } from 'next-intl'
 import LocaleRichText from '@/components/LocaleRichText'
-import FadeIn from '@/components/FadeIn'
+import FadeInWhenInView from '@/components/FadeIn'
 
 export default function Home() {
     const n = useTranslations('Navbar')
@@ -69,7 +69,7 @@ export default function Home() {
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
                         <div
                             className="mx-auto d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
@@ -102,10 +102,10 @@ export default function Home() {
                             </div>
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section id={n('skills.slug')} className="bg-body-tertiary">
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer
                         fluid={false}
                         style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
@@ -117,7 +117,7 @@ export default function Home() {
                             <SkillList />
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section
                 id={n('experience.slug')}
@@ -140,18 +140,18 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('experience.title')}</h2>
                 </div>
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>
                         <ExperienceTimeline />
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section
                 id={n('education.slug')}
                 className="bg-body-tertiary spikes"
                 style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
             >
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
                         <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                             {t('education.title')}
@@ -160,24 +160,24 @@ export default function Home() {
                             <EducationList />
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section
                 id={n('projects.slug')}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
                         <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
                             {t('projects.title')}
                         </h2>
                         <ProjectList />
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section id={n('languages.slug')} className="bg-body-tertiary">
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer
                         fluid="md"
                         style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
@@ -189,7 +189,7 @@ export default function Home() {
                             <LanguageList />
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section
                 id={n('honors.slug')}
@@ -208,23 +208,23 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('honors.title')}</h2>
                 </div>
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid="xl" style={{ paddingBlock: '8rem' }}>
                         <div className="mx-auto">
                             <HonorList />
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
             <section id={n('contact.slug')} className="bg-body-tertiary">
-                <FadeIn>
+                <FadeInWhenInView>
                     <StandardContainer fluid="lg" style={{ paddingBlock: '4rem' }}>
                         <div className="d-flex flex-column flex-lg-row column-gap-4 row-gap-5 align-items-center justify-content-between">
                             <h2 className="display-2 text-center">{t('contact.title')}</h2>
                             <ContactList />
                         </div>
                     </StandardContainer>
-                </FadeIn>
+                </FadeInWhenInView>
             </section>
         </main>
     )

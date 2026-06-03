@@ -66,7 +66,7 @@ export default async function LocaleLayout({
                     <MotionConfig reducedMotion="user">
                         <Navbar />
                         {children}
-                        <footer>
+                        <footer id="footer">
                             <div className="bg-body text-center text-body-secondary py-4 small border border-top">
                                 &copy; {new Date().getFullYear()} <Felipe fullName></Felipe>
                             </div>

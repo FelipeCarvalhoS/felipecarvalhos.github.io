@@ -4,14 +4,14 @@ import { ProjectType } from '@/types'
 import { formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap'
-import FadeIn from './FadeIn'
+import FadeInWhenInView from './FadeIn'
 
 export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
     const locale = useLocale()
     const t = useTranslations('Projects')
 
     return (
-        <FadeIn>
+        <FadeInWhenInView>
             <div
                 id={project.slug}
                 className={`d-flex justify-content-between align-items-center gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
@@ -92,6 +92,6 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                     />
                 </div>
             </div>
-        </FadeIn>
+        </FadeInWhenInView>
     )
 }
