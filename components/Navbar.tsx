@@ -58,26 +58,6 @@ export default function MyNavbar() {
         setOffcanvasShow(false)
     }
 
-    function handleNavItemClick(link: (typeof links)[number]) {
-        handleOffcanvasClose()
-
-        const indexClicked = links.indexOf(link)
-
-        for (let i = indexClicked; i >= 0; i--) {
-            document
-                .querySelectorAll(`[data-scrollspy-fade-triggered-by="${links[i].slug}"`)
-                .forEach(element => {
-                    const el = element as HTMLElement
-
-                    if (el.dataset.scrollspyFaded === 'false') {
-                        el.classList.add('fade-in')
-                    }
-
-                    el.dataset.scrollspyFaded = 'true'
-                })
-        }
-    }
-
     function renderChangeLocaleTooltip(props: TooltipProps) {
         return (
             <Tooltip id="change-locale-tooltip" {...props}>
@@ -127,13 +107,8 @@ export default function MyNavbar() {
                                     className={
                                         link.onlyVisibleInOffcanvas ? 'd-md-none' : undefined
                                     }
-                                    onClick={() => handleNavItemClick(link)}
                                 >
-                                    <Nav.Link
-                                        className="px-2"
-                                        href={'#' + link.slug}
-                                        data-scrollspy-fade-triggers={link.slug}
-                                    >
+                                    <Nav.Link className="px-2" href={'#' + link.slug}>
                                         {link.label}
                                     </Nav.Link>
                                 </Nav.Item>

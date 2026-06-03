@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.8",
+        "motion": "^12.40.0",
         "next": "^16.2.6",
         "next-intl": "^4.11.1",
         "react": "^19.2.6",

@@ -13,6 +13,7 @@ import HonorList from '@/components/HonorList'
 import ContactList from '@/components/ContactList'
 import { useTranslations } from 'next-intl'
 import LocaleRichText from '@/components/LocaleRichText'
+import FadeIn from '@/components/FadeIn'
 
 export default function Home() {
     const n = useTranslations('Navbar')
@@ -67,54 +68,56 @@ export default function Home() {
                 id={n('about.slug')}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
-                data-scrollspy-fade-triggered-by={n('about.slug')}
             >
-                <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
-                    <div
-                        className="mx-auto d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
-                        style={{ maxWidth: '60rem' }}
-                    >
-                        <div style={{ flexBasis: '50%' }}>
-                            <h2 className="display-2 h1 mb-4">{t('about.title')}</h2>
-                            <p className="fs-5 lh-sm mb-5">
-                                <LocaleRichText>
-                                    {tags => t.rich('about.text', tags)}
-                                </LocaleRichText>
-                            </p>
-                            <Button
-                                as="a"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={f('cv')}
-                                variant="primary"
-                                size="lg"
-                                className="fs-5 rounded-pill d-flex align-items-center gap-3"
-                                style={{ width: 'fit-content' }}
-                            >
-                                <span className="icon-after icon-external-link">
-                                    {t('about.getResume')}
-                                </span>
-                            </Button>
+                <FadeIn>
+                    <StandardContainer fluid={false} style={{ paddingBlock: '6.75rem' }}>
+                        <div
+                            className="mx-auto d-flex flex-column-reverse gap-6 flex-lg-row justify-content-between align-items-center"
+                            style={{ maxWidth: '60rem' }}
+                        >
+                            <div style={{ flexBasis: '50%' }}>
+                                <h2 className="display-2 h1 mb-4">{t('about.title')}</h2>
+                                <p className="fs-5 lh-sm mb-5">
+                                    <LocaleRichText>
+                                        {tags => t.rich('about.text', tags)}
+                                    </LocaleRichText>
+                                </p>
+                                <Button
+                                    as="a"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={f('cv')}
+                                    variant="primary"
+                                    size="lg"
+                                    className="fs-5 rounded-pill d-flex align-items-center gap-3"
+                                    style={{ width: 'fit-content' }}
+                                >
+                                    <span className="icon-after icon-external-link">
+                                        {t('about.getResume')}
+                                    </span>
+                                </Button>
+                            </div>
+                            <div>
+                                <BsImage src="/img/profile.webp" alt="" fluid />
+                            </div>
                         </div>
-                        <div>
-                            <BsImage src="/img/profile.webp" alt="" fluid />
-                        </div>
-                    </div>
-                </StandardContainer>
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section id={n('skills.slug')} className="bg-body-tertiary">
-                <StandardContainer
-                    fluid={false}
-                    style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
-                    data-scrollspy-fade-triggered-by={n('skills.slug')}
-                >
-                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        {t('skills.title')}
-                    </h2>
-                    <div className="mx-auto" style={{ maxWidth: '64rem' }}>
-                        <SkillList />
-                    </div>
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer
+                        fluid={false}
+                        style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
+                    >
+                        <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                            {t('skills.title')}
+                        </h2>
+                        <div className="mx-auto" style={{ maxWidth: '64rem' }}>
+                            <SkillList />
+                        </div>
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section
                 id={n('experience.slug')}
@@ -137,63 +140,56 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('experience.title')}</h2>
                 </div>
-                <StandardContainer
-                    fluid="lg"
-                    style={{ paddingBlock: '8rem' }}
-                    data-scrollspy-fade-triggered-by={n('experience.slug')}
-                >
-                    <ExperienceTimeline />
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer fluid="lg" style={{ paddingBlock: '8rem' }}>
+                        <ExperienceTimeline />
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section
                 id={n('education.slug')}
                 className="bg-body-tertiary spikes"
                 style={{ '--spike-color': 'var(--bs-secondary-bg)' } as CSSProperties}
             >
-                <StandardContainer
-                    fluid="md"
-                    style={{ paddingBlock: '7rem' }}
-                    data-scrollspy-fade-triggered-by={n('education.slug')}
-                >
-                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        {t('education.title')}
-                    </h2>
-
-                    <div className="mx-auto" style={{ maxWidth: '46rem' }}>
-                        <EducationList />
-                    </div>
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer fluid="md" style={{ paddingBlock: '7rem' }}>
+                        <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                            {t('education.title')}
+                        </h2>
+                        <div className="mx-auto" style={{ maxWidth: '46rem' }}>
+                            <EducationList />
+                        </div>
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section
                 id={n('projects.slug')}
                 className="spikes"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
-                <StandardContainer
-                    fluid={false}
-                    style={{ paddingBlock: '7rem' }}
-                    data-scrollspy-fade-triggered-by={n('projects.slug')}
-                >
-                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        {t('projects.title')}
-                    </h2>
-                    <ProjectList />
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer fluid={false} style={{ paddingBlock: '7rem' }}>
+                        <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                            {t('projects.title')}
+                        </h2>
+                        <ProjectList />
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section id={n('languages.slug')} className="bg-body-tertiary">
-                <StandardContainer
-                    fluid="md"
-                    style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
-                    data-scrollspy-fade-triggered-by={n('languages.slug')}
-                >
-                    <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
-                        {t('languages.title')}
-                    </h2>
-
-                    <div className="mx-auto" style={{ maxWidth: '42rem' }}>
-                        <LanguageList />
-                    </div>
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer
+                        fluid="md"
+                        style={{ paddingTop: '7rem', paddingBottom: '8.5rem' }}
+                    >
+                        <h2 className="display-2 text-center" style={{ marginBottom: '7rem' }}>
+                            {t('languages.title')}
+                        </h2>
+                        <div className="mx-auto" style={{ maxWidth: '42rem' }}>
+                            <LanguageList />
+                        </div>
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section
                 id={n('honors.slug')}
@@ -212,24 +208,23 @@ export default function Home() {
                 >
                     <h2 className="display-2">{t('honors.title')}</h2>
                 </div>
-                <StandardContainer
-                    fluid="xl"
-                    style={{ paddingBlock: '8rem' }}
-                    data-scrollspy-fade-triggered-by={n('honors.slug')}
-                >
-                    <div className="mx-auto">
-                        <HonorList />
-                    </div>
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer fluid="xl" style={{ paddingBlock: '8rem' }}>
+                        <div className="mx-auto">
+                            <HonorList />
+                        </div>
+                    </StandardContainer>
+                </FadeIn>
             </section>
             <section id={n('contact.slug')} className="bg-body-tertiary">
-                <StandardContainer fluid="lg" style={{ paddingBlock: '4rem' }}>
-                    <div className="d-flex flex-column flex-lg-row column-gap-4 row-gap-5 align-items-center justify-content-between">
-                        <h2 className="display-2 text-center">{t('contact.title')}</h2>
-
-                        <ContactList />
-                    </div>
-                </StandardContainer>
+                <FadeIn>
+                    <StandardContainer fluid="lg" style={{ paddingBlock: '4rem' }}>
+                        <div className="d-flex flex-column flex-lg-row column-gap-4 row-gap-5 align-items-center justify-content-between">
+                            <h2 className="display-2 text-center">{t('contact.title')}</h2>
+                            <ContactList />
+                        </div>
+                    </StandardContainer>
+                </FadeIn>
             </section>
         </main>
     )

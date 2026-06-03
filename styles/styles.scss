@@ -170,43 +170,6 @@
     }
 }
 
-[data-scrollspy-fade-triggered-by][data-scrollspy-faded]:not([data-scrollspy-faded='true']) {
-    opacity: 0;
-}
-
-$fade-translate-distance: 40px;
-$fade-duration: 0.5s;
-
-.fade-in {
-    animation: fadeIn $fade-duration ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY($fade-translate-distance);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-.fade-out {
-    animation: fadeOut $fade-duration ease-in forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-    to {
-        opacity: 0;
-        transform: translateY($fade-translate-distance);
-    }
-}
-
 .btn-unstyled {
     background: none;
     border: none;
