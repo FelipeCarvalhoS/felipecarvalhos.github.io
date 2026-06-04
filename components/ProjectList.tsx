@@ -192,7 +192,12 @@ export default function ProjectList() {
     return (
         <div className="d-flex flex-column align-items-center" style={{ gap: '7rem' }}>
             {loadedProjects.map((project, index) => (
-                <Project key={project.id} project={project} isEven={index % 2 === 0} />
+                <Project
+                    key={project.id}
+                    project={project}
+                    isEven={index % 2 === 0}
+                    notLoadedInitially={index >= initiallyLoaded}
+                />
             ))}
             {loadedProjects.length < projects.length && (
                 <Button

@@ -4,14 +4,55 @@ import { ProjectType } from '@/types'
 import { formatDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Image as BsImage, Badge, Stack, Ratio, Dropdown } from 'react-bootstrap'
-import FadeInWhenInView from './FadeIn'
+import FadeInWhenInView from './FadeInWhenInView'
+import * as m from 'motion/react-m'
+import { Fade } from '@/constants'
 
-export default function Project({ project, isEven }: { project: ProjectType; isEven: boolean }) {
+function FadeInWhenInViewAndNotLoadedInitially({ children }: { children: React.ReactNode }) {
+    return (
+        <m.div
+            initial={Fade.hidden}
+            whileInView={Fade.visible}
+            transition={Fade.in.transition}
+            viewport={{ once: true, margin: `0px 0px ${Fade.viewportMarginBottomPixels}px 0px` }}
+        >
+            {children}
+        </m.div>
+    )
+}
+
+function PickFade({
+    notLoadedInitially,
+    children,
+}: {
+    notLoadedInitially: boolean
+    children: React.ReactNode
+}) {
+    if (notLoadedInitially) {
+        return (
+            <FadeInWhenInViewAndNotLoadedInitially>
+                {children}
+            </FadeInWhenInViewAndNotLoadedInitially>
+        )
+    }
+
+    return <FadeInWhenInView>{children}</FadeInWhenInView>
+}
+
+export default function Project({
+    project,
+    isEven,
+    notLoadedInitially: notLoadedInitially,
+}: {
+    project: ProjectType
+    isEven: boolean
+    notLoadedInitially: boolean
+}) {
     const locale = useLocale()
     const t = useTranslations('Projects')
 
     return (
-        <FadeInWhenInView>
+        <PickFade notLoadedInitially={notLoadedInitially}>
             <div
                 id={project.slug}
                 className={`d-flex justify-content-between align-items-center gap-6 flex-column-reverse ${isEven ? 'flex-lg-row' : 'flex-lg-row-reverse'}`}
@@ -92,6 +133,6 @@ export default function Project({ project, isEven }: { project: ProjectType; isE
                     />
                 </div>
             </div>
-        </FadeInWhenInView>
+        </PickFade>
     )
 }

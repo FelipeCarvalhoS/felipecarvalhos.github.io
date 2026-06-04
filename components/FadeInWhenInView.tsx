@@ -1,16 +1,15 @@
+'use client'
+
 import { useAnimate } from 'motion/react'
 import { useEffect, useEffectEvent, useRef } from 'react'
-
-const FADE_DURATION = 0.5
-const FADE_HIDDEN = { opacity: 0, y: 50 }
-const FADE_VISIBLE = { opacity: 1, y: 0 }
+import { Fade } from '@/constants'
 
 export default function FadeInWhenInView({ children }: { children: React.ReactNode }) {
     const [scope, animate] = useAnimate<HTMLDivElement>()
     const faded = useRef(false)
 
     const onMount = useEffectEvent(() => {
-        const footer_height = document.getElementById('footer')!.offsetHeight
+        const footerHeight = document.getElementById('footer')!.offsetHeight
         const el = scope.current
         let viewportMarginBottom = 0
 
@@ -20,22 +19,22 @@ export default function FadeInWhenInView({ children }: { children: React.ReactNo
         }
 
         function cannotReachMarginBottom() {
-            return el.offsetHeight + footer_height < Math.abs(viewportMarginBottom)
+            return el.offsetHeight + footerHeight < Math.abs(viewportMarginBottom)
         }
 
         if (isInOrAboveViewport() || cannotReachMarginBottom()) {
             faded.current = true
         } else {
-            animate(scope.current, FADE_HIDDEN, { duration: FADE_DURATION })
+            animate(scope.current, Fade.hidden, Fade.in.transition)
         }
 
-        viewportMarginBottom = -150
+        viewportMarginBottom = Fade.viewportMarginBottomPixels
 
         function updateFade() {
             if (faded.current) return
 
             if (isInOrAboveViewport() || cannotReachMarginBottom()) {
-                animate(scope.current, FADE_VISIBLE, { duration: FADE_DURATION })
+                animate(scope.current, Fade.visible, Fade.in.transition)
                 faded.current = true
             }
         }
@@ -46,7 +45,7 @@ export default function FadeInWhenInView({ children }: { children: React.ReactNo
         el.addEventListener('focusin', () => {
             if (faded.current) return
 
-            animate(scope.current, FADE_VISIBLE, { duration: FADE_DURATION })
+            animate(scope.current, Fade.visible, Fade.in.transition)
             faded.current = true
         })
     })

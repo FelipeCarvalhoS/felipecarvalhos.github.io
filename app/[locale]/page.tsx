@@ -13,7 +13,7 @@ import HonorList from '@/components/HonorList'
 import ContactList from '@/components/ContactList'
 import { useTranslations } from 'next-intl'
 import LocaleRichText from '@/components/LocaleRichText'
-import FadeInWhenInView from '@/components/FadeIn'
+import FadeInWhenInView from '@/components/FadeInWhenInView'
 
 export default function Home() {
     const n = useTranslations('Navbar')
