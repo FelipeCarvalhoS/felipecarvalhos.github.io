@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import UnstyledButton from './UnstyledButton'
 import { AttachmentType } from '@/types'
 import ImageModal from './ImageModal'
@@ -27,13 +26,14 @@ export default function Attachment({
             )
         case 'link':
             return (
-                <Link
+                <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={attachment.url}
                     className={`link-info text-decoration-none ${stretchLinkClass}`}
                 >
                     <span className="icon-after icon-external-link">{attachment.label}</span>
-                </Link>
+                </a>
             )
         case 'anchor':
             return (
