@@ -103,6 +103,7 @@ export default function MyNavbar() {
                             {links.map(link => (
                                 <Nav.Item
                                     key={link.label}
+                                    onClick={handleOffcanvasClose}
                                     as="li"
                                     className={
                                         link.onlyVisibleInOffcanvas ? 'd-md-none' : undefined
