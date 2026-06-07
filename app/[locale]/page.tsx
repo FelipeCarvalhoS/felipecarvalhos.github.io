@@ -121,11 +121,10 @@ export default function Home() {
             </section>
             <section
                 id={n('experience.slug')}
-                className="spikes"
+                className="spikes scroll-margin-top"
                 style={
                     {
                         '--spike-color': 'var(--bs-tertiary-bg)',
-                        scrollMarginTop: '6rem',
                     } as CSSProperties
                 }
             >
@@ -193,7 +192,7 @@ export default function Home() {
             </section>
             <section
                 id={n('honors.slug')}
-                className="spikes"
+                className="spikes scroll-margin-top"
                 style={{ '--spike-color': 'var(--bs-tertiary-bg)' } as CSSProperties}
             >
                 <div
