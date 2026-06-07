@@ -2,7 +2,7 @@
 
 import { LanguageType } from '@/types'
 import { Image as BsImage } from 'react-bootstrap'
-import { addIncrementalIDs, formatDate } from '@/utils'
+import { addIncrementalIDs, formatDate, toDate } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { Fragment } from 'react'
 import Attachment from './Attachment'
@@ -20,12 +20,12 @@ export default function LanguageList() {
             certificates: [
                 {
                     name: 'TOEIC Listening & Reading - Score 940',
-                    issued_at: new Date('June 2025'),
+                    issued_in: toDate('June 2025'),
                     url: '/img/languages/TOEIC-2025-Certificate.webp',
                 },
                 {
                     name: 'TOEIC Listening & Reading - Score 950',
-                    issued_at: new Date('April 2023'),
+                    issued_in: toDate('April 2023'),
                     url: '/img/languages/TOEIC-2023-Certificate.webp',
                 },
             ],
@@ -92,7 +92,7 @@ export default function LanguageList() {
                                     </h4>
                                     <div>
                                         {t('issuedIn', {
-                                            date: formatDate(certificate.issued_at, locale, 'long'),
+                                            date: formatDate(certificate.issued_in, locale, 'long'),
                                         })}
                                     </div>
                                 </div>

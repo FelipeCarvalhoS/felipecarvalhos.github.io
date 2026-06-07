@@ -28,3 +28,27 @@ export function formatDate(
 
     return formatted
 }
+
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+]
+
+export function toDate(dateStr: string): Date {
+    const day = 1
+    const [monthStr, yearStr] = dateStr.split(' ')
+    const month = months.findIndex(month => month.toLowerCase() === monthStr.toLowerCase())
+    const year = parseInt(yearStr, 10)
+
+    return new Date(year, month, day)
+}

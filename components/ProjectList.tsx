@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap'
 import { addIncrementalIDs } from '@/utils'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { toDate } from '@/utils'
 
 export default function ProjectList() {
     const t = useTranslations('Projects')
@@ -15,8 +16,8 @@ export default function ProjectList() {
         {
             slug: 'easytalk',
             title: t('easytalk.title'),
-            start: new Date('February 2025'),
-            end: new Date('December 2025'),
+            start: toDate('February 2025'),
+            end: toDate('December 2025'),
             technologies: [
                 { name: 'Django', logo: '/img/icons/django.svg' },
                 { name: 'Python', logo: '/img/icons/python.webp' },
@@ -44,8 +45,8 @@ export default function ProjectList() {
         {
             slug: 'smash-ultimate-api',
             title: t('smash-ultimate-api.title'),
-            start: new Date('February 2026'),
-            end: new Date('March 2026'),
+            start: toDate('February 2026'),
+            end: toDate('March 2026'),
             technologies: [
                 { name: 'FastAPI', logo: '/img/icons/fastapi.svg' },
                 { name: 'Python', logo: '/img/icons/python.webp' },
@@ -76,8 +77,8 @@ export default function ProjectList() {
         {
             slug: 'habitat-website',
             title: t('habitat-website.title'),
-            start: new Date('September 2025'),
-            end: new Date('November 2025'),
+            start: toDate('September 2025'),
+            end: toDate('November 2025'),
             technologies: [
                 { name: 'Django', logo: '/img/icons/django.svg' },
                 { name: 'Python', logo: '/img/icons/python.webp' },
@@ -103,8 +104,8 @@ export default function ProjectList() {
         {
             slug: 'portfolio-site',
             title: t('portfolio-site.title'),
-            start: new Date('March 2026'),
-            end: new Date('May 2026'),
+            start: toDate('March 2026'),
+            end: toDate('May 2026'),
             technologies: [
                 { name: 'React', logo: '/img/icons/react-darker.svg' },
                 { name: 'Next.js', logo: '/img/icons/next-js.svg' },
@@ -127,8 +128,8 @@ export default function ProjectList() {
         {
             slug: 'switchbot',
             title: t('switchbot.title'),
-            start: new Date('August 2024'),
-            end: new Date('October 2024'),
+            start: toDate('August 2024'),
+            end: toDate('October 2024'),
             technologies: [
                 { name: 'Python', logo: '/img/icons/python.webp' },
                 { name: 'Discord.py', logo: '/img/icons/discord.webp' },
@@ -156,8 +157,8 @@ export default function ProjectList() {
         {
             slug: 'picross',
             title: t('picross.title'),
-            start: new Date('July 2024'),
-            end: new Date('July 2024'),
+            start: toDate('July 2024'),
+            end: toDate('July 2024'),
             technologies: [
                 { name: 'Python', logo: '/img/icons/python.webp' },
                 { name: 'Pygame', logo: '/img/icons/pygame.webp' },

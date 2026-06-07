@@ -52,7 +52,7 @@ export type LanguageType = {
     name: string
     proficiency: string
     flags: string[]
-    certificates: { name: string; issued_at: Date; url: string }[]
+    certificates: { name: string; issued_in: Date; url: string }[]
 }
 
 export type HonorType = {

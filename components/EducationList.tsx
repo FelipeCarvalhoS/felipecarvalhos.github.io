@@ -3,7 +3,7 @@
 import { EducationType } from '@/types'
 import { Accordion, Image as BsImage } from 'react-bootstrap'
 import { CSSProperties } from 'react'
-import { addIncrementalIDs, formatDate } from '@/utils'
+import { addIncrementalIDs, formatDate, toDate } from '@/utils'
 import { useFormatter, useLocale, useTranslations } from 'next-intl'
 import Attachment from './Attachment'
 
@@ -31,8 +31,8 @@ export default function EducationList() {
             //     type: 'image',
             //     name: t('fatec.attachment.name'),
             // },
-            start: new Date('February 2023'),
-            end: new Date('December 2025'),
+            start: toDate('February 2023'),
+            end: toDate('December 2025'),
             extraParagraphs: t.raw('fatec.extraParagraphs'),
         },
         {
@@ -53,8 +53,8 @@ export default function EducationList() {
                 type: 'link',
                 name: t('high-school.attachment.name'),
             },
-            start: new Date('March 2020'),
-            end: new Date('December 2022'),
+            start: toDate('March 2020'),
+            end: toDate('December 2022'),
             bulletPoints: t.raw('high-school.bulletPoints'),
             extraParagraphs: t.raw('high-school.extraParagraphs'),
         },
@@ -76,8 +76,8 @@ export default function EducationList() {
                 type: 'image',
                 name: t('ensino-medio.attachment.name'),
             },
-            start: new Date('February 2020'),
-            end: new Date('December 2022'),
+            start: toDate('February 2020'),
+            end: toDate('December 2022'),
         },
     ])
 

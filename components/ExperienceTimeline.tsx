@@ -2,7 +2,7 @@
 
 import { ExperienceType } from '@/types'
 import Experience from './Experience'
-import { addIncrementalIDs } from '@/utils'
+import { addIncrementalIDs, toDate } from '@/utils'
 import { useTranslations } from 'next-intl'
 
 export default function ExperienceTimeline() {
@@ -16,8 +16,8 @@ export default function ExperienceTimeline() {
                 name: 'Habitat Arquitetura & Construção',
                 logo: '/img/experiences/logos/habitat.webp',
             },
-            start: new Date('September 2025'),
-            end: new Date('November 2025'),
+            start: toDate('September 2025'),
+            end: toDate('November 2025'),
             bulletPoints: t.raw('habitat.bulletPoints'),
             attachment: {
                 url: 'https://habitat.net.br',
