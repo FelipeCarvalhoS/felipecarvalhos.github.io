@@ -80,14 +80,6 @@
         },
         "habitat-website": {
             "title": "Corporate Website of Habitat Arquitetura & Construção",
-            "bulletPoints": [
-                "Rebuilt, using Django, the company's corporate website that was previously made in WordPress.",
-                "Set up an administrator panel that interacts with the SQLite database to allow the website's mantainer to update its contents with ease.",
-                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap.",
-                "Applied static site generation (SSG) with the django-distill library.",
-                "Implemented email sending through the contact form.",
-                "Configured a GitHub Actions workflow to rebuild and redeploy the site on every push, as well as back up its database."
-            ],
             "links": {
                 "webAlt": "Website",
                 "website": "Visit website"
@@ -132,6 +124,28 @@
             },
             "image": {
                 "partialUrl": "/img/projects/portfolio-site-en"
+            }
+        },
+        "nintendo-shop-in-laravel": {
+            "title": "E-Commerce Mockup with CRUD Operations",
+            "bulletPoints": [
+                "Created a Laravel web app that executes CRUD operations interacting with a MySQL database.",
+                "Implemented authentication to allow creation, modification, and deletion of products.",
+                "Used the Blade templating engine to generate the content of each page."
+            ],
+            "links": {
+                "repository": "Repository",
+                "video": "Demonstration Video"
+            }
+        },
+        "ssbu-in-php": {
+            "title": "Character Selection Screen in PHP",
+            "bulletPoints": [
+                "Developed a character selection screen with dynamically generated pages using PHP.",
+                "Described the characters' data in a JSON file."
+            ],
+            "links": {
+                "video": "Demonstration Video"
             }
         }
     },
@@ -237,7 +251,10 @@
             "bulletPoints": [
                 "Rebuilt, using Django, the company's corporate website that was previously made in WordPress.",
                 "Set up an administrator panel that interacts with the SQLite database to allow the website's mantainer to update its contents with ease.",
-                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap."
+                "Remade and modernized the website's design, making prototypes in Figma and implementing them with Bootstrap.",
+                "Applied static site generation (SSG) with the django-distill library.",
+                "Implemented email sending through the contact form with a FastAPI endpoint protected by rate limiting via Redis and a honeypot field.",
+                "Configured a GitHub Actions workflow to rebuild and redeploy the site on every push, as well as back up its database."
             ],
             "attachment": {
                 "label": "Visit the website"

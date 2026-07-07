@@ -33,6 +33,10 @@ const skills: SkillType[] = addIncrementalIDs<SkillType>([
         logo: 'img/icons/next-js.svg',
     },
     {
+        name: 'PHP',
+        logo: 'img/icons/php.svg',
+    },
+    {
         name: 'HTML',
         logo: 'img/icons/html.webp',
     },
@@ -52,10 +56,10 @@ const skills: SkillType[] = addIncrementalIDs<SkillType>([
         name: 'Git',
         logo: 'img/icons/git.svg',
     },
-    {
-        name: 'GitHub',
-        logo: 'img/icons/github.svg',
-    },
+    // {
+    //     name: 'GitHub',
+    //     logo: 'img/icons/github.svg',
+    // },
     {
         name: 'Docker',
         logo: 'img/icons/docker.webp',

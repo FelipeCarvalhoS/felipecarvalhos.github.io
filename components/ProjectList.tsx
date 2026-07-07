@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { toDate } from '@/utils'
 
 export default function ProjectList() {
+    const e = useTranslations('Experience')
     const t = useTranslations('Projects')
     const locale = useLocale()
 
@@ -89,7 +90,7 @@ export default function ProjectList() {
                 partialUrl: '/img/projects/habitat-website',
                 extension: 'webp',
             },
-            bulletPoints: t.raw('habitat-website.bulletPoints'),
+            bulletPoints: e.raw('habitat.bulletPoints'),
             links: [
                 {
                     icon: {
@@ -181,6 +182,63 @@ export default function ProjectList() {
                     },
                     label: t('picross.links.play'),
                     url: 'https://felipinho5.itch.io/picross',
+                },
+            ],
+        },
+        {
+            slug: 'nintendo-shop-in-laravel',
+            title: t('nintendo-shop-in-laravel.title'),
+            start: toDate('June 2024'),
+            end: toDate('June 2024'),
+            technologies: [
+                { name: 'PHP', logo: '/img/icons/php.svg' },
+                { name: 'Laravel', logo: '/img/icons/laravel.webp' },
+            ],
+            image: {
+                partialUrl: '/img/projects/nintendo-shop-in-laravel',
+                extension: 'webp',
+            },
+            bulletPoints: t.raw('nintendo-shop-in-laravel.bulletPoints'),
+            links: [
+                {
+                    icon: { src: '/img/icons/github.svg', alt: 'GitHub' },
+                    label: t('picross.links.repository'),
+                    url: 'https://github.com/FelipeCarvalhoS/nintendo-shop-in-laravel',
+                },
+                {
+                    icon: {
+                        src: '/img/icons/youtube.svg',
+                        alt: 'YouTube',
+                    },
+                    label: t('nintendo-shop-in-laravel.links.video'),
+                    url: 'https://youtu.be/lowjOax2_I4',
+                },
+            ],
+        },
+        {
+            slug: 'ssbu-in-php',
+            title: t('ssbu-in-php.title'),
+            start: toDate('March 2024'),
+            end: toDate('March 2024'),
+            technologies: [{ name: 'PHP', logo: '/img/icons/php.svg' }],
+            image: {
+                partialUrl: '/img/projects/ssbu-in-php',
+                extension: 'webp',
+            },
+            bulletPoints: t.raw('ssbu-in-php.bulletPoints'),
+            links: [
+                {
+                    icon: { src: '/img/icons/github.svg', alt: 'GitHub' },
+                    label: t('picross.links.repository'),
+                    url: 'https://github.com/FelipeCarvalhoS/ssbu-in-php',
+                },
+                {
+                    icon: {
+                        src: '/img/icons/youtube.svg',
+                        alt: 'YouTube',
+                    },
+                    label: t('ssbu-in-php.links.video'),
+                    url: 'https://youtu.be/8H00iXewrXE',
                 },
             ],
         },

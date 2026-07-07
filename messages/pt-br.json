@@ -94,14 +94,6 @@
         },
         "habitat-website": {
             "title": "Website Corporativo da Habitat Arquitetura & Construção",
-            "bulletPoints": [
-                "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
-                "Configurei um painel administrativo que interage com o banco de dados SQLite para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.",
-                "Apliquei geração de site estático (SSG) com a biblioteca django-distill.",
-                "Implementei envio de e-mails por meio do formulário de contato.",
-                "Configurei um workflow do GitHub Actions para fazer o rebuild e o redeployment do site a cada push, bem como um backup do banco de dados."
-            ],
             "links": {
                 "webAlt": "Website",
                 "website": "Visitar site"
@@ -133,6 +125,28 @@
             },
             "image": {
                 "partialUrl": "/img/projects/portfolio-site-pt-br"
+            }
+        },
+        "nintendo-shop-in-laravel": {
+            "title": "Mockup de E-commerce com Operações CRUD",
+            "bulletPoints": [
+                "Criei um web app em Laravel que executa operações CRUD interagindo com um banco de dados MySQL.",
+                "Implementei autenticação para permitir criação, modificação e remoção de produtos.",
+                "Usei a engine de templates Blade para gerar o conteúdo de cada página."
+            ],
+            "links": {
+                "repository": "Repositório",
+                "video": "Vídeo Demonstrativo"
+            }
+        },
+        "ssbu-in-php": {
+            "title": "Tela de Seleção de Personagens em PHP",
+            "bulletPoints": [
+                "Desenvolvi uma tela de seleção de personagens com páginas alimentadas dinamicamente pelo PHP.",
+                "Descrevi os dados dos personagens em um arquivo JSON."
+            ],
+            "links": {
+                "video": "Vídeo Demonstrativo"
             }
         }
     },
@@ -238,7 +252,10 @@
             "bulletPoints": [
                 "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
                 "Configurei um painel administrativo que interage com o banco de dados SQLite para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
-                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap."
+                "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.",
+                "Apliquei geração de site estático (SSG) com a biblioteca django-distill.",
+                "Implementei envio de e-mails por meio do formulário de contato com um endpoint de FastAPI protegido por rate limiting via Redis e um campo de honeypot.",
+                "Configurei um workflow do GitHub Actions para fazer o rebuild e o redeployment do site a cada push, bem como um backup do banco de dados."
             ],
             "attachment": {
                 "label": "Visite o site"
