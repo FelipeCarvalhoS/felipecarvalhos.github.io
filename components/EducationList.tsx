@@ -25,12 +25,12 @@ export default function EducationList() {
                 maxValue: 10,
                 label: t('fatec.grade.label'),
             },
-            // attachment: {
-            //     url: '/img/education/attachments/fatec-diploma.webp',
-            //     label: t('fatec.attachment.label'),
-            //     type: 'image',
-            //     name: t('fatec.attachment.name'),
-            // },
+            attachment: {
+                url: '/img/education/attachments/Diploma-Tecnologo-ADS.pdf',
+                label: t('fatec.attachment.label'),
+                type: 'link',
+                name: t('fatec.attachment.name'),
+            },
             start: toDate('February 2023'),
             end: toDate('December 2025'),
             extraParagraphs: t.raw('fatec.extraParagraphs'),
@@ -179,11 +179,6 @@ export default function EducationList() {
                                         attachment={education.attachment}
                                         alt={`${education.title} - ${education.attachment.name}`}
                                     />
-                                )}
-                                {education.slug === 'fatec' && (
-                                    <div className="text-body-secondary small">
-                                        {t('fatec.attachment.comingSoon')}
-                                    </div>
                                 )}
                             </div>
                         )}
