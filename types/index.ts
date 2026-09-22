@@ -1,3 +1,5 @@
+import { routing } from '@/i18n/routing'
+
 export type AttachmentType = {
     url: string
     label: string
@@ -72,3 +74,6 @@ export type ContactType = {
     url?: string
     icon: { src: string; alt: string }
 }
+
+export type AvailableLocale = (typeof routing.locales)[number]
+export type Localized<T> = Record<AvailableLocale, T>
