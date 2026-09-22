@@ -1,14 +1,15 @@
 import { ReactNode } from 'react'
 import { routing } from '@/i18n/routing'
+import type { AvailableLocale } from '@/types'
 
-type Locale = (typeof routing.locales)[number]
+type TagChunkRecord = Record<AvailableLocale, (chunks: ReactNode) => ReactNode>
 
 type LocaleRichTextProps = {
-    children(tags: Record<Locale, (chunks: ReactNode) => ReactNode>): ReactNode
+    children(tags: TagChunkRecord): ReactNode
 }
 
 export default function LocaleRichText({ children }: LocaleRichTextProps) {
-    const tags = {} as Record<Locale, (chunks: ReactNode) => ReactNode>
+    const tags = {} as TagChunkRecord
 
     routing.locales.forEach(locale => {
         tags[locale] = (chunks: ReactNode) => <span lang={locale}>{chunks}</span>
