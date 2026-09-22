@@ -3,7 +3,7 @@ import '@/styles/main.scss'
 import { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { routing } from '@/i18n/routing'
-import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import BootstrapClient from '@/components/BootstrapClient'
@@ -24,7 +24,7 @@ export async function generateMetadata({
         default: t('title.default'),
     }
 
-    const languages: Record<Locale, string> = Object.fromEntries(
+    const languages = Object.fromEntries(
         routing.locales.map(locale => [locale, `${process.env.SITE_URL}/${locale}`]),
     )
 
