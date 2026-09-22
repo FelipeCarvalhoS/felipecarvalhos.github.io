@@ -48,7 +48,7 @@ function ContactTooltip({
 
 function CopyEmailAlert({ email, children }: { email: ContactType; children: React.ReactNode }) {
     const g = useTranslations('General')
-    const t = useTranslations('Contacts')
+    const t = useTranslations('Contact')
 
     const [copyText, setText] = useState(email.label)
     const [show, setShow] = useState(false)
@@ -112,7 +112,7 @@ function CopyEmailAlert({ email, children }: { email: ContactType; children: Rea
 }
 
 export default function ContactList() {
-    const t = useTranslations('Contacts')
+    const t = useTranslations('Contact')
 
     const contacts: ContactType[] = addIncrementalIDs<ContactType>([
         {

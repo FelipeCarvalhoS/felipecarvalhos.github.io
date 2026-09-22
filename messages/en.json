@@ -292,7 +292,7 @@
             "title": "Honors"
         }
     },
-    "Contacts": {
+    "Contact": {
         "email": {
             "label": "Copy my email",
             "copied": "Email copied!",
