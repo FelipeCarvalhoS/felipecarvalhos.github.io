@@ -29,26 +29,36 @@ export function formatDate(
     return formatted
 }
 
-const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-]
-
+/**
+ * Converts a date string in the format "Month Year" (e.g., "March 2024") to a Date object.
+ * The day is always set to 1.
+ */
 export function toDate(dateStr: string): Date {
+    const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ]
     const day = 1
     const [monthStr, yearStr] = dateStr.split(' ')
     const month = months.findIndex(month => month.toLowerCase() === monthStr.toLowerCase())
     const year = parseInt(yearStr, 10)
 
     return new Date(year, month, day)
+}
+
+/**
+ * Joins an array of strings into a single string with each element separated by a newline character.
+ */
+export function toParagraphs(lines: string[]): string {
+    return lines.join('\n')
 }
