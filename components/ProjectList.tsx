@@ -13,7 +13,7 @@ export default function ProjectList() {
     const t = useTranslations('Projects')
     const locale = useLocale()
 
-    const projects: ProjectType[] = addIncrementalIDs<ProjectType>([
+    const projects = addIncrementalIDs<ProjectType>([
         {
             slug: 'easytalk',
             title: t('easytalk.title'),

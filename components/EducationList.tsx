@@ -12,7 +12,7 @@ export default function EducationList() {
     const locale = useLocale()
     const format = useFormatter()
 
-    const educations: EducationType[] = addIncrementalIDs<EducationType>([
+    const educations = addIncrementalIDs<EducationType>([
         {
             slug: 'fatec',
             title: t('fatec.title'),

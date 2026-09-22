@@ -9,7 +9,7 @@ import Attachment from './Attachment'
 export default function HonorList() {
     const t = useTranslations('Honors')
 
-    const honors: HonorType[] = addIncrementalIDs<HonorType>([
+    const honors = addIncrementalIDs<HonorType>([
         {
             slug: 'best-academic-performance',
             name: t('best-academic-performance.name'),

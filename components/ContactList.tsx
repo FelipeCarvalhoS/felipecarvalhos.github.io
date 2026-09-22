@@ -114,7 +114,7 @@ function CopyEmailAlert({ email, children }: { email: ContactType; children: Rea
 export default function ContactList() {
     const t = useTranslations('Contact')
 
-    const contacts: ContactType[] = addIncrementalIDs<ContactType>([
+    const contacts = addIncrementalIDs<ContactType>([
         {
             slug: 'email',
             label: t('email.label'),

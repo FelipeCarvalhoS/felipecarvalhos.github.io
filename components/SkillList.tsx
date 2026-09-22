@@ -3,7 +3,7 @@ import { addIncrementalIDs } from '@/utils'
 import { CSSProperties } from 'react'
 import { Card, Image as BsImage, Ratio } from 'react-bootstrap'
 
-const skills: SkillType[] = addIncrementalIDs<SkillType>([
+const skills = addIncrementalIDs<SkillType>([
     {
         name: 'Python',
         logo: 'img/icons/python.webp',
