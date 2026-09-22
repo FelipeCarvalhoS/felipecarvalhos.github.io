@@ -250,7 +250,7 @@
         "habitat": {
             "title": "Desenvolvedor Web Estagiário",
             "bulletPoints": [
-                "Reconstruí, usando Django, o site corporativo da empresa que antes era em WordPress.",
+                "Reconstruí, usando Django, o site corporativo da empresa que antes era feito em WordPress.",
                 "Configurei um painel administrativo que interage com o banco de dados SQLite para que o mantenedor do site pudesse atualizar seu conteúdo com facilidade.",
                 "Refiz e modernizei o design do site, montando protótipos no Figma e implementando-os com Bootstrap.",
                 "Apliquei geração de site estático (SSG) com a biblioteca django-distill.",
