@@ -44,3 +44,6 @@ next-env.d.ts
 .vscode/
 
 todo.md
+
+secret_cv.ts
+cv/json/**
