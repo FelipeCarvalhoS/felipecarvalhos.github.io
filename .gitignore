@@ -216,4 +216,5 @@ next-env.d.ts
 todo.md
 
 secret_cv.ts
-cv/json/**
+/cv/json/**
+/cv/
