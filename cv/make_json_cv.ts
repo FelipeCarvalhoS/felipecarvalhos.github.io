@@ -1,13 +1,13 @@
-import { cv } from '@/cv/cv'
 import type {
     EducationType,
     ExperienceType,
     HonorType,
     LanguageType,
     Localized,
+    ProjectType,
     SkillType,
 } from '@/types'
-import { writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync, readFileSync, rmSync } from 'fs'
 import path from 'path'
 
 export type ResumeType = {
@@ -27,6 +27,7 @@ export type ResumeType = {
 
     address: {
         line: string
+        neighborhood: string
         city: string
         state: string
         zip: string
@@ -46,23 +47,31 @@ export type ResumeType = {
     experience: ExperienceType[]
     languages: LanguageType[]
     honors: HonorType[]
+    projects: ProjectType[]
 }
+
+const fullCv = JSON.parse(
+    readFileSync(path.join(__dirname, 'temporary', 'fullCv.json'), 'utf-8'),
+) as ResumeType
 
 function extractPickerCvFromFullCv() {
     return {
-        fullName: cv.fullName,
-        cpf: cv.cpf,
-        contact: cv.contact,
-        address: cv.address,
-        rg: cv.rg,
-        summary: cv.summary,
-        education: cv.education,
-        experience: cv.experience,
+        fullName: fullCv.fullName,
+        cpf: fullCv.cpf,
+        contact: fullCv.contact,
+        address: fullCv.address,
+        rg: fullCv.rg,
+        summary: fullCv.summary,
+        education: fullCv.education,
+        experience: fullCv.experience,
+        projects: fullCv.projects,
+        skills: fullCv.skills.map(skill => skill.name),
+        honors: fullCv.honors,
     }
 }
 
 function createCvJsonFiles() {
-    const jsonCv = JSON.stringify(cv, null, 4)
+    const jsonCv = JSON.stringify(fullCv, null, 4)
     const jsonPickerCv = JSON.stringify(extractPickerCvFromFullCv(), null, 4)
 
     mkdirSync(path.join(__dirname, 'json'), { recursive: true })
@@ -70,4 +79,10 @@ function createCvJsonFiles() {
     writeFileSync(path.join(__dirname, 'json', 'picker_cv.json'), jsonPickerCv)
 }
 
+function cleanUpTemporary() {
+    const temporaryDir = path.join(__dirname, 'temporary')
+    rmSync(temporaryDir, { recursive: true, force: true })
+}
+
 createCvJsonFiles()
+cleanUpTemporary()

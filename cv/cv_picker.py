@@ -3,8 +3,7 @@
 import json
 import os
 import subprocess
-import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from xml.sax.saxutils import escape as xml_escape
 
 RESUME_PATH = "/home/felipe/Documents/GitHub/felipecarvalhos.github.io/cv/json/picker_cv.json"

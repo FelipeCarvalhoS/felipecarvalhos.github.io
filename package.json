@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "eslint",
-        "cv:make": "tsx cv/make_json_cv.ts"
+        "cv:make": "python3 -m cv.extract_cv_data_from_components && tsx cv/process_data_from_components.ts && tsx cv/make_json_cv.ts"
     },
     "dependencies": {
         "bootstrap": "^5.3.8",

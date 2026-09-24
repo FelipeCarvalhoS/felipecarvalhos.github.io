@@ -62,3 +62,11 @@ export function toDate(dateStr: string): Date {
 export function toParagraphs(lines: string[]): string {
     return lines.join('\n')
 }
+
+/**
+ * Joins an array of strings into a single string with each element separated by a newline character
+ * and prepends a bullet point to each line.
+ */
+export function toBulletPoints(lines: string[]): string {
+    return lines.map(line => `• ${line}`).join('\n')
+}

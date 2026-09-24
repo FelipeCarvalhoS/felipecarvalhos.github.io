@@ -40,11 +40,14 @@ export const cv: ResumeType = {
         github: 'https://github.com/FelipeCarvalhoS',
     },
 
+    // Add keys for the data that comes from components (the data will be later merged by the script)
     skills: [],
     education: [],
     experience: [],
     languages: [],
     honors: [],
+    projects: [],
 
+    // Merge Secrets
     ...cvSecrets,
 } as const

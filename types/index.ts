@@ -75,5 +75,14 @@ export type ContactType = {
     icon: { src: string; alt: string }
 }
 
+export class MessageKey {
+    public messageKey: string
+
+    constructor(messageKey: string, translatedMessage: string) {
+        this.messageKey = messageKey
+        void translatedMessage
+    }
+}
+
 export type AvailableLocale = (typeof routing.locales)[number]
 export type Localized<T> = Record<AvailableLocale, T>

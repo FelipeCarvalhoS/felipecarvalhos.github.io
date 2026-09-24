@@ -3,70 +3,70 @@ import { addIncrementalIDs } from '@/utils'
 import { CSSProperties } from 'react'
 import { Card, Image as BsImage, Ratio } from 'react-bootstrap'
 
-const skills = addIncrementalIDs<SkillType>([
-    {
-        name: 'Python',
-        logo: 'img/icons/python.webp',
-    },
-    {
-        name: 'Django',
-        logo: 'img/icons/django.svg',
-    },
-    {
-        name: 'FastAPI',
-        logo: 'img/icons/fastapi.svg',
-    },
-    {
-        name: 'JavaScript',
-        logo: 'img/icons/javascript.webp',
-    },
-    {
-        name: 'TypeScript',
-        logo: 'img/icons/typescript.svg',
-    },
-    {
-        name: 'React',
-        logo: 'img/icons/react.webp',
-    },
-    {
-        name: 'Next.js',
-        logo: 'img/icons/next-js.svg',
-    },
-    {
-        name: 'PHP',
-        logo: 'img/icons/php.svg',
-    },
-    {
-        name: 'HTML',
-        logo: 'img/icons/html.webp',
-    },
-    {
-        name: 'CSS',
-        logo: 'img/icons/css.svg',
-    },
-    {
-        name: 'Sass',
-        logo: 'img/icons/sass.webp',
-    },
-    {
-        name: 'Bootstrap',
-        logo: 'img/icons/bootstrap.webp',
-    },
-    {
-        name: 'Git',
-        logo: 'img/icons/git.svg',
-    },
-    // {
-    //     name: 'GitHub',
-    //     logo: 'img/icons/github.svg',
-    // },
-    {
-        name: 'Docker',
-        logo: 'img/icons/docker.webp',
-    },
-])
-
 export default function SkillList() {
+    const skills = addIncrementalIDs<SkillType>([
+        {
+            name: 'Python',
+            logo: 'img/icons/python.webp',
+        },
+        {
+            name: 'Django',
+            logo: 'img/icons/django.svg',
+        },
+        {
+            name: 'FastAPI',
+            logo: 'img/icons/fastapi.svg',
+        },
+        {
+            name: 'JavaScript',
+            logo: 'img/icons/javascript.webp',
+        },
+        {
+            name: 'TypeScript',
+            logo: 'img/icons/typescript.svg',
+        },
+        {
+            name: 'React',
+            logo: 'img/icons/react.webp',
+        },
+        {
+            name: 'Next.js',
+            logo: 'img/icons/next-js.svg',
+        },
+        {
+            name: 'PHP',
+            logo: 'img/icons/php.svg',
+        },
+        {
+            name: 'HTML',
+            logo: 'img/icons/html.webp',
+        },
+        {
+            name: 'CSS',
+            logo: 'img/icons/css.svg',
+        },
+        {
+            name: 'Sass',
+            logo: 'img/icons/sass.webp',
+        },
+        {
+            name: 'Bootstrap',
+            logo: 'img/icons/bootstrap.webp',
+        },
+        {
+            name: 'Git',
+            logo: 'img/icons/git.svg',
+        },
+        // {
+        //     name: 'GitHub',
+        //     logo: 'img/icons/github.svg',
+        // },
+        {
+            name: 'Docker',
+            logo: 'img/icons/docker.webp',
+        },
+    ])
+
     return (
         <div className="d-flex flex-wrap gap-4 justify-content-center">
             {skills.map(skill => (
